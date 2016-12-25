@@ -84,6 +84,10 @@ header div.slogan .title{
     font-family: $primary-font;
     text-align: center;
 }
+header div.slogan .typed-strings em{
+    font-style: normal;
+    font-family: $primary-font;
+}
 header div.slogan .typed-strings{
     color: $light-color;
     font-family: $second-font;
@@ -111,11 +115,12 @@ header div.logo img {
 /* NAVIGATION */
 .top-bar {
     background: none;
+    z-index: 99;
+
 }
 .top-bar.expanded {
     overflow: visible;
     min-height: 100%;
-    z-index: 99;
 }
 .top-bar-section li:not(.has-form) a:not(.button) {
     font-size: 1.2em;
@@ -547,7 +552,27 @@ footer .footer-bar {
     background-attachment: fixed;
 }
 
-footer .footer-bar .widget {}
+footer .footer-bar form{
+    max-width: 100%;
+    overflow: hidden;
+}
+footer .footer-bar .widget .button.small{
+    padding-left:5px;
+    padding-right:5px;
+    width:100%;
+    font-size: 1em;
+    padding:0.55em;
+    
+}
+footer .footer-bar .widget-title {
+    color: #5f3633;
+}
+
+footer .footer-bar {
+    margin-top: 20px;
+    background-color: $light-color;
+}
+
 
 footer .footer-bar .widget-title {
     font-family: $primary-font;
@@ -676,19 +701,30 @@ aside .recent-posts-box ul li:last-child {
     border-bottom: none;
 }
 
-aside .recent-posts-box ul li a:before {
+.widget .button.small {
+    padding: 0.6rem 1.75rem 0.6rem 1.75rem;
+    font-size: 0.8125rem;
+}
+.widget ul {
+    list-style: none;
+    margin:0; 
+    padding:0;
+}
+.widget ul li a:before {
     font-family: $icon-font;
     content: '\f054';
     color: $link-color;
-    padding-right: 5px;
+    padding-right: 10px;
 }
-
-aside .recent-posts-box ul li a {
-    font-size: 0.8em;
+.widget ul li a {
+    font-size: 0.9em;
     color: #000;
 }
+aside .recent-posts-box ul li a {
+    font-size: 0.8em;
+}
 
-aside .recent-posts-box ul li a:hover {
+.widget ul li a:hover {
     color: $link-color;
 }
 
@@ -998,7 +1034,9 @@ img.alignright {
         content: '\f054';
         font-size: 0.8em;
         border:none;
-        padding-right:10x;
+        padding-right: 10px;
+        height: 1em;
+        line-height: 1em;
     }
     .top-bar-section ul li:hover:not(.has-form) > a {
         color: #000;
@@ -1086,14 +1124,6 @@ header {
     background-size: cover;
 }
 
-footer .footer-bar .widget-title {
-    color: #5f3633;
-}
-
-footer .footer-bar {
-    margin-top: 20px;
-    background-color: $light-color;
-}
 .clearfix {
     clear: both;
 }

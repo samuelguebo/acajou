@@ -1,6 +1,8 @@
 jQuery(document).ready(function ($) {
     
     $(document).foundation(); // Initialize Foundation
+    /*Turn input[type=submit] into button */
+    $('input[type=submit]').addClass('button small');
     
     /* WOW effect with ScrollReveal */
     window.sr = ScrollReveal();
@@ -12,8 +14,8 @@ jQuery(document).ready(function ($) {
     }, 200);
     sr.reveal('.category-row .post-item');
     sr.reveal('footer .widget', {
-        duration: 1000
-    }, 200);
+        duration: 1500
+    }, 300);
     sr.reveal('aside .widget', {
         duration: 1000
     }, 100);
