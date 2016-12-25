@@ -22,6 +22,7 @@ get_header(); ?>
                     <?php
                         if ( have_posts() ) :
                             /* Start the Loop */
+                            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // for pagination purpose
                             while ( have_posts() ) : the_post();
 
                                 /*
@@ -40,8 +41,9 @@ get_header(); ?>
 
                         endif; ?>
                 </div>
-                <div class="pagination-wrapper large-5 large-centered columns">
-                    <ul class="pagination">
+                <div class="pagination-wrapper" >
+                    <!--
+                    <ul class="pagination" >
                         <li class="arrow unavailable"><a href="">&laquo;</a></li>
                         <li class="current"><a href="">1</a></li>
                         <li><a href="">2</a></li>
@@ -52,6 +54,10 @@ get_header(); ?>
                         <li><a href="">13</a></li>
                         <li class="arrow"><a href="">&raquo;</a></li>
                     </ul>
+                    -->
+                    <?php if(function_exists('acajou_pagination')) { 
+                        acajou_pagination($wp_query, $paged); 
+                    } ?>
                 </div>
             </div>
         </section>

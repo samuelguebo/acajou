@@ -141,3 +141,52 @@ class Multilevel_Menu extends Walker_Nav_Menu
         call_user_func_array(array(&$this, 'end_el'), $cb_args);
     }
 }
+
+
+/**
+ * This functions prints a group of button for browsing through the other pages
+ * The pagination logic is inspired from WP Page Numbers plugin and and article of * Codular.
+ * 
+ * @link https://wordpress.org/plugins/wp-page-numbers
+ * @link http://codular.com/implementing-pagination
+ */
+
+function acajou_pagination($custom_query, $paged)
+{
+	$pagingString   = "<ul class=\"pagination\">\n";
+    $postsPerPage   = get_option('posts_per_page');
+    $pagesToShow    = ceil(($custom_query->found_posts)/ ($postsPerPage));
+    
+    $firstPage      = 1;
+    $lastPage   = $pagesToShow;
+    if($pagesToShow>10) $pagesToShow = 10;
+    
+    if($paged > $firstPage): // make sure previous page exists
+        $pagingString .="<li class=\"arrow unavailable\">";
+        $pagingString .= "<a href=\"" . get_pagenum_link($firstPage) . "\">&raquo;</a>";
+        $pagingString .= "</li>\n";
+        $pagingString .= '</ul>';
+    endif;
+    
+    for($i=1;$i<=$pagesToShow;$i++):
+        if($i== $paged): //highlight the current page
+            $pagingString .= "<li class=\"current\">";
+            $pagingString .= "<a href=\"" . get_pagenum_link($i) . "\">" . $i . "</a>";
+            $pagingString .= "</li>\n";
+        else:
+            $pagingString .= "<li>";
+            $pagingString .= "<a href=\"" . get_pagenum_link($i) . "\">" . $i . "</a>";
+            $pagingString .= "</li>\n";
+        endif;
+    endfor;
+    
+    if($paged < $pagesToShow): // make sure next page exists
+        $pagingString .="<li class=\"arrow unavailable\">";
+        $pagingString .= "<a href=\"" . get_pagenum_link(($paged+$postsPerPage)+1) . "\">&raquo;</a>";
+        $pagingString .= "</li>\n";
+        $pagingString .= '</ul>';
+    endif;
+	
+    echo $pagingString;
+
+}
