@@ -42,7 +42,7 @@
                 </div> 
             </div><!--slogan/-->
             <div class="row socials">
-                <ul class="small-5 small-centered large-3 large-centered columns">
+                <ul class="large-3 large-centered medium-4 medium-centered small-centered small-7 columns ">
                     <li class="reveal"><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li class="reveal"><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li class="reveal"><a href="#"><i class="fa fa-youtube"></i></a></li>
