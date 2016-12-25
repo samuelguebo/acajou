@@ -28,6 +28,21 @@ function acajou_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'acajou_body_classes' );
 
+
+/**
+ * Add the appropriate class to post-item in the loop
+ */
+function acajou_post_item_class() {
+	if ( is_front_page() || is_home()) {
+		echo 'large-4';
+	}elseif(!is_front_page() && !is_home() && !is_singular()) {
+        echo 'large-6';
+        
+    }
+}
+add_action( 'wp_head', 'acajou_pingback_header' );
+
+
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
@@ -37,3 +52,12 @@ function acajou_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'acajou_pingback_header' );
+
+/**
+ * Override the default excerpt length
+ * @link https://wordpress.org/support/topic/changing-excerpt-length/
+ */
+function new_excerpt_length($length) {
+    return 25;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
