@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="post-item  <?php acajou_post_item_class();?> columns">
+<article id="post-<?php the_ID(); ?>" class="post-item  <?php acajou_post_item_class();?>">
     <!--post/-->
     <div class="post-item-caption">
         <div class="post-item-image"> 
@@ -18,7 +18,7 @@
                     the_post_thumbnail( 'post-thumb' ); 
                 }
             ?>
-            <p class="post-item-date"> <span class="day"><?php echo get_the_date('d')?></span> <span class="month-year">dec. 2016</span> </p>
+            <p class="post-item-date"> <span class="day"><?php echo get_the_date('d')?></span> <span class="month-year"><?php echo get_the_date('M. Y')?></span> </p>
         </div>
         <div class="panel">
             <h6 class="post-item-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h6>

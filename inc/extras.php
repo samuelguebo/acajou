@@ -34,9 +34,12 @@ add_filter( 'body_class', 'acajou_body_classes' );
  */
 function acajou_post_item_class() {
 	if ( is_front_page() || is_home()) {
-		echo 'large-4 medium-6';
-	}elseif(!is_front_page() && !is_home() && !is_singular()) {
-        echo 'large-6 medium-6';
+		echo 'large-4 medium-6 columns';
+	}elseif(is_singular()) {
+        echo '';
+        
+    }elseif(!is_front_page() && !is_home() && !is_singular()) {
+        echo 'large-6 medium-6 columns';
         
     }
 }

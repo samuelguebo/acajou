@@ -55,7 +55,7 @@
             <div class="overlay">
                 <div class="row">
                     <div class="small-2 large-2 columns logo">
-                        <a href="index.php"> <img src="img/acajou_logo.png"> </a>
+                        <a href="<?php echo site_url('/'); ?>"> <img src="<?php bloginfo( 'template_directory' ); ?>/img/acajou_logo.png"> </a>
                     </div>
                     <?php require_once('menu.php');?>
                 </div>

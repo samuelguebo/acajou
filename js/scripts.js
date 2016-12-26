@@ -20,6 +20,10 @@ jQuery(document).ready(function ($) {
         duration: 1000
     }, 100);
     
+    sr.reveal('form input', {
+        duration: 2000
+    }, 50);
+    
     /* Typed animation text */
     $("#typed").typed({
         // Waits 1000ms after typing "First

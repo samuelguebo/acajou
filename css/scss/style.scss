@@ -5,6 +5,8 @@ $second-font:    'Roboto',Helvetica, sans-serif;
 $primary-color: #5f3633;
 $light-color: #ffbb8f;
 $link-color: #F47621;
+$shadow-color:#c9c9c9;
+$border-color:#d8d8d8;
 
 @font-face {
     font-family: 'Arvo';
@@ -77,6 +79,7 @@ header {
 header div.slogan .title, header div.slogan .description{
     font-weight: 300;
 }
+
 header div.slogan .title{
     font-size: 5.8em;
     color: $link-color;
@@ -92,6 +95,10 @@ header div.slogan .typed-strings{
     color: $light-color;
     font-family: $second-font;
     text-align: center;
+    padding-bottom:10px;
+}
+header div.slogan .strings{
+    display: none;
 }
 header div.logo {
     padding: 0px;
@@ -472,9 +479,9 @@ article .panel {
 .category-row .post-item-caption {
     height: 100%;
     background: #f2f2f2;
-    webkit-box-shadow: 0px 0px 2px 1px #c9c9c9;
-    -moz-box-shadow: 0px 0px 2px 1px #c9c9c9;
-    box-shadow: 0px 0px 2px 1px #c9c9c9;
+    webkit-box-shadow: 0px 0px 2px 1px $shadow-color;
+    -moz-box-shadow: 0px 0px 2px 1px $shadow-color;
+    box-shadow: 0px 0px 2px 1px $shadow-color;
 }
 
 .category-row article .post-item-image{
@@ -516,7 +523,7 @@ footer .copyright a:hover {
     color: #FFF;
 }
 
-footer ol.breadcrumbs {
+footer .breadcrumbs {
     display: block;
     list-style: none;
     margin-left: 0;
@@ -526,12 +533,12 @@ footer ol.breadcrumbs {
     border: none;
 }
 
-footer ol.breadcrumbs li a,
-footer ol.breadcrumbs li {
+footer .breadcrumbs li a,
+footer .breadcrumbs li {
     color: #FFF;
 }
 
-footer ol.breadcrumbs li a:hover {
+footer .breadcrumbs li a:hover {
     color: #000;
 }
 
@@ -556,7 +563,7 @@ footer .footer-bar form{
     max-width: 100%;
     overflow: hidden;
 }
-footer .footer-bar .widget .button.small{
+.widget .button.small{
     padding-left:5px;
     padding-right:5px;
     width:100%;
@@ -617,8 +624,15 @@ footer a#back-to-top {
 
 /* SIDEBAR */
 
-aside {}
 
+aside .widget {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border:solid 1px $border-color;
+}
+aside .widget ul, .widget ol{
+    padding:15px 10px;
+}
 aside .row.widget {
     margin-bottom: 20px;
     border: solid 1px #d8d8d8;
@@ -630,23 +644,29 @@ aside .widget-title {
     text-transform: uppercase;
     display: block;
     margin-bottom: 15px;
+    background: $primary-color;
 }
 
-aside .widget-search .widget-title {
+aside .widget_search .widget-title {
     padding: 0px;
     margin-bottom: 0px;
     margin-top: 0px;
+    background: none;
 }
 
-aside .widget-search {
+aside .widget_search {
     background: $link-color;
     padding: 5px 10px 0px 15px;
+    border:solid 1px $link-color;
 }
 
-aside .widget-search button {
+aside .widget_search button {
     font-size: 1.4em;
 }
-
+aside .widget .button.small {
+    padding: 0.6rem 0.5rem 0.7rem 0.5rem;
+    font-size: 0.8125rem;
+}
 aside .widget-title {
     padding: 5px 10px 0px 15px;
     margin-bottom: 0px;
@@ -667,7 +687,6 @@ aside .twitter-feed .widget-title {
 }
 
 aside .widget.twitter-feed {
-    border-color: #3ecaee;
     max-height: 300px;
     overflow: hidden;
 }
@@ -680,21 +699,21 @@ aside .facebook-box iframe {
     width: 100%;
 }
 
-aside .recent-posts-box .widget-title {
-    background: $primary-color;
-    color: #FFF;
-}
-
 aside .recent-posts-box ul {
     padding: 0;
     margin: 0;
     padding: 15px;
 }
 
-aside .recent-posts-box ul li {
+aside .widget ul li {
     list-style: none;
     padding-bottom: 10px;
-    border-bottom: dashed 1px #d8d8d8;
+    margin-bottom: 5px;
+    border-bottom: dashed 1px $border-color;
+
+}
+aside .widget ul li:last-child {
+    border-bottom: none;
 }
 
 aside .recent-posts-box ul li:last-child {
@@ -769,7 +788,10 @@ aside .recent-posts-box ul li a {
     padding-top: 5px;
     border-top: solid 1px;
 }
-
+.single-row .post-categories, .single-row .post-tags {
+    margin-right:20px;
+    margin-bottom:20px;
+}
 .single-row article.post-item iframe {
     min-width: 100%;
 }
@@ -783,9 +805,10 @@ aside .recent-posts-box ul li a {
     background: #FFF;
     /* padding-top:50px; */
     text-align: justify;
-    -webkit-box-shadow: 0px 0px 2px 1px #c9c9c9;
-    -moz-box-shadow: 0px 0px 2px 1px #c9c9c9;
-    box-shadow: 0px 0px 2px 1px #c9c9c9;
+    
+    -webkit-box-shadow: 0px 0px 2px 1px $shadow-color;
+    -moz-box-shadow: 0px 0px 2px 1px $shadow-color;
+    box-shadow: 0px 0px 2px 1px $shadow-color;
 }
 .single-row article .post-item-image{
     position:relative;
@@ -843,6 +866,24 @@ aside .recent-posts-box ul li a {
     margin-bottom: 10px
 }
 
+.single-row article .category-title-line{
+    height:2px;
+}
+.single-row article .post-item-date {
+    color: #5f3633;
+    text-align: center;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 80px;
+    right: -5px;
+    background: #ffbb8f;
+    text-transform: uppercase;
+    padding: 5px;
+    padding-left:10px;
+    webkit-box-shadow: 0px 0px 2px 1px $primary-color;
+    -moz-box-shadow: 0px 0px 2px 1px $primary-color;
+    box-shadow: 0px 0px 2px 1px $primary-color;
+}
 .single-row article.post-item blockquote p {
     margin: 7px 0
 }
@@ -898,7 +939,7 @@ aside .recent-posts-box ul li a {
     text-align: left;
 }
 
-#breadcrumbs ol.breadcrumbs {
+.breadcrumbs {
     display: block;
     list-style: none;
     margin-left: 0;
@@ -907,13 +948,18 @@ aside .recent-posts-box ul li a {
     background-color: transparent;
     border: none;
 }
+.single-row .post-item .breadcrumbs {
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 0;
+}
 
-#breadcrumbs .breadcrumbs > * {
+.breadcrumbs > * {
     color: #000;
     font-size: 0.7em;
 }
 
-#breadcrumbs .breadcrumbs > * a {
+.breadcrumbs > * a {
     color: $link-color;
 }
 
@@ -924,7 +970,6 @@ aside .recent-posts-box ul li a {
 .single-row .category-title, .single-row .category-title-line
 {
     text-align: left;
-    margin-left:20px;
 }
 
 ul.pagination li.current a,
@@ -1087,10 +1132,7 @@ img.alignright {
         margin-bottom: 0.6rem;
         text-rendering: optimizeLegibility;
     }
-    #breadcrumbs ol.breadcrumbs {
-        padding-top:35px;
-        background-color: #FFF;
-    }
+    
 }
 
 
@@ -1161,4 +1203,14 @@ header {
     list-style:none;
     position:relative;
     left:50%;
+}
+/* DEFAULT */
+figure {
+    margin:0;
+    min-width: 100%;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+article.comment-wrapper {
+    margin-top: 20px;
 }
