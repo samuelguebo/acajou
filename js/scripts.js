@@ -17,8 +17,8 @@ jQuery(document).ready(function ($) {
         duration: 1500
     }, 300);
     sr.reveal('aside .widget', {
-        duration: 1000
-    }, 100);
+        duration: 2000
+    }, 150);
     
     sr.reveal('form input', {
         duration: 2000

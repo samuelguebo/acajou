@@ -206,7 +206,7 @@ if(!function_exists('acajou_custom_breadcrumbs')) {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $delimiter = '/'; // delimiter between crumbs
-  $home = __('Home'); // text for the 'Home' link
+  $home = __('Home','acajou'); // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="active">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
@@ -299,11 +299,61 @@ if(!function_exists('acajou_custom_breadcrumbs')) {
  
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
+      echo __('Page','acajou') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  
  
   }
 }
+    
+/**
+ * Acajou Custom Title prints a title on archive pages : category, tag, author, etc.
+ * Its logic is similar to the breadcrumbs.
+ */
+
+function acajou_custom_title() {        
+    
+  if (is_home() || is_front_page()) {
+  
+    echo 'From the blog';
+  
+  } else {
+  
+     if ( is_category() ) {
+        echo single_cat_title('', false);
+  
+    } elseif ( is_search() ) {
+      echo $before . __('Results for ','acajou'). get_search_query() . '"' . $after;
+  
+    } elseif ( is_day() ) {
+      echo get_the_time('d').' '.get_the_time('F');
+  
+    } elseif ( is_month() ) {
+      echo get_the_time('F').' '.get_the_time('Y');
+  
+    } elseif ( is_year() ) {
+      echo get_the_time('Y');
+  
+    } elseif ( is_tag() ) {
+      echo single_tag_title('', false);
+  
+    } elseif ( is_author() ) {
+       global $author;
+      $userdata = get_userdata($author);
+      echo __('Articles written by ','acajou') . $userdata->display_name;
+  
+    } elseif ( is_404() ) {
+      echo __('Sorry, not found','acajou');
+    }
+  
+    if ( get_query_var('paged') ) {
+      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
+      echo __('Page','acajou') . ' ' . get_query_var('paged');
+      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
+    }
+  
+ 
+  }
+} 
 }
