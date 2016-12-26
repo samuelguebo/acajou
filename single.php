@@ -8,14 +8,12 @@
  */
 
 get_header(); ?>
-    <section class="row" id="breadcrumbs">
-        <ol class="breadcrumbs row">
-            <li><a href="index.php" class="active">Home</a></li>
-            <li><a href="archive.php">Technology & culture</a></li>
-            <li>We Should All Be Feminists</li>
-        </ol>
-    </section>
     <section class="row single-row">
+        <section id="breadcrumbs" class="clearfix">
+            <div class="breadcrumbs row">
+                <?php if (function_exists('acajou_custom_breadcrumbs')) acajou_custom_breadcrumbs(); ?>
+            </div>
+        </section>
         <section class="large-9 columns main-column">
             <?php
             while ( have_posts() ) : the_post();
@@ -25,8 +23,7 @@ get_header(); ?>
 
             endwhile; // End of the loop.
             ?>
-        </section>   
+        </section>
         <?php get_sidebar();?>
     </section>
-<?php get_footer();?>
-
+    <?php get_footer();?>

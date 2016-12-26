@@ -752,7 +752,6 @@ aside .recent-posts-box ul li a {
 
 .single-row {
     padding: 0px;
-    margin-top: 20px;
 }
 
 .single-row article .panel {
@@ -948,6 +947,9 @@ aside .recent-posts-box ul li a {
     background-color: transparent;
     border: none;
 }
+.single-row .breadcrumbs {
+        margin-bottom:15px;
+}
 .single-row .post-item .breadcrumbs {
     font-weight: bold;
     font-size: 0.9em;
@@ -959,8 +961,11 @@ aside .recent-posts-box ul li a {
     font-size: 0.7em;
 }
 
-.breadcrumbs > * a {
+.breadcrumbs  a {
     color: $link-color;
+}
+.breadcrumbs a:hover{
+    color:$primary-color;
 }
 
 
