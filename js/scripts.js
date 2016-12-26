@@ -65,4 +65,18 @@ jQuery(document).ready(function ($) {
             }, 700);
         });
     }
+    
+    /*
+     *  Lazy loading for images
+     * 
+     */
+    setTimeout(function () {
+       jQuery('.delay').each(function () {
+          var imagex = jQuery(this);
+          var imgOriginal = imagex.data('src');
+            jQuery(imagex).css('padding',0);
+            jQuery(imagex).attr('src', imgOriginal);
+            jQuery(imagex).removeClass('placeholder'); /*added this*/
+       });
+    }, 1000);
 });
