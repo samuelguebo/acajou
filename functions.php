@@ -111,14 +111,10 @@ function acajou_scripts() {
 	wp_enqueue_style( 'acajou-style', get_template_directory_uri().'/css/style.css' );
     
     // JS
-    /* deregister jquery */
-    wp_deregister_script('jquery');
-    
 	wp_enqueue_script( 'modernizer', get_template_directory_uri().'/js/modernizr.min.js');
 	wp_enqueue_script( 'jquery', get_template_directory_uri().'/js/jquery.min.js');
 	wp_enqueue_script( 'foundation-js', get_template_directory_uri().'/js/foundation.min.js');
 	wp_enqueue_script( 'typed', get_template_directory_uri().'/js/typed.js');
-	wp_enqueue_script( 'equalize', get_template_directory_uri().'/js/equalize.js');
 	wp_enqueue_script( 'slippry-slider', get_template_directory_uri().'/js/slippry.min.js');
 	wp_enqueue_script( 'scroll-reveal', get_template_directory_uri().'/js/scrollreveal.min.js');
 	wp_enqueue_script( 'main-scripts', get_template_directory_uri().'/js/scripts.js');

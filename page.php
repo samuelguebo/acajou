@@ -12,4 +12,4 @@
  * @package Acajou
  */
 
-require_once('single.php');
+get_template_part('single'); ?>

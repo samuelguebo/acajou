@@ -48,7 +48,7 @@
                     ?>
                 </div><!-- .post-tags -->
                 <div class="panel post-item-author row reveal">
-                    <div class="small-3 large-3 columns"> <?php echo get_avatar( get_the_author_meta(  get_the_author_ID() ), 120 ); ?> </div>
+                    <div class="small-3 large-3 columns"> <?php echo get_avatar( get_the_author_meta(  get_the_author_meta('ID') ), 120 ); ?> </div>
                     <div class="small-9 large-9 columns">
                         <h3><?php _e('About the author','acajou'); ?></h3>
                         <div><?php echo nl2br(get_the_author_meta('description')); ?></div>

@@ -7,4 +7,4 @@
  * @package Acajou
  */
 
-require_once('archive.php'); ?>
+get_template_part('archive'); ?>

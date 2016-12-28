@@ -83,12 +83,12 @@ function add_home_menu_item ( $items, $args ) {
  */
 class Multilevel_Menu extends Walker_Nav_Menu
 {
-   function start_lvl(&$output, $depth)
+   function start_lvl(&$output, $depth = 0, $args = array())
    {
        $indent = str_repeat("\t", $depth);
        $output .= "\n$indent<ul class=\"dropdown\">\n";
    }
-   function end_lvl(&$output, $depth)
+   function end_lvl(&$output, $depth = 0, $args = array())
    {
        $indent = str_repeat("\t", $depth);
        $output .= "$indent</ul>\n";
@@ -166,9 +166,8 @@ function acajou_pagination($custom_query, $paged)
     
     if($paged > $firstPage): // make sure previous page exists
         $pagingString .="<li class=\"arrow unavailable\">";
-        $pagingString .= "<a href=\"" . get_pagenum_link($firstPage) . "\">&raquo;</a>";
+        $pagingString .= "<a href=\"" . get_pagenum_link($firstPage) . "\">&laquo;</a>";
         $pagingString .= "</li>\n";
-        $pagingString .= '</ul>';
     endif;
     
     for($i=1;$i<=$pagesToShow;$i++):
@@ -212,7 +211,7 @@ if(!function_exists('acajou_custom_breadcrumbs')) {
   $after = '</span>'; // tag after the current crumb
  
   global $post;
-  $homeLink = get_bloginfo('url');
+  $homeLink = home_url();
  
   if (is_home() || is_front_page()) {
  

@@ -26,9 +26,9 @@
         <div class="overlay">
             <div class="row clearfix">
                 <div class="small-3 large-2 columns logo">
-                    <a href="<?php echo site_url('/'); ?>"> <img src="<?php bloginfo( 'template_directory' ); ?>/img/acajou_logo.png"> </a>
+                    <a href="<?php echo site_url('/'); ?>"> <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/acajou_logo.png"> </a>
                 </div><!--logo/-->
-                <?php require_once('menu.php');?>
+                <?php get_template_part('menu'); ?>
             </div>
             <div class="row slogan">
                 <h1 class="title reveal">Acajou</h1>
@@ -55,9 +55,9 @@
             <div class="overlay">
                 <div class="row">
                     <div class="small-2 large-2 columns logo">
-                        <a href="<?php echo site_url('/'); ?>"> <img src="<?php bloginfo( 'template_directory' ); ?>/img/acajou_logo.png"> </a>
+                        <a href="<?php echo site_url('/'); ?>"> <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/acajou_logo.png"> </a>
                     </div>
-                    <?php require_once('menu.php');?>
+                    <?php get_template_part('menu'); ?>
                 </div>
             </div>
         </header>
