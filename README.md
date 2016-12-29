@@ -1,10 +1,10 @@
 # Acajou
 A minimalist woodstyle theme for WordPress.
 
-[![acajou_default_screeshot.png](https://s6.postimg.org/a5vm6fu8x/acajou_default_screeshot.png)](https://postimg.org/image/j0wggyj19/)
+[![acajou_top.png](https://s6.postimg.org/pfvhdmpr5/acajou_top.png)](https://postimg.org/image/zd6i6oxct/)
 ## Description
 
-Acajou is a clean, simple, and fully responsive WordPress theme that feels like wood and looks awesome on any device. Its name, pronounced *** /a.kaˈʒu/*** in French, refers to a tree from tropical forests. 
+Acajou is a clean, simple, and fully responsive WordPress theme that feels like wood and looks awesome on any device. Its name, pronounced ***/a.kaˈʒu/*** in French, refers to a tree from tropical forests. 
 
 It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using [Zurb Foundation](https://github.com/zurb/foundation-sites), a  framework for HTML5 / CSS3 which is SEO friendly. This WordPress theme was built with blogs and creative portfolios in mind but be creative and unleash its full potential in eCommerce, business and other projects. Acajou is available in English, French and Spanish for now.
 
@@ -81,13 +81,7 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 -  [Zurb Foundation](https://github.com/zurb/foundation-sites), under MIT License.
 
 # Change log
-All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/blob/master/CHANGELOG.md) file.
+All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/CHANGELOG.md) file.
 
 # Contributors
  * Samuel Gu&eacute;bo ([@samuelguebo](http://twitter.com/samuelguebo))
-
- 
-
-
-
-[![acajou_footer.jpg](https://s6.postimg.org/p0k7km3tt/acajou_footer.jpg)](https://postimg.org/image/xvl1v4sm5/)
