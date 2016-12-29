@@ -81,7 +81,7 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 -  [Zurb Foundation](https://github.com/zurb/foundation-sites), under MIT License.
 
 # Change log
-All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/CHANGELOG.md) file.
+All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/blob/master/CHANGELOG.md) file.
 
 # Contributors
  * Samuel Gu&eacute;bo ([@samuelguebo](http://twitter.com/samuelguebo))
