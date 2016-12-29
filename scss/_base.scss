@@ -2,9 +2,6 @@ $author-image-radius : 60px;
 $icon-font:    'FontAwesome';
 $primary-font:    'Arvo', serif;
 $second-font:    'Roboto',Helvetica, sans-serif;
-$primary-color: #5f3633;
-$light-color: #ffbb8f;
-$link-color: #F47621;
 $shadow-color:#c9c9c9;
 $border-color:#d8d8d8;
 
@@ -42,7 +39,7 @@ a {
     text-decoration: none;
 }
 a:hover, a:focus {
-    color: $primary-color;
+    color: $dark-color;
 }
 h1,
 h2,
@@ -69,7 +66,8 @@ h6 {
 /* HEADER */
 
 header {
-    border-bottom: solid 10px $light-color;
+    border-bottom: solid 10px $extra-light-color;
+;
 }
 
 header div.slogan .title, header div.slogan .description{
@@ -78,7 +76,7 @@ header div.slogan .title, header div.slogan .description{
 
 header div.slogan .title{
     font-size: 5.8em;
-    color: $link-color;
+    color: $light-color;
     text-transform: uppercase;
     font-family: $primary-font;
     text-align: center;
@@ -88,7 +86,7 @@ header div.slogan .typed-strings em{
     font-family: $primary-font;
 }
 header div.slogan .typed-strings{
-    color: $light-color;
+    color: $dark-color;
     font-family: $second-font;
     text-align: center;
     padding-bottom:10px;
@@ -106,11 +104,23 @@ header div.slogan a {
 }
 
 header div.slogan a:hover {
-    color: #000;
+    color: $dark-color;
 }
 
 header div.logo img {
     max-height: 120px;
+    filter: brightness(200%);
+        -webkit-filter: brightness(200%);
+        -moz-filter: brightness(0%);
+        -o-filter: brightness(0%);
+        -ms-filter: brightness(0%);
+    /*
+    filter: hue-rotate(180deg);
+        -webkit-filter: hue-rotate(180deg);
+        -moz-filter: hue-rotate(180deg);
+        -o-filter: hue-rotate(180deg);
+        -ms-filter: hue-rotate(180deg);
+    */
 }
 
 
@@ -142,10 +152,10 @@ header div.logo img {
 }
 
 .top-bar-section ul li > a {
-    color:$link-color;
+    color:$light-color;
 }
 .top-bar-section li a:hover {
-    background: $primary-color;
+    background: $dark-color;
 }
 .nav-wrapper {
     margin-bottom: -25px;
@@ -247,12 +257,31 @@ header div.logo img {
 }
 
 .socials ul li a:hover {
-    color: $link-color;
+    color: $dark-color;
     font-size: 20px;
     text-align: center;
-    border: solid 1px $link-color;
+    border: solid 1px $dark-color;
 }
 
+header .socials ul li a {
+    color: $dark-color;
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+    border: solid 1px $dark-color;
+    display: block;
+}
+
+.socials ul li a:hover {
+    color: $light-color;
+    font-size: 20px;
+    text-align: center;
+    border: solid 1px $light-color;
+}
 
 /* TEST COLORS */
 
@@ -347,7 +376,7 @@ header div.logo img {
     background-color: $primary-color;
 }
 ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
-    background: $light-color;
+    background: $dark-color;
 }
 article .panel .button {
     border-radius: 5px;
@@ -385,7 +414,7 @@ article .panel .button:focus,
 article .panel .button:hover,
 article .panel .button:focus,
 .widget .button:hover {
-    background-color: #000;
+    background-color: $dark-color;
     color: #FFFFFF;
 }
 
@@ -396,13 +425,13 @@ article.post-item .post-item-title {
 }
 
 article .post-item-date {
-    color: $primary-color;
+    color: $light-color;
     text-align: center;
     font-size: 0.8rem;
     position:absolute;
     top:40px;
     right:15px;
-    background: $light-color;
+    background: $primary-color;
     text-transform: uppercase;
     padding: 5px;
 }
@@ -515,7 +544,7 @@ footer .copyright {
 }
 
 footer .copyright a {
-    color: $light-color;
+    color: $dark-color;
 }
 
 footer .copyright a:hover {
@@ -548,7 +577,7 @@ footer .breadcrumbs > *::before {
 footer .footer-bar {
     margin-bottom: 25px;
     background-image: url("../img/bright-squares.png");
-    background-blend-mode:multiply;
+    background-blend-mode:normal;
     padding-top: 20px;
     padding-bottom: 60px;
     margin-top: 20px;
@@ -568,12 +597,12 @@ footer .footer-bar form{
     
 }
 footer .footer-bar .widget-title {
-    color: $primary-color;
+    color: $light-color;
 }
 
 footer .footer-bar {
     margin-top: 20px;
-    background-color: $light-color;
+    background-color: $dark-color;
 }
 
 
@@ -640,7 +669,7 @@ aside .widget-title {
     text-transform: uppercase;
     display: block;
     margin-bottom: 15px;
-    background: $primary-color;
+    background: $secondary-color;
 }
 
 aside .widget_search .widget-title {
@@ -651,9 +680,9 @@ aside .widget_search .widget-title {
 }
 
 aside .widget_search {
-    background: $link-color;
+    background: $primary-color;
     padding: 5px 10px 0px 15px;
-    border:solid 1px $link-color;
+    border:solid 1px $primary-color;
 }
 
 aside .widget_search button {
@@ -734,7 +763,11 @@ aside .recent-posts-box ul li:last-child {
 }
 .widget ul li a {
     font-size: 0.9em;
-    color: #000;
+    color: $dark-color;
+}
+footer .widget ul li a {
+    font-size: 0.9em;
+    color: $light-color;
 }
 aside .recent-posts-box ul li a {
     font-size: 0.8em;
@@ -866,13 +899,13 @@ aside .recent-posts-box ul li a {
     height:2px;
 }
 .single-row article .post-item-date {
-    color: $primary-color;
+    color: $light-color;
     text-align: center;
     font-size: 0.8rem;
     position: absolute;
     top: 80px;
     right: -5px;
-    background: #ffbb8f;
+    background: $primary-color;
     text-transform: uppercase;
     padding: 5px;
     padding-left:10px;
@@ -988,7 +1021,7 @@ ul.pagination li a, ul.pagination li{
 table,
 th,
 td {
-    border: 1px solid $light-color;
+    border: 1px solid $extra-light-color;
 }
 
 table {
@@ -1036,6 +1069,9 @@ img.alignright {
         width: 100%;
         padding-left:0px;
         padding-right:0px;
+    }
+    .top-bar-section ul li > a {
+    color:$primary-color;
     }
 }
 @media only screen and (max-width: 40.0625em) {

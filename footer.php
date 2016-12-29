@@ -9,7 +9,7 @@
  * @package Acajou
  */
 ?>
-    <footer>
+    <footer id="footer">
         <div class="footer-bar parallax">
             <div class="row back-to-top-wrapper">
                 <a href="#0" class="back-to-top" id="back-to-top"><i class="fa fa-angle-up"></i></a><!-- back to top-->

@@ -1,45 +1,93 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# Acajou
+A minimalist woodstyle theme for WordPress.
 
-_s
-===
+[![acajou_default_screeshot.png](https://s6.postimg.org/a5vm6fu8x/acajou_default_screeshot.png)](https://postimg.org/image/j0wggyj19/)
+## Description
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Acajou is a clean, simple, and fully responsive WordPress theme that feels like wood and looks awesome on any device. Its name, pronounced *** /a.kaˈʒu/*** in French, refers to a tree from tropical forests. 
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using [Zurb Foundation](https://github.com/zurb/foundation-sites), a  framework for HTML5 / CSS3 which is SEO friendly. This WordPress theme was built with blogs and creative portfolios in mind but be creative and unleash its full potential in eCommerce, business and other projects. Acajou is available in English, French and Spanish for now.
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A custom header implementation in `inc/custom-header.php` just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts/` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+## Installation
 
-Getting Started
----------------
+#### Manual
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+1. Download theme by using "Download zip" button on the right side
+2. Upload the **acajou** folder to the **/wp-content/themes/** directory
+3. Activate the Theme through the Apperance - Themes menu in WordPress
+4. See **Appearance -> Customize**  to change theme specific options.
+ 
+#### WordPress Admin Panel
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a five-step find and replace on the name in all the templates.
+1. Download theme by using "Download zip" button on the right side
+2. Go to **Appearance > Themes**
+3. Click on **Add New**
+4. Click on **Upload Theme**
+5. Choose the **acajou.zip** file
+6. Click on **Install Now**
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
 
-OR
+## Adapting existing content
+If you already have menus and widgets on the website, you need to do this after finishing the theme activation process:
 
-* Search for: `'_s'` and replace with: `'megatherium-is-awesome'`
-* Search for: `_s_` and replace with: `megatherium_is_awesome_`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium-is-awesome` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium_is_Awesome</code>
-* Search for: `_s-` and replace with: `megatherium-is-awesome-`
+1. Go to **Appearance > Menus** and update theme locations
+2. Go to **Appearance > Widgets** and add old widgets to new sidebars
 
-Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
+If you already have uploaded images on the website, you should regenerate thumbnails. To do that you can install [Regenerate Thumbnails](http://wordpress.org/plugins/regenerate-thumbnails/) plugin.
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+If you didn't use featured images you can install the [Easy Add Thumbnail](http://wordpress.org/plugins/easy-add-thumbnail/) plugin to dinamically set featured images for old published posts.
 
-Good luck!
+
+## Customization
+
+This theme has loads of customization options available. To open WordPress Customizer go to **Appearance > Customize**. There you will find the following sections:
+#### Background
+Change background color and/or set a background image.
+#### Social links
+Set the link for Facebook, Twitter, youtube and other social networks.
+
+#### Colors
+ Acajou comes with six flavors: chocolate, blue, green, red, purple, and yellow. You might switch between these colors in using the Customizer.
+[![acajou_theme_showcase.jpg](https://s6.postimg.org/p9hsajgm9/acajou_theme_showcase.jpg)](https://postimg.org/image/5rn4uljod/).
+
+
+## File structure
+In this theme we are using a default [WordPress template hierarchy](http://codex.wordpress.org/Template_Hierarchy).
+
+**/css/** - Style(CSS) files.
+
+**/scss/** - [SASS](http://sass-lang.com) files for those that are comfortable with CSS preprocessors.
+
+**/inc/** - Includes custom logics that are non-standard to WordPress.
+
+**/js/** - Theme javascript files.
+
+
+## License
+
+This theme is based on Underscore WordPress theme by Theme Horse.
+
+The theme is released for free under the terms of the GNU General Public License version 2
+and some parts under their respective licenses.
+In general words, feel free and encouraged to use, modify and redistribute this theme however you like.
+You may remove any copyright references (unless required by third party components) and crediting is not necessary.
+The theme is offered free of charge. If someone asked money for it, someone just tricked you.
+
+Unless otherwise specified, all the theme files, scripts and images are licensed under [GNU General Public License version 2](http://github.com/samuelguebo/acajou/LICENSE).
+
+**The exceptions to this license are as follows:**
+
+- [FontAwesome](https://github.com/FortAwesome/Font-Awesome), under the SIL Open Font License.
+-  [Zurb Foundation](https://github.com/zurb/foundation-sites), under MIT License.
+
+# Change log
+All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/blob/master/CHANGELOG.md) file.
+
+# Contributors
+ * Samuel Gu&eacute;bo ([@samuelguebo](http://twitter.com/samuelguebo))
+
+ 
+
+
+
+[![acajou_footer.jpg](https://s6.postimg.org/p0k7km3tt/acajou_footer.jpg)](https://postimg.org/image/xvl1v4sm5/)
