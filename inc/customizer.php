@@ -20,7 +20,7 @@ function acajou_customize_register( $wp_customize ) {
     
     // Facebook link
     $wp_customize->add_setting("facebook_url", array(
-		"default" => "",
+		"default" => "#",
 		"transport" => "refresh",
 	));
     $wp_customize->add_control(new WP_Customize_Control(
@@ -36,7 +36,7 @@ function acajou_customize_register( $wp_customize ) {
     
     // Twitter link
     $wp_customize->add_setting("twitter_url", array(
-		"default" => "",
+		"default" => "#",
 		"transport" => "refresh",
 	));
     $wp_customize->add_control(new WP_Customize_Control(
@@ -52,7 +52,7 @@ function acajou_customize_register( $wp_customize ) {
     
     // Youtube link
     $wp_customize->add_setting("youtube_url", array(
-		"default" => "",
+		"default" => "#",
 		"transport" => "refresh",
 	));
     $wp_customize->add_control(new WP_Customize_Control(
@@ -122,7 +122,7 @@ function acajou_customize_register( $wp_customize ) {
     
     // Typing lines
     $wp_customize->add_setting("typing_text", array(
-		"default" => "a minimalist woodstyle theme \n it looks like wood \n and tastes like soup.",
+		"default" => "a minimalist woodstyle theme /it looks like wood/ and tastes like soup.",
 		"transport" => "refresh",
 	));
     $wp_customize->add_control(new WP_Customize_Control(
