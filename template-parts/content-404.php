@@ -16,7 +16,7 @@
 
 <div class="post-list not-found columns">
     <ol>
-    <?php $lostposts = get_posts("showposts=50");
+    <?php $lostposts = get_posts("numberposts=50&suppress_filters=0");
         if ( $lostposts ): ?>
             <?php foreach($lostposts as $lostpost):
                 echo '<li class="large-4 columns"><a href="'.$lostpost->guid.'">'.$lostpost->post_title.'</a></li>';

@@ -355,4 +355,18 @@ function acajou_custom_title() {
  
   }
 } 
+  /*
+   * Print social links
+   *
+   */
+    function acajou_social_links() {
+        $socials = array('facebook','twitter','youtube','github');
+        
+        foreach($socials as $social){
+            $id = $social.'_url';
+            if(""!=get_theme_mod($id)){
+                echo '<li class="reveal" id="'.$id.'"><a href="'.get_theme_mod($id).'"><i class="fa fa-'.$social.'"></i></a></li>';  
+            }
+        }
+    }
 }

@@ -41,8 +41,8 @@ If you didn't use featured images you can install the [Easy Add Thumbnail](http:
 ## Customization
 
 This theme has loads of customization options available. To open WordPress Customizer go to **Appearance > Customize**. There you will find the following sections:
-#### Background
-Change background color and/or set a background image.
+#### Header
+Change the header image. It might support a random image list.
 #### Social links
 Set the link for Facebook, Twitter, youtube and other social networks.
 

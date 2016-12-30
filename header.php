@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 <?php
     if ( is_front_page() && is_home() ) : ?>
-        <header >
+        <header <?php acajou_header_background();?>>
         <div class="overlay">
             <div class="row clearfix">
                 <div class="small-3 large-2 columns logo">
@@ -43,9 +43,7 @@
             </div><!--slogan/-->
             <div class="row socials">
                 <ul class="large-3 large-centered medium-4 medium-centered small-centered small-7 columns ">
-                    <li class="reveal"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="reveal"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="reveal"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <?php acajou_social_links();?>
                 </ul>
             </div><!--socials/-->
         </div>
@@ -55,7 +53,7 @@
             <div class="overlay">
                 <div class="row">
                     <div class="small-2 large-2 columns logo">
-                        <a href="<?php echo site_url('/'); ?>"> <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/acajou_logo.png"> </a>
+                        <a href="<?php echo site_home_url(); ?>"> <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/acajou_logo.png"> </a>
                     </div>
                     <?php get_template_part('menu'); ?>
                 </div>
