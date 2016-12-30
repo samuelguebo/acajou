@@ -400,11 +400,14 @@ function acajou_custom_title() {
      *
      */
      function acajou_typing_machine(){
-         $text = "a minimalist woodstyle theme \n it looks like wood \n and tastes like soup.";
+         $text = "a minimalist woodstyle theme/ it looks like wood/ and tastes like soup.";
          if(get_theme_mod( 'typing_text' ) && ""!=get_theme_mod( 'typing_text' )) {
-             $lines = str_split()
+            $text = get_theme_mod( 'typing_text' );
+         }
+         $lines = explode('/', $text);
+         foreach($lines as $line){
+             echo '<p>';
+                echo $line;
+             echo '</p>';
          }
      }
-p>a minimalist woodstyle theme</p> 
-                    <p>it <em>looks</em> like wood</p>
-                    <p>and <em>tastes</em> like soup.</p>

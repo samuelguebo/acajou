@@ -129,7 +129,7 @@ function acajou_customize_register( $wp_customize ) {
 		$wp_customize,
 		"typing_text",
 		array(
-			"label" => __("Enter typing lines", "acajou"),
+			"label" => __("Type your text and use slash (/) for creating several sentences", "acajou"),
 			"section" => "acajou_typing_section",
 			"settings" => "typing_text",
 			"type" => "textarea",
