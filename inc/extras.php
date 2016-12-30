@@ -224,7 +224,7 @@ if(!function_exists('acajou_custom_breadcrumbs')) {
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
       if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, '');
-      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+      echo $before . __('Archive by category ','acajou').'"' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_search() ) {
       echo $before . 'Search results for "' . get_search_query() . '"' . $after;
@@ -290,10 +290,10 @@ if(!function_exists('acajou_custom_breadcrumbs')) {
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+      echo $before . __('Articles posted by ','acajou') . $userdata->display_name . $after;
  
     } elseif ( is_404() ) {
-      echo $before . 'Error 404' . $after;
+      echo $before .__('Error 404','acajou')  . $after;
     }
  
     if ( get_query_var('paged') ) {

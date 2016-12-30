@@ -53,7 +53,7 @@
             <div class="overlay">
                 <div class="row">
                     <div class="small-2 large-2 columns logo">
-                        <a href="<?php echo site_home_url(); ?>"> <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/acajou_logo.png"> </a>
+                        <a href="<?php echo home_url(); ?>"> <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/acajou_logo.png"> </a>
                     </div>
                     <?php get_template_part('menu'); ?>
                 </div>

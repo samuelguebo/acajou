@@ -6,7 +6,7 @@ A minimalist woodstyle theme for WordPress.
 
 Acajou is a clean, simple, and fully responsive WordPress theme that feels like wood and looks awesome on any device. Its name, pronounced ***/a.kaˈʒu/*** in French, refers to a tree from tropical forests. 
 
-It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using [Zurb Foundation](https://github.com/zurb/foundation-sites), a  framework for HTML5 / CSS3 which is SEO friendly. This WordPress theme was built with blogs and creative portfolios in mind but be creative and unleash its full potential in eCommerce, business and other projects. Acajou is available in English, French and Spanish for now.
+It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using [Zurb Foundation](https://github.com/zurb/foundation-sites), a  framework for HTML5 / CSS3 which is SEO friendly. This WordPress theme was built with blogs and creative portfolios in mind but be creative and unleash its full potential in eCommerce, business and other projects. Acajou is available in English, French for now.
 
 ## Installation
 

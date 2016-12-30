@@ -25,7 +25,7 @@
             <p><?php the_excerpt();?></p> 
             <a href="<?php the_permalink();?>" class="small button post-item-buttom"><?php _e('Read more','acajou')?></a> 
             <?php if ( get_edit_post_link() ) : ?>
-                <a href="<?php echo get_edit_post_link();?>" class="small button alert"><i class="fa fa-edit"></i> edit</a> 
+                <a href="<?php echo get_edit_post_link();?>" class="small button alert"><i class="fa fa-edit"></i> <?php _e('Edit','acajou')?></a> 
                     
             <?php endif; ?>
         </div>
