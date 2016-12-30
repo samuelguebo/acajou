@@ -365,7 +365,7 @@ function acajou_custom_title() {
         foreach($socials as $social){
             $id = $social.'_url';
             if(""!=get_theme_mod($id)){
-                echo '<li class="reveal" id="'.$id.'"><a href="'.get_theme_mod($id).'"><i class="fa fa-'.$social.'"></i></a></li>';  
+                echo '<li class="reveal" id="'.$id.'"><a href="'.esc_url(get_theme_mod($id)).'"><i class="fa fa-'.$social.'"></i></a></li>';  
             }
         }
     }

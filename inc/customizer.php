@@ -13,7 +13,7 @@
 function acajou_customize_register( $wp_customize ) {
 	
     // Create sections for socials links
-    $wp_customize->add_section("social_links", array(
+    $wp_customize->add_section("acajou_social_links", array(
 		"title" => __("Social links", "acajou"),
 		"priority" => 30,
 	));
@@ -28,7 +28,7 @@ function acajou_customize_register( $wp_customize ) {
 		"facebook_url",
 		array(
 			"label" => __("Enter Facebook url", "acajou"),
-			"section" => "social_links",
+			"section" => "acajou_social_links",
 			"settings" => "facebook_url",
 			"type" => "text",
 		)
@@ -44,7 +44,7 @@ function acajou_customize_register( $wp_customize ) {
 		"twitter_url",
 		array(
 			"label" => __("Enter Twitter url", "acajou"),
-			"section" => "social_links",
+			"section" => "acajou_social_links",
 			"settings" => "twitter_url",
 			"type" => "text",
 		)
@@ -60,7 +60,7 @@ function acajou_customize_register( $wp_customize ) {
 		"youtube_url",
 		array(
 			"label" => __("Enter Youtube url", "acajou"),
-			"section" => "social_links",
+			"section" => "acajou_social_links",
 			"settings" => "youtube_url",
 			"type" => "text",
 		)
@@ -76,7 +76,7 @@ function acajou_customize_register( $wp_customize ) {
 		"github_url",
 		array(
 			"label" => __("Enter Github url", "acajou"),
-			"section" => "social_links",
+			"section" => "acajou_social_links",
 			"settings" => "github_url",
 			"type" => "text",
 		)
@@ -84,11 +84,29 @@ function acajou_customize_register( $wp_customize ) {
     
     
     /*
-     * Theme colors
+     * Theme colors using Customizer Custom Controls, 
+     * @link https://github.com/bueltge/Wordpress-Theme-Customizer-Custom-Controls
      *
      */
+    require_once dirname(__FILE__) . '/class-palette_custom_control.php';
     
+    $wp_customize->remove_control('header_textcolor'); // remove existing Headline color setting
+    $wp_customize->add_setting(
+		'acajou_theme_color', array(
+			'default' => '',
 
+		)
+	);
+    
+    $wp_customize->add_control(
+            new Palette_Custom_Control(
+                $wp_customize, 'acajou_theme_color', array(
+                    'label' => __( 'Theme color', 'acajou' ),
+                    'section' => 'colors',
+                    'settings' => 'acajou_theme_color',
+                )
+            )
+        );
     
 }
 add_action( 'customize_register', 'acajou_customize_register' );

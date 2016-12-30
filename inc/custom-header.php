@@ -25,6 +25,6 @@ $args = array(
 add_theme_support( 'custom-header', $args );
 function acajou_header_background(){
     if ( get_header_image() ) {
-        echo 'style="background-image:url('.get_header_image().');"';
+        echo 'style="background-image:url('.esc_url(get_header_image()).');"';
     }
 }
