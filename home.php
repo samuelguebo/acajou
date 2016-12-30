@@ -15,7 +15,7 @@
 get_header(); ?>
         <section class="row main-row">
             <div class="category-row">
-                <h1 class="category-title">From the blog</h1>
+                <h1 class="category-title"><?php acajou_from_blog_title();?></h1>
                 <div class="category-title-line large-2 large-centered columns"></div>
                 <!-- post list-->
                 <div class="post-list clearfix">

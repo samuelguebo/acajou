@@ -411,3 +411,14 @@ function acajou_custom_title() {
              echo '</p>';
          }
      }
+    /*
+     * "From the blog"
+     *
+     */
+     function acajou_from_blog_title(){
+         $text = __("From the blog", "acajou");
+         if(get_theme_mod( 'from_text' ) && ""!=get_theme_mod( 'from_text' )) {
+            $text = get_theme_mod( 'from_text' );
+         }
+         echo $text;
+     }

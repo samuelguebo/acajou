@@ -14,6 +14,34 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 1.5.4\n"
 
+# wpml-name: 1bae563ac73d8764dc25047a4b779d41
+#: "from_text", array( "label" => __("Replace the defaut « From blog »
+#: text", "acajou"),
+msgid "Replace the defaut « From the blog » text"
+msgstr "Remplacer le titre « Actualités »"
+
+# wpml-name: e9e838e8eb8a156d2989faa260244799
+#: // Create sections for socials links
+#: $wp_customize->add_section("acajou_from_section", array( "title" =>
+#: __("From the blog", "acajou"),
+msgid "From the blog"
+msgstr "Actualités"
+
+# wpml-name: dc754740f7de8b013feff530324c71b8
+#: "typing_text", array( "label" => __("Type your text and use slash (/) for
+#: creating several sentences", "acajou"),
+msgid "Type your text and use slash (/) for creating several sentences"
+msgstr ""
+"Tapez votre texte et utilisez la barre oblique (/) pour créer plusieurs "
+"phrases"
+
+# wpml-name: 0eae6a1413df83696f931b200ba47561
+#: // Create sections for socials links
+#: $wp_customize->add_section("acajou_typing_section", array( "title" =>
+#: __("Typing machine", "acajou"),
+msgid "Typing machine"
+msgstr "Machine à écrire"
+
 # wpml-name: 7dce122004969d56ae2e0245cb754d35
 #: <a href="<?php the_permalink();?>" class="small button
 #: post-item-buttom"><?php _e('Read more','acajou')?></a> <?php if (
@@ -197,7 +225,7 @@ msgstr "Principal"
 #: href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i>
 #: Github</a></p>
 msgid "and available on"
-msgstr "disponible sur"
+msgstr "et disponible sur "
 
 # wpml-name: e2b8f1326fea2c94cdc3bccda878a9d6
 #: <div class="row"> class="small-6 large-6 columns"> <p
@@ -230,7 +258,7 @@ msgstr "Fièrement propulsé par %s"
 #: href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i>
 #: Github</a></p>
 msgid "https://wordpress.org/"
-msgstr ""
+msgstr "https://wordpress.org/"
 
 # wpml-name: ed9e37872f818f1e8903eba505917478
 #: <?php printf( // WPCS: XSS OK. esc_html( _nx( 'One thought on

@@ -135,6 +135,33 @@ function acajou_customize_register( $wp_customize ) {
 			"type" => "textarea",
 		)
 	));
+    
+     /*
+     * From the blog text
+     * 
+     *
+     */
+    // Create sections for socials links
+    $wp_customize->add_section("acajou_from_section", array(
+		"title" => __("From the blog", "acajou"),
+		"priority" => 30,
+	));
+    
+    // Typing lines
+    $wp_customize->add_setting("from_text", array(
+		"default" => "From the blog",
+		"transport" => "refresh",
+	));
+    $wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"from_text",
+		array(
+			"label" => __("Replace the defaut « From the blog » text", "acajou"),
+			"section" => "acajou_from_section",
+			"settings" => "from_text",
+			"type" => "textarea",
+		)
+	));
 }
 add_action( 'customize_register', 'acajou_customize_register' );
 

@@ -13,6 +13,34 @@ msgstr ""
 "Language:fr\n"
 "MIME-Version: 1.0\n"
 
+#: "from_text",
+#: array(
+#: "label" => __("Replace the defaut « From the blog » text", "acajou"),
+# wpml-name: 1bae563ac73d8764dc25047a4b779d41
+msgid "Replace the defaut « From the blog » text"
+msgstr "Remplacer le titre « Actualités »"
+
+#: // Create sections for socials links
+#: $wp_customize->add_section("acajou_from_section", array(
+#: "title" => __("From the blog", "acajou"),
+# wpml-name: e9e838e8eb8a156d2989faa260244799
+msgid "From the blog"
+msgstr "Actualités"
+
+#: "typing_text",
+#: array(
+#: "label" => __("Type your text and use slash (/) for creating several sentences", "acajou"),
+# wpml-name: dc754740f7de8b013feff530324c71b8
+msgid "Type your text and use slash (/) for creating several sentences"
+msgstr "Tapez votre texte et utilisez la barre oblique (/) pour créer plusieurs phrases"
+
+#: // Create sections for socials links
+#: $wp_customize->add_section("acajou_typing_section", array(
+#: "title" => __("Typing machine", "acajou"),
+# wpml-name: 0eae6a1413df83696f931b200ba47561
+msgid "Typing machine"
+msgstr "Machine à écrire"
+
 #: <a href="<?php the_permalink();?>" class="small button post-item-buttom"><?php _e('Read more','acajou')?></a>
 #: <?php if ( get_edit_post_link() ) : ?>
 #: <a href="<?php echo get_edit_post_link();?>" class="small button alert"><i class="fa fa-edit"></i> <?php _e('Edit','acajou')?></a>
@@ -207,7 +235,7 @@ msgstr "Principal"
 #: <p class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
 # wpml-name: d6c4a6ac6a732b8db88d1cfe32b5b44e
 msgid "and available on"
-msgstr "disponible sur"
+msgstr "et disponible sur "
 
 #: <div class="row">
 #: <div class="small-6 large-6 columns">
@@ -228,7 +256,7 @@ msgstr "Fièrement propulsé par %s"
 #: <p class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
 # wpml-name: 71a7765c3d553e44aaa308159b5a2ba6
 msgid "https://wordpress.org/"
-msgstr ""
+msgstr "https://wordpress.org/"
 
 #: <?php
 #: printf( // WPCS: XSS OK.
