@@ -36,10 +36,10 @@ jQuery(document).ready(function ($) {
     
     /* Equalizer */
     $(window).resize(function () {
-        equalheight('.post-list .post-item');
+        equalheight('.post-list .post-item .post-item-caption');
     });
     $(window).load(function () {
-        equalheight('.post-list .post-item');
+        equalheight('.post-list .post-item .post-item-caption');
     });
     
     /* Back to Top */
