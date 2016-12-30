@@ -108,6 +108,33 @@ function acajou_customize_register( $wp_customize ) {
             )
         );
     
+    
+    /*
+     * The Typing animation 
+     * made with typed.js
+     *
+     */
+    // Create sections for socials links
+    $wp_customize->add_section("acajou_typing_section", array(
+		"title" => __("Typing machine", "acajou"),
+		"priority" => 30,
+	));
+    
+    // Typing lines
+    $wp_customize->add_setting("typing_text", array(
+		"default" => "a minimalist woodstyle theme \n it looks like wood \n and tastes like soup.",
+		"transport" => "refresh",
+	));
+    $wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"typing_text",
+		array(
+			"label" => __("Enter typing lines", "acajou"),
+			"section" => "acajou_typing_section",
+			"settings" => "typing_text",
+			"type" => "textarea",
+		)
+	));
 }
 add_action( 'customize_register', 'acajou_customize_register' );
 

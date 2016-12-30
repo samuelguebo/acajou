@@ -370,3 +370,41 @@ function acajou_custom_title() {
         }
     }
 }
+    /*
+    * Prints the header background image
+    *
+    */
+    function acajou_header_background(){
+        if ( get_header_image() ) {
+            echo 'style="background-image:url('.esc_url(get_header_image()).');"';
+        }
+    }
+    
+    /*
+     * Get content out of the_custom_logo()
+     */
+    
+    function acajou_get_custom_logo() {
+        if(has_custom_logo()) {
+            $custom_logo_id = get_theme_mod( 'custom_logo' );
+            $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+            return $image[0];
+        }else {
+            return get_template_directory_uri().'/img/acajou_logo.png';
+        }
+    }
+    add_filter( 'the_custom_logo', 'acajou_body_classes' );
+    
+    /*
+     * Do the typing machine thing
+     *
+     */
+     function acajou_typing_machine(){
+         $text = "a minimalist woodstyle theme \n it looks like wood \n and tastes like soup.";
+         if(get_theme_mod( 'typing_text' ) && ""!=get_theme_mod( 'typing_text' )) {
+             $lines = str_split()
+         }
+     }
+p>a minimalist woodstyle theme</p> 
+                    <p>it <em>looks</em> like wood</p>
+                    <p>and <em>tastes</em> like soup.</p>

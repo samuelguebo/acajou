@@ -23,8 +23,14 @@ $args = array(
 		'default-image'          => get_template_directory_uri() . '/img/back.jpg',
 	);
 add_theme_support( 'custom-header', $args );
-function acajou_header_background(){
-    if ( get_header_image() ) {
-        echo 'style="background-image:url('.esc_url(get_header_image()).');"';
-    }
-}
+
+/**
+ *  Taking advantage of the Custom Logo API
+ *  @link https://codex.wordpress.org/Theme_Logo
+ *  @link https://www.sitepoint.com/wordpress-custom-logo-api/
+ */
+add_theme_support('custom-logo');
+add_image_size('acajou-logo', 150, 150);
+add_theme_support('custom-logo', array(
+    'size' => 'acajou-logo'
+));
