@@ -422,3 +422,41 @@ function acajou_custom_title() {
          }
          echo $text;
      }
+    /*
+     * Override the default post_thumbnail() content
+     *
+     */
+    function acajou_get_attachment_id_from_src( $image_src ) {
+        global $wpdb;
+        $query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
+        $id = $wpdb->get_var($query);
+        return $id;
+    }
+    function acajou_get_first_image($post_id) {
+        $post = get_post($post_id);
+        $post_content = $post->post_content;
+        preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post_content, $matches);
+        return $matches[1][0];
+    }
+
+    function acajou_modify_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
+        if( '' == $html ) {
+            $attr['class'] = 'default';
+            global $post, $posts;
+            ob_start();
+            ob_end_clean();
+            
+            acajou_get_first_image($post_id);
+            $first_img = acajou_get_first_image($post_id);
+            if ( empty( $first_img ) ){
+                $image_id = 129; // default image ID
+            }
+            else {
+                //$image_id = get_attachment_id_from_src($first_img);
+                $html = '<img src="' . $first_img . '" alt="' . $alt . '" class="' . $attr['class'] . '" />';
+                
+            }
+        }
+        return $html;
+    }
+    add_filter('post_thumbnail_html', 'acajou_modify_post_thumbnail_html', 10, 5);
