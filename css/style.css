@@ -672,7 +672,7 @@ aside .recent-posts-box ul li a {
   list-style: none;
   counter-reset: li; }
 
-.single-row article.post-item ol li:before {
+.single-row article.post-item .post-content ol li:before {
   content: counter(li) ".";
   color: #F47621;
   display: inline-block;
@@ -682,7 +682,7 @@ aside .recent-posts-box ul li a {
 .single-row article.post-item ol li {
   counter-increment: li; }
 
-.single-row article.post-item ul li:before {
+.single-row article.post-item .post-content ul li:before {
   font-family: "FontAwesome";
   content: '\f054';
   color: #F47621;

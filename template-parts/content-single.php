@@ -24,10 +24,20 @@
                 </p>
             </div>        
         <?php endif;?>
-        <?php if(is_single()): // print the meta below for posts only ?>
+        <?php if(is_single()): global $numpages; ?>
             <div class="panel">
-                <?php the_content();?>
-                <?php wp_link_pages(); ?> 
+                <div class="post-content">
+                    <?php the_content();?> 
+                </div>
+                <div class="post-pagination clearfix">
+                    <?php
+                    if ( is_singular() && $numpages > 1 ):?>
+                        <div class="pagination-wrapper" >
+                            <?php wp_link_pages();?> 
+                        </div>
+                        <?php 
+                    endif;?>
+                </div>
                 <div class="post-categories breadcrumbs">
                     <?php $categories = get_the_category();
                         if ( $categories ): ?>
@@ -49,8 +59,8 @@
                     ?>
                 </div><!-- .post-tags -->
                 <div class="panel post-item-author row reveal">
-                    <div class="small-3 large-3 columns"> <?php echo get_avatar( get_the_author_meta('ID'), 120 ); ?> </div>
-                    <div class="small-9 large-9 columns">
+                    <div class="medium-4 large-3 columns"> <?php echo get_avatar( get_the_author_meta('ID'), 120 ); ?> </div>
+                    <div class="medium-8 large-9 columns">
                         <h3><?php _e('About the author','acajou'); ?></h3>
                         <div><?php echo nl2br(get_the_author_meta('description')); ?></div>
                     </div>

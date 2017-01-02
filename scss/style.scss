@@ -831,7 +831,7 @@ aside .recent-posts-box ul li a {
     counter-reset: li
 }
 
-.single-row article.post-item ol li:before {
+.single-row article.post-item .post-content ol li:before {
     content: counter(li) ".";
     color: $link-color;
     display: inline-block;
@@ -843,7 +843,7 @@ aside .recent-posts-box ul li a {
     counter-increment: li;
 }
 
-.single-row article.post-item ul li:before {
+.single-row article.post-item .post-content ul li:before {
     font-family: $icon-font;
     content: '\f054';
     color: $link-color;
