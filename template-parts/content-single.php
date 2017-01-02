@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="post-item  <?php acajou_post_item_class();?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <!--post/-->
     <h1 class="category-title" class="large-6 columns"><?php the_title();?></h1>
     <div class="category-title-line large-4 columns"></div>
@@ -27,10 +27,11 @@
         <?php if(is_single()): // print the meta below for posts only ?>
             <div class="panel">
                 <?php the_content();?>
+                <?php wp_link_pages(); ?> 
                 <div class="post-categories breadcrumbs">
                     <?php $categories = get_the_category();
                         if ( $categories ): ?>
-                            <span><?php _e('categories');?></span>
+                            <span><?php _e('categories','acajou');?></span>
                             <?php foreach($categories as $cat):
                                 echo '<span><a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a></span>';
                             endforeach;
@@ -40,7 +41,7 @@
                 <div class="post-tags breadcrumbs">
                     <?php $tags = get_the_tags(get_the_ID());
                         if ( $tags ): ?>
-                            <span><?php _e('tags');?></span>
+                            <span><?php _e('tags','acajou');?></span>
                             <?php foreach($tags as $tag):
                                 echo '<span><a href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a></span>';
                             endforeach;

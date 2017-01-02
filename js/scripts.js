@@ -66,20 +66,6 @@ jQuery(document).ready(function ($) {
         });
     }
     
-    /*
-     *  Lazy loading for images
-     * 
-     */
-    setTimeout(function () {
-       jQuery('.delay').each(function () {
-          var imagex = jQuery(this);
-          var imgOriginal = imagex.data('src');
-            jQuery(imagex).css('padding',0);
-            jQuery(imagex).attr('src', imgOriginal);
-            jQuery(imagex).removeClass('placeholder'); /*added this*/
-       });
-    }, 1000);
-    
     
     /* 
      * Thanks to CSS Tricks for pointing out this bit of jQuery

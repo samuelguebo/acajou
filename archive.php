@@ -46,6 +46,8 @@ get_header(); ?>
                     <div class="pagination-wrapper" >
                         <?php if(function_exists('acajou_pagination')) { 
                             acajou_pagination($wp_query, $paged); 
+                        }else {
+                            posts_nav_link();
                         } ?>
                     </div>
                 </section>

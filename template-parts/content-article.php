@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="post-item  <?php acajou_post_item_class();?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <!--post/-->
     <div class="post-item-caption">
         <div class="post-item-image"> 

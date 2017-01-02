@@ -25,6 +25,12 @@ $args = array(
 add_theme_support( 'custom-header', $args );
 
 /**
+ * Set up the default content width
+ *
+ */
+if ( ! isset( $content_width ) ) $content_width = 900;
+
+/**
  *  Taking advantage of the Custom Logo API
  *  @link https://codex.wordpress.org/Theme_Logo
  *  @link https://www.sitepoint.com/wordpress-custom-logo-api/

@@ -33,16 +33,19 @@ add_filter( 'body_class', 'acajou_body_classes' );
  * Add the appropriate class to post-item in the loop
  */
 function acajou_post_item_class() {
+    
 	if ( is_front_page() || is_home()) {
-		echo 'large-4 medium-6 columns';
+		$classes[] = 'post-item large-4 medium-6 columns';
 	}elseif(is_singular()) {
-        echo '';
+        $classes[] = 'post-item';
         
     }elseif(!is_front_page() && !is_home() && !is_singular()) {
-        echo 'large-6 medium-6 columns';
+        $classes[] = 'post-item large-6 medium-6 columns';
         
     }
+    return $classes;
 }
+add_filter( 'post_class', 'acajou_post_item_class' );
 add_action( 'wp_head', 'acajou_pingback_header' );
 
 
