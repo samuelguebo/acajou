@@ -100,7 +100,7 @@ function acajou_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
 		'acajou_theme_color', array(
 			'default' => '',
-            'sanitize_callback'	=> 'acajou_sanitize_select'
+            'sanitize_callback'	=> 'acajou_sanitize_colors'
 
 		)
 	);
@@ -168,7 +168,7 @@ function acajou_customize_register( $wp_customize ) {
 		$wp_customize,
 		'from_text',
 		array(
-			'label' => __('Replace the defaut « From the blog » text', 'acajou'),
+			'label' => __('Replace the defaut &laquo; From the blog &raquo; text', 'acajou'),
 			'section' => 'acajou_from_section',
 			'settings' => 'from_text',
 			'type' => 'textarea',
@@ -185,4 +185,4 @@ function acajou_customize_preview_js() {
 }
 
 /* Validate user input */
-include_once('customizer-sanitize.php'); 
+get_template_part('inc/customizer-sanitize'); 

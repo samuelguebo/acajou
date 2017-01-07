@@ -28,16 +28,17 @@ function acajou_sanitize_checkbox( $input ) {
 }
 /* Radio, select, option */
 
-function acajou_sanitize_select( $input, $setting ) {
-	
+function acajou_sanitize_colors( $input, $setting ) {
+	$color = $setting->default;
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );
 	
-	// Get list of choices from the control associated with the setting.
-	$choices = $setting->manager->get_control( $setting->id )->choices;
-	
-	// If the input is a valid key, return it; otherwise, return the default.
-	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	// Make sure the chosen colors exists among the available ones.
+    $colors = array('chocolate','blue', 'green', 'purple', 'red','yellow');
+    if (in_array($input, $colors)) {
+        $color = $input;
+    }
+	return $color;
 }
 
 /* Multicheck */

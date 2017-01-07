@@ -27,7 +27,7 @@
         <div class="overlay">
             <div class="row clearfix">
                 <div class="small-3 large-2 columns logo">
-                    <a href="<?php echo home_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>"> </a>
+                    <a href="<?php echo home_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>"> </a>
                 </div><!--logo/-->
                 <?php get_template_part('menu'); ?>
             </div>
@@ -52,7 +52,7 @@
             <div class="overlay">
                 <div class="row">
                     <div class="small-2 large-2 columns logo">
-                        <a href="<?php echo home_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>"> </a>
+                        <a href="<?php echo home_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>"> </a>
                     </div>
                     <?php get_template_part('menu'); ?>
                 </div>

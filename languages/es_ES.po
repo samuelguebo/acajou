@@ -17,7 +17,7 @@ msgstr ""
 # wpml-name: 1bae563ac73d8764dc25047a4b779d41
 #: "from_text", array( "label" => __("Replace the defaut « From blog »
 #: text", "acajou"),
-msgid "Replace the defaut « From the blog » text"
+msgid "Replace the defaut &laquo; From the blog &raquo; text"
 msgstr "Sustituir el título \"Noticias\""
 
 # wpml-name: e9e838e8eb8a156d2989faa260244799
