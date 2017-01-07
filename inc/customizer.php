@@ -122,7 +122,7 @@ function acajou_customize_register( $wp_customize ) {
     
     // Typing lines
     $wp_customize->add_setting("typing_text", array(
-		"default" => "a minimalist woodstyle theme /it looks like wood/ and tastes like soup.",
+		"default" => get_bloginfo('description'),
 		"transport" => "refresh",
 	));
     $wp_customize->add_control(new WP_Customize_Control(
