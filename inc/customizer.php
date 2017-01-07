@@ -13,72 +13,78 @@
 function acajou_customize_register( $wp_customize ) {
 	
     // Create sections for socials links
-    $wp_customize->add_section("acajou_social_links", array(
-		"title" => __("Social links", "acajou"),
-		"priority" => 30,
+    $wp_customize->add_section('acajou_social_links', array(
+		'title' => __('Social links', 'acajou'),
+		'priority' => 30,
 	));
     
     // Facebook link
-    $wp_customize->add_setting("facebook_url", array(
-		"default" => "#",
-		"transport" => "refresh",
+    $wp_customize->add_setting('facebook_url', array(
+		'default' => '#',
+		'transport' => 'refresh',            
+        'sanitize_callback'	=> 'acajou_sanitize_text'
+
 	));
     $wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
-		"facebook_url",
+		'facebook_url',
 		array(
-			"label" => __("Enter Facebook url", "acajou"),
-			"section" => "acajou_social_links",
-			"settings" => "facebook_url",
-			"type" => "text",
+			'label' => __('Enter Facebook url', 'acajou'),
+			'section' => 'acajou_social_links',
+			'settings' => 'facebook_url',
+			'type' => 'text',
 		)
 	));
     
     // Twitter link
-    $wp_customize->add_setting("twitter_url", array(
-		"default" => "#",
-		"transport" => "refresh",
+    $wp_customize->add_setting('twitter_url', array(
+		'default' => '#',
+		'transport' => 'refresh',
+        'sanitize_callback'	=> 'acajou_sanitize_text'
+
 	));
     $wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
-		"twitter_url",
+		'twitter_url',
 		array(
-			"label" => __("Enter Twitter url", "acajou"),
-			"section" => "acajou_social_links",
-			"settings" => "twitter_url",
-			"type" => "text",
+			'label' => __('Enter Twitter url', 'acajou'),
+			'section' => 'acajou_social_links',
+			'settings' => 'twitter_url',
+			'type' => 'text',
 		)
 	));
     
     // Youtube link
-    $wp_customize->add_setting("youtube_url", array(
-		"default" => "#",
-		"transport" => "refresh",
+    $wp_customize->add_setting('youtube_url', array(
+		'default' => '#',
+		'transport' => 'refresh',
+		'sanitize_callback'	=> 'acajou_sanitize_text'
 	));
     $wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
-		"youtube_url",
+		'youtube_url',
 		array(
-			"label" => __("Enter Youtube url", "acajou"),
-			"section" => "acajou_social_links",
-			"settings" => "youtube_url",
-			"type" => "text",
+			'label' => __('Enter Youtube url', 'acajou'),
+			'section' => 'acajou_social_links',
+			'settings' => 'youtube_url',
+			'type' => 'text',
 		)
 	));
     
     // Github link
-    $wp_customize->add_setting("github_url", array(
-		"default" => "",
-		"transport" => "refresh",
+    $wp_customize->add_setting('github_url', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'sanitize_callback'	=> 'acajou_sanitize_text'
 	));
     $wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
-		"github_url",
+		'github_url',
 		array(
-			"label" => __("Enter Github url", "acajou"),
-			"section" => "acajou_social_links",
-			"settings" => "github_url",
-			"type" => "text",
+			'label' => __('Enter Github url', 'acajou'),
+			'section' => 'acajou_social_links',
+			'settings' => 'github_url',
+			'type' => 'text',
 		)
 	));
     
@@ -94,6 +100,7 @@ function acajou_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
 		'acajou_theme_color', array(
 			'default' => '',
+            'sanitize_callback'	=> 'acajou_sanitize_select'
 
 		)
 	);
@@ -115,24 +122,27 @@ function acajou_customize_register( $wp_customize ) {
      *
      */
     // Create sections for socials links
-    $wp_customize->add_section("acajou_typing_section", array(
-		"title" => __("Typing machine", "acajou"),
-		"priority" => 30,
+    $wp_customize->add_section('acajou_typing_section', array(
+		'title' => __('Typing machine', 'acajou'),
+		'priority' => 30,
+        'sanitize_callback'	=> 'acajou_sanitize_select'
+
 	));
     
     // Typing lines
-    $wp_customize->add_setting("typing_text", array(
-		"default" => get_bloginfo('description'),
-		"transport" => "refresh",
+    $wp_customize->add_setting('typing_text', array(
+		'default' => get_bloginfo('description'),
+		'transport' => 'refresh',
+		'sanitize_callback'	=> 'acajou_sanitize_text'
 	));
     $wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
-		"typing_text",
+		'typing_text',
 		array(
-			"label" => __("Type your text and use slash (/) for creating several sentences", "acajou"),
-			"section" => "acajou_typing_section",
-			"settings" => "typing_text",
-			"type" => "textarea",
+			'label' => __('Type your text and use slash (/) for creating several sentences', 'acajou'),
+			'section' => 'acajou_typing_section',
+			'settings' => 'typing_text',
+			'type' => 'textarea',
 		)
 	));
     
@@ -142,24 +152,26 @@ function acajou_customize_register( $wp_customize ) {
      *
      */
     // Create sections for socials links
-    $wp_customize->add_section("acajou_from_section", array(
-		"title" => __("From the blog", "acajou"),
-		"priority" => 30,
+    $wp_customize->add_section('acajou_from_section', array(
+		'title' => __('From the blog', 'acajou'),
+		'priority' => 30,
 	));
     
     // Typing lines
-    $wp_customize->add_setting("from_text", array(
-		"default" => "From the blog",
-		"transport" => "refresh",
+    $wp_customize->add_setting('from_text', array(
+		'default' => 'From the blog',
+		'transport' => 'refresh',
+        'sanitize_callback'	=> 'acajou_sanitize_text'
+
 	));
     $wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
-		"from_text",
+		'from_text',
 		array(
-			"label" => __("Replace the defaut « From the blog » text", "acajou"),
-			"section" => "acajou_from_section",
-			"settings" => "from_text",
-			"type" => "textarea",
+			'label' => __('Replace the defaut « From the blog » text', 'acajou'),
+			'section' => 'acajou_from_section',
+			'settings' => 'from_text',
+			'type' => 'textarea',
 		)
 	));
 }
@@ -171,3 +183,6 @@ add_action( 'customize_register', 'acajou_customize_register' );
 function acajou_customize_preview_js() {
 	wp_enqueue_script( 'acajou_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
+
+/* Validate user input */
+include_once('customizer-sanitize.php'); 
