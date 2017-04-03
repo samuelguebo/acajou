@@ -30,9 +30,11 @@ get_header(); ?>
                                  * If you want to override this in a child theme, then include a file
                                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                                  */
-                    
-                                //get_template_part( 'template-parts/content', get_post_format() );
-                                get_template_part( 'template-parts/content', 'article' );
+                                if(has_post_thumbnail()){
+                                    get_template_part( 'template-parts/content', 'article' );
+                                }else {
+                                    get_template_part( 'template-parts/content', 'article-without-thumb' );
+                                }
 
                             endwhile;
 

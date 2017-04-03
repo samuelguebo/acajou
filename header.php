@@ -26,9 +26,20 @@
         <header <?php acajou_header_background();?>>
         <div class="overlay">
             <div class="row clearfix">
-                <div class="small-3 large-2 columns logo">
-                    <a href="<?php echo home_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>"> </a>
-                </div><!--logo/-->
+                    <?php if(has_custom_logo()):?>
+                    <div class="small-2 large-2 columns logo">
+                        <a href="<?php echo site_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>"> </a>
+                    </div>
+                    <?php else:?>
+                    <div class="small-2 large-2 columns">
+                        <h2 class="site-title">
+                            <a href="<?php echo site_url(); ?>"><?php bloginfo('title'); ?></a>
+                        </h2>
+                        <p class="site-description">
+                            <?php bloginfo('description'); ?>
+                        </p>
+                    </div>
+                    <?php endif;?>
                 <?php get_template_part('menu'); ?>
             </div>
             <div class="row slogan">
@@ -51,9 +62,20 @@
         <header>
             <div class="overlay">
                 <div class="row">
+                    <?php if(has_custom_logo()):?>
                     <div class="small-2 large-2 columns logo">
-                        <a href="<?php echo home_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>"> </a>
+                        <a href="<?php echo site_url(); ?>"> <img src="<?php echo acajou_get_custom_logo(); ?>" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>"> </a>
                     </div>
+                    <?php else:?>
+                    <div class="small-2 large-2 columns">
+                        <h2 class="site-title">
+                            <a href="<?php echo site_url(); ?>"><?php bloginfo('title'); ?></a>
+                        </h2>
+                        <p class="site-description">
+                            <?php bloginfo('description'); ?>
+                        </p>
+                    </div>
+                    <?php endif;?>
                     <?php get_template_part('menu'); ?>
                 </div>
             </div>

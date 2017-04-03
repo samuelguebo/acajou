@@ -28,7 +28,7 @@
                     'container_id' => '',
                     'menu_id' => 'main-menu',
                     'menu_class' => 'right main-nav',
-                    'fallback_cb' => '',
+                    'fallback_cb' => 'wp_page_menu',
                     'walker' => new Multilevel_Menu()
                     )); 
                 }

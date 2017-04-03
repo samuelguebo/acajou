@@ -34,5 +34,8 @@ Acajou includes support for Infinite Scroll in Jetpack.
 
 == Credits ==
 
-* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+- Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+- normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+- FontAwesome and Arvo fonts under the SIL Open Font License.
+-  Zurb Foundation](https://github.com/zurb/foundation-sites), under MIT License.
+- [Commons images](https:commons.wikimedia.org), under Creative Commons By SA 4.0 License

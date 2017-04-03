@@ -6,9 +6,11 @@ jQuery(document).ready(function ($) {
     
     /* WOW effect with ScrollReveal */
     window.sr = ScrollReveal();
+    /*
     sr.reveal('.top-bar li', {
         duration: 1000
     }, 50);
+    */
     sr.reveal('.reveal', {
         duration: 1000
     }, 200);

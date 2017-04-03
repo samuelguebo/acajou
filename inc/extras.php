@@ -72,12 +72,16 @@ add_filter('excerpt_length', 'new_excerpt_length');
  * Adding the Home button to main menu 
  */
 add_filter( 'wp_nav_menu_items', 'add_home_menu_item', 10, 2 );
+
 function add_home_menu_item ( $items, $args ) {
-    if ($args->theme_location == 'primary') {
-        
-            $items = '<li id="home-link" $class_names><a href="'.site_url().'" title="'.esc_html__( 'Home', 'acajou' ).'"><i class="fa fa-home"></i></a></li>'.$items;
-        
+    if('1'== get_theme_mod( 'home_icon' )) {
+        if ($args->theme_location == 'primary') {
+
+                $items = '<li id="home-link" $class_names><a href="'.site_url().'" title="'.esc_html__( 'Home', 'acajou' ).'"><i class="fa fa-home"></i></a></li>'.$items;
+
+        }
     }
+            
     return $items;
 }
 
@@ -230,7 +234,7 @@ if(!function_exists('acajou_custom_breadcrumbs')) {
       echo $before . __('Archive by category ','acajou').'"' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+      echo $before . "' . get_search_query() . '" . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>';
@@ -264,10 +268,13 @@ if(!function_exists('acajou_custom_breadcrumbs')) {
  
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, '');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo '' . $before . get_the_title() . $after;
+      $cat = get_the_category($parent->ID); 
+      if(count($cat)>0) {
+          $cat = $cat[0];
+          echo get_category_parents($cat, TRUE, '');
+          echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
+          if ($showCurrent == 1) echo '' . $before . get_the_title() . $after;
+      }  
  
     } elseif ( is_page() && !$post->post_parent ) {
       if ($showCurrent == 1) echo $before . get_the_title() . $after;
@@ -326,7 +333,7 @@ function acajou_custom_title() {
         echo single_cat_title('', false);
   
     } elseif ( is_search() ) {
-      echo $before . __('Results for ','acajou'). get_search_query() . '"' . $after;
+      echo '"'. get_search_query() . '"';
   
     } elseif ( is_day() ) {
       echo get_the_time('d').' '.get_the_time('F');
@@ -388,13 +395,9 @@ function acajou_custom_title() {
      */
     
     function acajou_get_custom_logo() {
-        if(has_custom_logo()) {
             $custom_logo_id = get_theme_mod( 'custom_logo' );
             $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
             return $image[0];
-        }else {
-            return get_template_directory_uri().'/img/acajou_logo.png';
-        }
     }
     add_filter( 'the_custom_logo', 'acajou_body_classes' );
     
@@ -451,14 +454,10 @@ function acajou_custom_title() {
             
             acajou_get_first_image($post_id);
             $first_img = acajou_get_first_image($post_id);
-            if ( empty( $first_img ) ){
-                $image_id = 129; // default image ID
-            }
-            else {
-                //$image_id = get_attachment_id_from_src($first_img);
+            if ( !empty( $first_img ) ){
                 $html = '<img src="' . $first_img . '" alt="' . $alt . '" class="' . $attr['class'] . '" />';
-                
             }
+           
         }
         return $html;
     }

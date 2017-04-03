@@ -427,6 +427,19 @@ article.columns + article.columns:last-child {
 .category-row .category-link-wrapper {
   display: block; }
 
+article .post-item-date.wrap {
+  color: #FFF;
+  text-align: center;
+  font-size: 0.8rem;
+  position: relative;
+  float: right;
+  clear: left;
+  top: 40px;
+  right: 0;
+  background: #3fc455;
+  text-transform: uppercase;
+  padding: 5px; }
+
 /* FOOTER */
 footer {
   padding-bottom: 25px;
@@ -991,13 +1004,27 @@ header .overlay {
   padding: 0;
   padding-top: 15px; }
 
+header .overlay .site-title a, header .overlay .site-description {
+  font-family: "Arvo", serif;
+  text-align: center;
+  color: #000; }
+
+header .overlay .site-title a:hover {
+  color: #FFF; }
+
+header .overlay .site-title {
+  line-height: 0.8em;
+  margin-top: 20px; }
+
+header .overlay .site-description {
+  font-size: 0.8em; }
+
 header .socials {
   padding-bottom: 25px; }
 
 header {
   display: block;
   position: relative;
-  background: url(../img/back.jpg);
   background-repeat: no-repeat;
   background-position: center bottom;
   /* Create the parallax scrolling effect */
@@ -1050,11 +1077,134 @@ header {
 /* MISCELLANEOUS */
 figure {
   margin: 0;
-  min-width: 100%;
   margin-top: 20px;
   margin-bottom: 20px; }
 
 article.comment-wrapper {
   margin-top: 20px; }
+
+/* WORDPRESS GALLERY */
+.post-content .gallery:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+img.aligncenter, div.aligncenter, figure.aligncenter {
+  display: block;
+  margin: 1em auto; }
+
+img.alignright, div.alignright, figure.alignright {
+  float: right;
+  margin: 1em 0 1em 2em; }
+
+img.alignleft, div.alignleft, figure.alignleft, img.wp-post-image.attachment-thumb {
+  float: left;
+  margin: 1em 1em 2em 0; }
+
+figure {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0; }
+
+p img.alignright, p img.alignleft {
+  margin-top: 0; }
+
+.gallery figure img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block; }
+
+.gallery figure {
+  float: left;
+  margin: 0 2% 1em 0; }
+
+.gallery.gallery-columns-1 figure {
+  width: 100%;
+  margin: 0 0 1em 0;
+  float: none; }
+
+.post-content .gallery.gallery-columns-3 figure {
+  width: 32%; }
+
+.gallery.gallery-columns-3 figure:nth-of-type(3n+3) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-3 figure:nth-of-type(3n+4) {
+  clear: left; }
+
+.gallery.gallery-columns-2 figure {
+  width: 49%; }
+
+.gallery.gallery-columns-2 figure:nth-of-type(even) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-2 figure:nth-of-type(odd) {
+  clear: left; }
+
+.gallery.gallery-columns-4 figure {
+  width: 23.25%; }
+
+.gallery.gallery-columns-4 figure:nth-of-type(4n+4) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-4 figure:nth-of-type(4n+5) {
+  clear: left; }
+
+.gallery.gallery-columns-5 figure {
+  width: 18%; }
+
+.gallery.gallery-columns-5 figure:nth-of-type(5n+5) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-5 figure:nth-of-type(5n+6) {
+  clear: left; }
+
+.gallery.gallery-columns-6 figure {
+  width: 14.2%; }
+
+.gallery.gallery-columns-6 figure:nth-of-type(6n+6) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-6 figure:nth-of-type(6n+7) {
+  clear: left; }
+
+.gallery.gallery-columns-7 figure {
+  width: 12%; }
+
+.gallery.gallery-columns-7 figure:nth-of-type(7n+7) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-7 figure:nth-of-type(7n+8) {
+  clear: left; }
+
+.gallery.gallery-columns-8 figure {
+  width: 10.2%; }
+
+.gallery.gallery-columns-8 figure:nth-of-type(8n+8) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-8 figure:nth-of-type(8n+9) {
+  clear: left; }
+
+.gallery.gallery-columns-9 figure {
+  width: 8.85%; }
+
+.gallery.gallery-columns-9 figure:nth-of-type(9n+9) {
+  margin-right: 0; }
+
+.gallery.gallery-columns-9 figure:nth-of-type(9n+10) {
+  clear: left; }
+
+@media (max-width: 767px) {
+  img.alignright, div.alignright, figure.alignright, img.alignleft, div.alignleft, figure.alignleft, img.wp-post-image.attachment-thumb {
+    display: block;
+    margin: 1em auto;
+    float: none; }
+
+  .gallery.gallery-columns-4 figure, .gallery.gallery-columns-5 figure, .gallery.gallery-columns-6 figure, .gallery.gallery-columns-7 figure, .gallery.gallery-columns-8 figure, .gallery.gallery-columns-9 figure {
+    width: 100%;
+    margin: 0 0 1em 0;
+    float: none; } }
 
 /*# sourceMappingURL=style-green.css.map */

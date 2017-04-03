@@ -79,6 +79,7 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 - [FontAwesome](https://github.com/FortAwesome/Font-Awesome), under the SIL Open Font License.
 -  [Zurb Foundation](https://github.com/zurb/foundation-sites), under MIT License.
+- [Commons images](https:commons.wikimedia.org), under Creative Commons By SA 4.0 License
 
 # Change log
 All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/blob/master/CHANGELOG.md) file.

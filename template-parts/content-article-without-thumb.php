@@ -12,17 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class();?>>
     <!--post/-->
     <div class="post-item-caption">
-        <div class="post-item-image"> 
-            <?php
-                if ( has_post_thumbnail() ) { 
-                    the_post_thumbnail( 'post-thumb' ); 
-                }
-            ?>
-            <?php if ('page' !==get_post_type()):?>
-                <p class="post-item-date"> <span class="day"><?php echo get_the_date('d')?></span> <span class="month-year"><?php echo get_the_date('M. Y')?></span> 
-                </p>
-            <?php endif;?>
-        </div>
+            <p class="post-item-date wrap"> <span class="day"><?php echo get_the_date('d')?></span> <span class="month-year"><?php echo get_the_date('M. Y')?></span> </p>
         <div class="panel">
             <h6 class="post-item-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h6>
             <p><?php the_excerpt();?></p> 
