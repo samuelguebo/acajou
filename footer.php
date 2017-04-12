@@ -18,7 +18,7 @@
         </div><!-- .footer-bar -->
         <div class="row">
                 <div class="small-6 large-6 columns">
-                    <p class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
+                    <p class="copyright"><?php bloginfo('title');?> | <?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
                 </div>
 
                 <div class="small-3 large-3 columns socials right">
