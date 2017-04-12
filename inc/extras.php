@@ -152,234 +152,111 @@ class Multilevel_Menu extends Walker_Nav_Menu
     }
 }
 
+    /**
+     * This functions prints a breadcrumb
+     * The script is inspired from a Quality Trust article
+     * 
+     * @link http://www.qualitytuts.com/wordpress-custom-breadcrumbs-without-plugin/
+     */
+    if(!function_exists('acajou_custom_breadcrumbs')) {
+        function acajou_custom_breadcrumbs() {
 
-/**
- * This functions prints a group of button for browsing through the other pages
- * The pagination logic is inspired from WP Page Numbers plugin and and article of * Codular.
- * 
- * @link https://wordpress.org/plugins/wp-page-numbers
- * @link http://codular.com/implementing-pagination
- */
+      $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+      $delimiter = '/'; // delimiter between crumbs
+      $home = __('Home','acajou'); // text for the 'Home' link
+      $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
+      $before = '<span class="active">'; // tag before the current crumb
+      $after = '</span>'; // tag after the current crumb
 
-function acajou_pagination($custom_query, $paged)
-{
-	$pagingString   = "<ul class=\"pagination\">\n";
-    $postsPerPage   = get_option('posts_per_page');
-    $pagesToShow    = ceil(($custom_query->found_posts)/ ($postsPerPage));
-    
-    $firstPage      = 1;
-    $lastPage   = $pagesToShow;
-    if($pagesToShow>10) $pagesToShow = 10;
-    
-    if($paged > $firstPage): // make sure previous page exists
-        $pagingString .="<li class=\"arrow unavailable\">";
-        $pagingString .= "<a href=\"" . get_pagenum_link($firstPage) . "\">&laquo;</a>";
-        $pagingString .= "</li>\n";
-    endif;
-    
-    for($i=1;$i<=$pagesToShow;$i++):
-        if($i== $paged): //highlight the current page
-            $pagingString .= "<li class=\"current\">";
-            $pagingString .= "<a href=\"" . get_pagenum_link($i) . "\">" . $i . "</a>";
-            $pagingString .= "</li>\n";
-        else:
-            $pagingString .= "<li>";
-            $pagingString .= "<a href=\"" . get_pagenum_link($i) . "\">" . $i . "</a>";
-            $pagingString .= "</li>\n";
-        endif;
-    endfor;
-    
-    if($paged < $pagesToShow): // make sure next page exists
-        $pagingString .="<li class=\"arrow unavailable\">";
-        $pagingString .= "<a href=\"" . get_pagenum_link(($paged+$postsPerPage)+1) . "\">&raquo;</a>";
-        $pagingString .= "</li>\n";
-        $pagingString .= '</ul>';
-    endif;
-	
-    echo $pagingString;
+      global $post;
+      $homeLink = home_url();
 
-}
+      if (is_home() || is_front_page()) {
 
+        if ($showOnHome == 1) echo '<a href="' . $homeLink . '">' . $home . '</a>';
 
-/**
- * This functions prints a breadcrumb
- * The script is inspired from a Quality Trust article
- * 
- * @link http://www.qualitytuts.com/wordpress-custom-breadcrumbs-without-plugin/
- */
-if(!function_exists('acajou_custom_breadcrumbs')) {
-    function acajou_custom_breadcrumbs() {
- 
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = '/'; // delimiter between crumbs
-  $home = __('Home','acajou'); // text for the 'Home' link
-  $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<span class="active">'; // tag before the current crumb
-  $after = '</span>'; // tag after the current crumb
- 
-  global $post;
-  $homeLink = home_url();
- 
-  if (is_home() || is_front_page()) {
- 
-    if ($showOnHome == 1) echo '<a href="' . $homeLink . '">' . $home . '</a>';
- 
-  } else {
- 
-    echo '<a href="' . $homeLink . '">' . $home . '</a>';
- 
-    if ( is_category() ) {
-      $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, '');
-      echo $before . __('Archive by category ','acajou').'"' . single_cat_title('', false) . '"' . $after;
- 
-    } elseif ( is_search() ) {
-      echo $before . "' . get_search_query() . '" . $after;
- 
-    } elseif ( is_day() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>';
-      echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>';
-      echo $before . get_the_time('d') . $after;
- 
-    } elseif ( is_month() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>';
-      echo $before . get_the_time('F') . $after;
- 
-    } elseif ( is_year() ) {
-      echo $before . get_the_time('Y') . $after;
- 
-    } elseif ( is_single() && !is_attachment() ) {
-      if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo '' . $before . get_the_title() . $after;
       } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, '');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-        echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
-      }
- 
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
- 
-    } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); 
-      if(count($cat)>0) {
-          $cat = $cat[0];
+
+        echo '<a href="' . $homeLink . '">' . $home . '</a>';
+
+        if ( is_category() ) {
+          $thisCat = get_category(get_query_var('cat'), false);
+          if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, '');
+          echo $before . __('Archive by category ','acajou').'"' . single_cat_title('', false) . '"' . $after;
+
+        } elseif ( is_search() ) {
+          echo $before . '"' . get_search_query() . '"' . $after;
+
+        } elseif ( is_day() ) {
+          echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>';
+          echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>';
+          echo $before . get_the_time('d') . $after;
+
+        } elseif ( is_month() ) {
+          echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>';
+          echo $before . get_the_time('F') . $after;
+
+        } elseif ( is_year() ) {
+          echo $before . get_the_time('Y') . $after;
+
+        } elseif ( is_single() && !is_attachment() ) {
+          if ( get_post_type() != 'post' ) {
+            $post_type = get_post_type_object(get_post_type());
+            $slug = $post_type->rewrite;
+            echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+            if ($showCurrent == 1) echo '' . $before . get_the_title() . $after;
+          } else {
+            $cat = get_the_category(); $cat = $cat[0];
+            $cats = get_category_parents($cat, TRUE, '');
+            if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+            echo $cats;
+            if ($showCurrent == 1) echo $before . get_the_title() . $after;
+          }
+
+        } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+          $post_type = get_post_type_object(get_post_type());
+          echo $before . $post_type->labels->singular_name . $after;
+
+        } elseif ( is_attachment() ) {
+          $parent = get_post($post->post_parent);
+          $cat = get_the_category($parent->ID); $cat = $cat[0];
           echo get_category_parents($cat, TRUE, '');
           echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
           if ($showCurrent == 1) echo '' . $before . get_the_title() . $after;
-      }  
- 
-    } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
- 
-    } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      for ($i = 0; $i < count($breadcrumbs); $i++) {
-        echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo '';
-      }
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
- 
-    } elseif ( is_tag() ) {
-      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
- 
-    } elseif ( is_author() ) {
-       global $author;
-      $userdata = get_userdata($author);
-      echo $before . __('Articles posted by ','acajou') . $userdata->display_name . $after;
- 
-    } elseif ( is_404() ) {
-      echo $before .__('Error 404','acajou')  . $after;
-    }
- 
-    if ( get_query_var('paged') ) {
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page','acajou') . ' ' . get_query_var('paged');
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-    }
- 
- 
-  }
-}
-    
-/**
- * Acajou Custom Title prints a title on archive pages : category, tag, author, etc.
- * Its logic is similar to the breadcrumbs.
- */
 
-function acajou_custom_title() {        
-    
-  if (is_home() || is_front_page()) {
-  
-    echo 'From the blog';
-  
-  } else {
-  
-     if ( is_category() ) {
-        echo single_cat_title('', false);
-  
-    } elseif ( is_search() ) {
-      echo '"'. get_search_query() . '"';
-  
-    } elseif ( is_day() ) {
-      echo get_the_time('d').' '.get_the_time('F');
-  
-    } elseif ( is_month() ) {
-      echo get_the_time('F').' '.get_the_time('Y');
-  
-    } elseif ( is_year() ) {
-      echo get_the_time('Y');
-  
-    } elseif ( is_tag() ) {
-      echo single_tag_title('', false);
-  
-    } elseif ( is_author() ) {
-       global $author;
-      $userdata = get_userdata($author);
-      echo __('Articles written by ','acajou') . $userdata->display_name;
-  
-    } elseif ( is_404() ) {
-      echo __('Sorry, not found','acajou');
-    }
-  
-    if ( get_query_var('paged') ) {
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page','acajou') . ' ' . get_query_var('paged');
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-    }
-  
- 
-  }
-} 
-  /*
-   * Print social links
-   *
-   */
-    function acajou_social_links() {
-        $socials = array('facebook','twitter','youtube','github');
-        
-        foreach($socials as $social){
-            $id = $social.'_url';
-            if(""!=get_theme_mod($id)){
-                echo '<li class="reveal" id="'.$id.'"><a href="'.esc_url(get_theme_mod($id)).'"><i class="fa fa-'.$social.'"></i></a></li>';  
-            }
+        } elseif ( is_page() && !$post->post_parent ) {
+          if ($showCurrent == 1) echo $before . get_the_title() . $after;
+
+        } elseif ( is_page() && $post->post_parent ) {
+          $parent_id  = $post->post_parent;
+          $breadcrumbs = array();
+          while ($parent_id) {
+            $page = get_page($parent_id);
+            $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+            $parent_id  = $page->post_parent;
+          }
+          $breadcrumbs = array_reverse($breadcrumbs);
+          for ($i = 0; $i < count($breadcrumbs); $i++) {
+            echo $breadcrumbs[$i];
+            if ($i != count($breadcrumbs)-1) echo '';
+          }
+          if ($showCurrent == 1) echo  $before . get_the_title() . $after;
+
+        } elseif ( is_tag() ) {
+          echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+
+        } elseif ( is_author() ) {
+           global $author;
+          $userdata = get_userdata($author);
+          echo $before . __('Articles posted by ','acajou') . $userdata->display_name . $after;
+
+        } elseif ( is_404() ) {
+          echo $before .__('Error 404','acajou')  . $after;
         }
+
+      }
     }
-}
+    }
     /*
     * Prints the header background image
     *
@@ -401,22 +278,6 @@ function acajou_custom_title() {
     }
     add_filter( 'the_custom_logo', 'acajou_body_classes' );
     
-    /*
-     * Do the typing machine thing
-     *
-     */
-     function acajou_typing_machine(){
-         $text = "a minimalist woodstyle theme/ it looks like wood/ and tastes like soup.";
-         if(get_theme_mod( 'typing_text' ) && ""!=get_theme_mod( 'typing_text' )) {
-            $text = get_theme_mod( 'typing_text' );
-         }
-         $lines = explode('/', $text);
-         foreach($lines as $line){
-             echo '<p>';
-                echo $line;
-             echo '</p>';
-         }
-     }
     /*
      * "From the blog"
      *
@@ -462,3 +323,64 @@ function acajou_custom_title() {
         return $html;
     }
     add_filter('post_thumbnail_html', 'acajou_modify_post_thumbnail_html', 10, 5);
+    
+    /*
+     * Customize the comments with this fallback
+     *
+     */
+    function acajou_custom_comments( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment;
+    echo '<div class="comment-list">';
+        switch( $comment->comment_type ) :
+            case 'pingback' :
+            case 'trackback' : ?>
+                <li <?php comment_class(); ?> id="comment<?php comment_ID(); ?>">
+                <div class="back-link"><?php comment_author_link(); ?></div>
+            <?php break;
+            default : ?>
+                <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+                <article <?php comment_class(); ?> class="comment">
+
+                <div class="comment-body">
+                    <div class="author vcard">
+                    <?php echo get_avatar( $comment, 100 ); ?>
+                    <h6 class="author-name">
+                        <a href="<?php comment_author_link(); ?>"><?php comment_author(); ?></a>
+                    </h6>
+                    <?php comment_text(); ?>
+                    <hr/>
+                    <footer class="comment-footer">
+                    <span class="date">
+                    <?php comment_date('d/m/Y'); ?>
+                    </span> - 
+                    <span class="time">
+                    <?php comment_time('H:i'); ?>
+                    </span>
+                    <div class="reply"><?php 
+                    comment_reply_link( array_merge( $args, array( 
+                    'reply_text' => __( 'Reply', 'acajou' ),
+                    'depth' => $depth,
+                    'max_depth' => $args['max_depth'] 
+                    ) ) ); ?>
+                    </div><!-- .reply -->
+                    </footer><!-- .comment-footer -->
+                    </div><!-- .vcard -->
+                </div><!-- comment-body -->
+
+                </article><!-- #comment-<?php comment_ID(); ?> -->
+            <?php // End the default styling of comment
+            break;
+        endswitch;
+    echo '</div>';
+    }
+
+    /*
+     * Creating the social nav menu
+     * inspired by @http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
+     *
+     */
+    add_action( 'init', 'acajou_register_nav_menus' );
+
+    function acajou_register_nav_menus() {
+        register_nav_menu( 'social', __( 'Social', 'acajou' ) );
+    }

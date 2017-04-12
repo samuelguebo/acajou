@@ -77,9 +77,14 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 **The exceptions to this license are as follows:**
 
-- [FontAwesome](https://github.com/FortAwesome/Font-Awesome), under the SIL Open Font License.
--  [Zurb Foundation](https://github.com/zurb/foundation-sites), under MIT License.
+- [Zurb Foundation](https://github.com/zurb/foundation-sites),for layout structure, under MIT License.
+- [Arvo](https://github.com/FortAwesome/Font-Awesome), [FontAwesome](https://github.com/FortAwesome/Font-Awesome), under the SIL Open Font License.
+
 - [Commons images](https:commons.wikimedia.org), under Creative Commons By SA 4.0 License
+- [ScrollReveal](https://github.com/jlmakes/scrollreveal), under MIT License.
+- [Typed.js](https://github.com/mattboldt/typed.js/), under MIT License.
+- [Roboto](https://github.com/google/roboto), under Apache License 2.0 License.
+
 
 # Change log
 All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/blob/master/CHANGELOG.md) file.

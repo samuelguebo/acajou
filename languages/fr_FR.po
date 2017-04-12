@@ -5,67 +5,184 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: WPML_EXPORT_acajou\n"
+"Project-Id-Version:WPML_EXPORT_acajou\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Samuel Guebo <samuelguebo@gmail.com>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr\n"
+"Language:fr\n"
 "MIME-Version: 1.0\n"
-"X-Generator: Poedit 1.5.4\n"
 
-# wpml-name: 1bae563ac73d8764dc25047a4b779d41
-#: "from_text", array( "label" => __("Replace the defaut « From blog »
-#: text", "acajou"),
+#: <div class="reply"><?php
+#: comment_reply_link( array_merge( $args, array(
+#: 'reply_text' => __( 'Reply', 'acajou' ),
+# wpml-name: 25d8df6e580905091a0d5ef5b9e05bf0
+msgid "Reply"
+msgstr "Répondre"
+
+#: <?php $tags = get_the_tags(get_the_ID());
+#: if ( $tags ): ?>
+#: <span><?php _e('tags','acajou');?></span>
+# wpml-name: d57ac45256849d9b13e2422d91580fb9
+msgid "tags"
+msgstr "mots-clés"
+
+#: <?php $categories = get_the_category();
+#: if ( $categories ): ?>
+#: <span><?php _e('categories','acajou');?></span>
+# wpml-name: b0b5ccb4a195a07fd3eed14affb8695f
+msgid "categories"
+msgstr "catégories"
+
+#: 
+#: function acajou_register_nav_menus() {
+#: register_nav_menu( 'social', __( 'Social', 'acajou' ) );
+# wpml-name: f431e17ea0081a3c9e51fc240221ee21
+msgid "Social"
+msgstr "Social"
+
+#: 'home_icon',
+#: array(
+#: 'label' => __('Show home icon in menu?', 'acajou'),
+# wpml-name: cb212e451e752ea93d2cc987ab9d770e
+msgid "Show home icon in menu?"
+msgstr "Afficher l'icône d'accueil?"
+
+#: // Create sections for socials links
+#: $wp_customize->add_section('acajou_home_icon_section', array(
+#: 'title' => __('Home icon', 'acajou'),
+# wpml-name: 1f6fd1fc7f451feeec24b342a8494b86
+msgid "Home icon"
+msgstr "Icône d'accueil"
+
+#: 'from_text',
+#: array(
+#: 'label' => __('Replace the defaut &laquo; From the blog &raquo; text', 'acajou'),
+# wpml-name: b22300c42f67c53e432383a7295dec7c
 msgid "Replace the defaut &laquo; From the blog &raquo; text"
 msgstr "Remplacer le titre « Actualités »"
 
-# wpml-name: e9e838e8eb8a156d2989faa260244799
+#: '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'acajou' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+#: 'comment_notes_before' =>
+#: '<p class="comment-notes">' . __( 'Your email address will not be published. Fields marked <span class="required">*</span> are required.' , 'acajou') . '</p>'
+# wpml-name: f8b899362e65018d4a03d9c280ec1aa8
+msgid "Your email address will not be published. Fields marked <span class=\"required\">*</span> are required."
+msgstr "Votre e-mail ne sera pas publiée. Les champs marqués <span class=\"required\">*</span> dont requis."
+
+#: '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'acajou'), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+#: 'must_log_in' =>
+#: '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'acajou' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+# wpml-name: 82c7d3fe1c980c2e8fc58f5df017c90f
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Vous devez être <a href=\"%s\">connecté(e) </a> pour publier un commentaire."
+
+#: 'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'acajou' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+#: 'logged_in_as' =>
+#: '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'acajou'), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+# wpml-name: 0ad059285c0880e9ea0f0cb43102d871
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
+msgstr "Connecté(e) en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Se déconnecter\">Se déconnecter?</a>"
+
+#: 'label_submit'=>__( 'Send', 'acajou' ),
+#: // redefine your own textarea (the comment body)
+#: 'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'acajou' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+# wpml-name: 0be8406951cdfda82f00f79328cf4efc
+msgid "Comment"
+msgstr "Commentaire"
+
+#: 'comment_notes_after' => '',
+#: // change the title of send button
+#: 'label_submit'=>__( 'Send', 'acajou' ),
+# wpml-name: 94966d90747b97d1f0f206c98a8b1ac3
+msgid "Send"
+msgstr "Envoyer"
+
+#: '" size="30" /></p>',
+#: ),
+#: 'title_reply'=>'<h5 id="reply-title" class="comment-reply-title">'.__( 'Leave a comment', 'acajou' ).'</h5>',
+# wpml-name: 4d475654cf26db0264212bc50e9cf6d2
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#: '" size="30"' . $aria_req . ' /></p>',
+#: 'url' =>
+#: '<p class="comment-form-url"><label for="url">' . __( 'Website', 'acajou' ) . '</label>' .
+# wpml-name: 15bbb9d0bbf25e8d2978de1168c749dc
+msgid "Website"
+msgstr "Website"
+
+#: 
+#: 'email' =>
+#: '<p class="comment-form-email"><label for="email">' .   __( 'Email', 'acajou' ) . '</label> ' .
+# wpml-name: ce8ae9da5b7cd6c3df2929543a9af92d
+msgid "Email"
+msgstr "E-mail"
+
+#: 'website' =>'',
+#: 'author' =>
+#: '<p class="comment-form-author"><label for="author">' .__( 'Name', 'acajou' ) . '</label> ' .
+# wpml-name: 49ee3087348e8d44e1feda1917443987
+msgid "Name"
+msgstr "Nom"
+
+#: 'mid_size' => 2,
+#: 'prev_text' => __( '&laquo;', 'acajou' ),
+#: 'next_text' => __( '&raquo;', 'acajou' ),
+# wpml-name: d0fbfc097c4fdbc0bc02e10243bd60fe
+msgid "&raquo;"
+msgstr "»"
+
+#: <?php the_posts_pagination( array(
+#: 'mid_size' => 2,
+#: 'prev_text' => __( '&laquo;', 'acajou' ),
+# wpml-name: a3332b79b0716cb7e3e4ec79a8b01048
+msgid "&laquo;"
+msgstr "«"
+
+# wpml-name: 1bae563ac73d8764dc25047a4b779d41
+msgid "Replace the defaut « From the blog » text"
+msgstr "Remplacer le titre « Actualités »"
+
 #: // Create sections for socials links
-#: $wp_customize->add_section("acajou_from_section", array( "title" =>
-#: __("From the blog", "acajou"),
+#: $wp_customize->add_section('acajou_from_section', array(
+#: 'title' => __('From the blog', 'acajou'),
+# wpml-name: e9e838e8eb8a156d2989faa260244799
 msgid "From the blog"
 msgstr "Actualités"
 
 # wpml-name: dc754740f7de8b013feff530324c71b8
-#: "typing_text", array( "label" => __("Type your text and use slash (/) for
-#: creating several sentences", "acajou"),
 msgid "Type your text and use slash (/) for creating several sentences"
-msgstr ""
-"Tapez votre texte et utilisez la barre oblique (/) pour créer plusieurs "
-"phrases"
+msgstr "Tapez votre texte et utilisez la barre oblique (/) pour créer plusieurs phrases"
 
 # wpml-name: 0eae6a1413df83696f931b200ba47561
-#: // Create sections for socials links
-#: $wp_customize->add_section("acajou_typing_section", array( "title" =>
-#: __("Typing machine", "acajou"),
 msgid "Typing machine"
 msgstr "Machine à écrire"
 
+#: <a href="<?php the_permalink();?>" class="small button post-item-buttom"><?php _e('Read more','acajou')?></a>
+#: <?php if ( get_edit_post_link() ) : ?>
+#: <a href="<?php echo get_edit_post_link();?>" class="small button alert"><i class="fa fa-edit"></i> <?php _e('Edit','acajou')?></a>
 # wpml-name: 7dce122004969d56ae2e0245cb754d35
-#: <a href="<?php the_permalink();?>" class="small button
-#: post-item-buttom"><?php _e('Read more','acajou')?></a> <?php if (
-#: get_edit_post_link() ) : ?> echo get_edit_post_link();?>" alert"><i
-#: class="fa fa-edit"></i> _e('Edit','acajou')?></a>
 msgid "Edit"
 msgstr "Modifier"
 
+#: 
+#: } elseif ( is_404() ) {
+#: echo $before .__('Error 404','acajou')  . $after;
 # wpml-name: bfd56f3cafc12f6317ae3351ad712eff
-#: } elseif ( is_404() ) { echo $before .__('Error 404','acajou') . $after;
 msgid "Error 404"
 msgstr "Erreur 404"
 
+#: global $author;
+#: $userdata = get_userdata($author);
+#: echo $before . __('Articles posted by ','acajou') . $userdata->display_name . $after;
 # wpml-name: 111c1a6419c01b8dcb3ee6ea8f3a291b
-#: global $author; $userdata = get_userdata($author); echo $before .
-#: __('Articles posted by ','acajou') $userdata->display_name $after;
 msgid "Articles posted by "
 msgstr "Articles publiés par"
 
+#: $thisCat = get_category(get_query_var('cat'), false);
+#: if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, '');
+#: echo $before . __('Archive by category ','acajou').'"' . single_cat_title('', false) . '"' . $after;
 # wpml-name: 01f9dd31a3153c5998aa885b33565592
-#: $thisCat = get_category(get_query_var('cat'), false); if ($thisCat->parent
-#: != 0) echo get_category_parents($thisCat->parent, TRUE, ''); $before .
-#: __('Archive by category ','acajou').'"' single_cat_title('', false) '"'
-#: $after;
 msgid "Archive by category "
 msgstr "Archive par catégorie"
 
@@ -89,218 +206,182 @@ msgstr "Recherche"
 msgid "Search for …"
 msgstr "Chercher …"
 
+#: <div class="medium-4 large-3 columns"> <?php echo get_avatar( get_the_author_meta('ID'), 120 ); ?> </div>
+#: <div class="medium-8 large-9 columns">
+#: <h3><?php _e('About the author','acajou'); ?></h3>
 # wpml-name: de9fbb31a77fd14bb6228f52d6e1907c
-#: <div class="small-3 large-3 columns"> <?php echo get_avatar(
-#: get_the_author_meta( get_the_author_meta('ID') ), 120 ); ?> </div>
-#: class="small-9 large-9 <h3><?php _e('About the author','acajou'); ?></h3>
 msgid "About the author"
 msgstr "A propos de l'auteur"
 
+#: <h6 class="post-item-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h6>
+#: <p><?php the_excerpt();?></p>
+#: <a href="<?php the_permalink();?>" class="small button post-item-buttom"><?php _e('Read more','acajou')?></a>
 # wpml-name: 43340e6cc4e88197d57f8d6d5ea50a46
-#: <h6 class="post-item-title"><a href="<?php the_permalink();?>"><?php
-#: the_title();?></a></h6> <p><?php the_excerpt();?></p> <a
-#: the_permalink();?>" class="small button post-item-buttom"><?php _e('Read
-#: more','acajou')?></a>
 msgid "Read more"
 msgstr "Lire la suite"
 
+#: 
+#: <div class="post-list not-found columns">
+#: <h4><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'acajou' ); ?></h4>
 # wpml-name: 4783397292b42b601dee3397f9ca05f9
-#: <div class="post-list not-found columns"> <h4><?php esc_html_e( 'It looks
-#: like nothing was found at this location. Maybe try one of the links below
-#: or a search?', 'acajou' ); ?></h4>
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-"Il semble que rien ne puisse être trouvé pour cette page. Peut-être en "
-"suivant un des liens ci-dessous, ou en faisant une recherche ?"
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Il semble que rien ne puisse être trouvé pour cette page. Peut-être en suivant un des liens ci-dessous, ou en faisant une recherche ?"
 
+#: <div class="row collapse">
+#: <div class="small-10 columns">
+#: <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'acajou' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 # wpml-name: 29042a31d997c996f52c1d2fd4ad813d
-#: <div class="row collapse"> class="small-10 columns"> <input type="search"
-#: class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;',
-#: 'placeholder', 'acajou' ); ?>" value="<?php get_search_query(); name="s" />
 msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr "Chercher …"
 
+#: <li class="name">
+#: </li>
+#: <li class="toggle-topbar menu-icon"><a href="#"><span><?php esc_html_e( 'Menu', 'acajou' );?></span></a></li>
 # wpml-name: b61541208db7fa7dba42c85224405911
-#: <li class="name"> </li> class="toggle-topbar menu-icon"><a
-#: href="#"><span><?php esc_html_e( 'Menu', 'acajou' );?></span></a></li>
 msgid "Menu"
 msgstr "Menu"
 
 # wpml-name: e9bb25dd73430089cf962dd6a73824da
-#: } elseif ( is_404() ) { echo __('Sorry, not found','acajou');
 msgid "Sorry, not found"
 msgstr "Désolé!! La page n'existe pas"
 
 # wpml-name: 583f75b52c16a2ef51b8fb8612338b26
-#: global $author; $userdata = get_userdata($author); echo __('Articles
-#: written by ','acajou') . $userdata->display_name;
 msgid "Articles written by "
 msgstr "Articles publiés par"
 
 # wpml-name: 6df1ab400da4c77b3b3ea8f38397ba60
-#: } elseif ( is_search() ) { echo $before . __('Results for ','acajou').
-#: get_search_query() '"' $after;
 msgid "Results for "
 msgstr "Résultats de la recherche"
 
 # wpml-name: 193cfc9be3b995831c6af2fea6650e60
-#: if ( get_query_var('paged') ) { is_category() || is_day() is_month()
-#: is_year() is_search() is_tag() is_author() echo ' ('; __('Page','acajou') .
-#: get_query_var('paged');
 msgid "Page"
 msgstr "Page"
 
+#: $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+#: $delimiter = '/'; // delimiter between crumbs
+#: $home = __('Home','acajou'); // text for the 'Home' link
 # wpml-name: 8cf04a9734132302f96da8e113e80ce5
-#: $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 don't
-#: $delimiter '/'; delimiter between crumbs $home __('Home','acajou'); text
-#: for 'Home' link
 msgid "Home"
 msgstr "Accueil"
 
-# wpml-name: 45e035baf33a8e403766a606457f8b10
-#: new Palette_Custom_Control( $wp_customize, 'acajou_theme_color', array(
+#: new Palette_Custom_Control(
+#: $wp_customize, 'acajou_theme_color', array(
 #: 'label' => __( 'Theme color', 'acajou' ),
+# wpml-name: 45e035baf33a8e403766a606457f8b10
 msgid "Theme color"
 msgstr "Couleur du thème"
 
 # wpml-name: 582d0217bdd3280c7fef224c83846d47
-#: "github_url", array( "label" => __("Enter Github url", "acajou"),
 msgid "Enter Github url"
 msgstr "Lien Github"
 
 # wpml-name: e3df3e1b4dda1804819fa7282c2ca0b7
-#: "youtube_url", array( "label" => __("Enter Youtube url", "acajou"),
 msgid "Enter Youtube url"
 msgstr "Lien Youtube"
 
 # wpml-name: 13e90aa88383d670e2628878822f7515
-#: "twitter_url", array( "label" => __("Enter Twitter url", "acajou"),
 msgid "Enter Twitter url"
 msgstr "Lien Twitter"
 
 # wpml-name: dfc2e158e98af501bceb60aef0532dd3
-#: "facebook_url", array( "label" => __("Enter Facebook url", "acajou"),
 msgid "Enter Facebook url"
 msgstr "Lien Facebook"
 
 # wpml-name: 07c2799ee9c0898531b00af6694eb4cd
-#: // Create sections for socials links
-#: $wp_customize->add_section("acajou_social_links", array( "title" =>
-#: __("Social links", "acajou"),
 msgid "Social links"
 msgstr "Réseaux sociaux"
 
+#: ) );
+#: register_sidebar( array(
+#: 'name'          => esc_html__( 'Footer', 'acajou' ),
 # wpml-name: ded40f2a77c30efc6062db0cbd857746
-#: ) ); register_sidebar( array( 'name' => esc_html__( 'Footer', 'acajou' ),
 msgid "Footer"
 msgstr "Footer"
 
+#: 'name'          => esc_html__( 'Sidebar', 'acajou' ),
+#: 'id'            => 'sidebar-1',
+#: 'description'   => esc_html__( 'Add widgets here.', 'acajou' ),
 # wpml-name: 5234c7d4d29fadd5614763897c8332c5
-#: 'name' => esc_html__( 'Sidebar', 'acajou' ), 'id' 'sidebar-1',
-#: 'description' 'Add widgets here.',
 msgid "Add widgets here."
 msgstr "Ajouter les widgets ici."
 
+#: function acajou_widgets_init() {
+#: register_sidebar( array(
+#: 'name'          => esc_html__( 'Sidebar', 'acajou' ),
 # wpml-name: 219ff7705d67d0c798779951dcf82e95
-#: function acajou_widgets_init() { register_sidebar( array( 'name' =>
-#: esc_html__( 'Sidebar', 'acajou' ),
 msgid "Sidebar"
 msgstr "Bare latérale"
 
+#: // This theme uses wp_nav_menu() in one location.
+#: register_nav_menus( array(
+#: 'primary' => esc_html__( 'Primary', 'acajou' ),
 # wpml-name: 074de7e7c226d5c60f8af14c20725352
-#: // This theme uses wp_nav_menu() in one location. register_nav_menus(
-#: array( 'primary' => esc_html__( 'Primary', 'acajou' ),
 msgid "Primary"
 msgstr "Principal"
 
+#: <div class="row">
+#: <div class="small-6 large-6 columns">
+#: <p class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
 # wpml-name: d6c4a6ac6a732b8db88d1cfe32b5b44e
-#: <div class="row"> class="small-6 large-6 columns"> <p
-#: class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a
-#: href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) );
-#: ?>"><?php printf( esc_html__( 'Proudly powered %s', ), 'WordPress' ?></a>
-#: <?php _e('and available on','acajou')?> <a
-#: href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i>
-#: Github</a></p>
 msgid "and available on"
 msgstr "et disponible sur "
 
+#: <div class="row">
+#: <div class="small-6 large-6 columns">
+#: <p class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
 # wpml-name: e2b8f1326fea2c94cdc3bccda878a9d6
-#: <div class="row"> class="small-6 large-6 columns"> <p
-#: class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a
-#: href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) );
-#: ?>"><?php printf( esc_html__( 'Proudly powered %s', ), 'WordPress' ?></a>
-#: <?php _e('and available on','acajou')?> <a
-#: href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i>
-#: Github</a></p>
 msgid "Developed by "
 msgstr "Développé par "
 
+#: <div class="row">
+#: <div class="small-6 large-6 columns">
+#: <p class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
 # wpml-name: a657bb99c4349a9510fe2a5585e30a15
-#: <div class="row"> class="small-6 large-6 columns"> <p
-#: class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a
-#: href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) );
-#: ?>"><?php printf( esc_html__( 'Proudly powered %s', ), 'WordPress' ?></a>
-#: <?php _e('and available on','acajou')?> <a
-#: href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i>
-#: Github</a></p>
 msgid "Proudly powered by %s"
 msgstr "Fièrement propulsé par %s"
 
+#: <div class="row">
+#: <div class="small-6 large-6 columns">
+#: <p class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acajou' ), 'WordPress' ); ?></a> <?php _e('and available on','acajou')?> <a href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i> Github</a></p>
 # wpml-name: 71a7765c3d553e44aaa308159b5a2ba6
-#: <div class="row"> class="small-6 large-6 columns"> <p
-#: class="copyright"><?php _e('Developed by ','acajou')?>Samuel Guebo.<br><a
-#: href="<?php echo esc_url( __( 'https://wordpress.org/', 'acajou' ) );
-#: ?>"><?php printf( esc_html__( 'Proudly powered %s', ), 'WordPress' ?></a>
-#: <?php _e('and available on','acajou')?> <a
-#: href="https://github.com/samuelguebo/acajou"><i class="fa fa-github"></i>
-#: Github</a></p>
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
 # wpml-name: ed9e37872f818f1e8903eba505917478
-#: <?php printf( // WPCS: XSS OK. esc_html( _nx( 'One thought on
-#: &ldquo;%2$s&rdquo;', '%1$s thoughts get_comments_number(), 'comments
-#: title', 'acajou' ) ),
 msgctxt "comments title"
 msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr "%1$s commentaires sur “%2$s”"
 
 # wpml-name: 5e842f65391c3945c5d208be06d82896
-#: <?php printf( // WPCS: XSS OK. esc_html( _nx( 'One thought on
-#: &ldquo;%2$s&rdquo;', '%1$s thoughts get_comments_number(), 'comments
-#: title', 'acajou' ) ),
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr "Un commentaire sur “%2$s”"
 
+#: if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+#: 
+#: <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'acajou' ); ?></p>
 # wpml-name: 496c558a09bbbcfc869aa80b2f037261
-#: if ( ! comments_open() && get_comments_number() post_type_supports(
-#: get_post_type(), 'comments' ) : ?> <p class="no-comments"><?php esc_html_e(
-#: 'Comments are closed.', 'acajou' ); ?></p>
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
+#: <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+#: <nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+#: <h4 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'acajou' ); ?></h4>
 # wpml-name: 221b94a7f866d10d0b85b7886cea5d18
-#: <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) :
-#: // Are there comments to navigate through? ?> <nav id="comment-nav-above"
-#: class="navigation comment-navigation" role="navigation"> <h2
-#: class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'acajou'
-#: ); ?></h2>
 msgid "Comment navigation"
 msgstr "Navigation"
 
+#: 
+#: <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'acajou' ) ); ?></div>
+#: <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'acajou' ) ); ?></div>
 # wpml-name: 36eb7633eb95e849cb42a170ea48e2dc
-#: <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older
-#: Comments', 'acajou' ) ); ?></div> class="nav-next"><?php
-#: next_comments_link( 'Newer
 msgid "Newer Comments"
 msgstr "Commentaires récents"
 
+#: <div class="nav-links">
+#: 
+#: <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'acajou' ) ); ?></div>
 # wpml-name: 18ee891b4e245d0cea15e36769318ccd
-#: <div class="nav-links"> class="nav-previous"><?php previous_comments_link(
-#: esc_html__( 'Older Comments', 'acajou' ) ); ?></div>
 msgid "Older Comments"
 msgstr "Anciens commentaires"

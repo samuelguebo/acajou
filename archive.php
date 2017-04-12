@@ -23,7 +23,7 @@ get_header(); ?>
                 
                 <!-- post list-->
                 <section class="large-9 columns main-column">
-                    <h1 class="category-title"><?php acajou_custom_title();?></h1>
+                    <h1 class="category-title"><?php the_archive_title(); ?></h1>
                     <div class="category-title-line large-2 large-centered columns"></div>
                     <div class="post-list clearfix">
                         <?php
@@ -46,12 +46,13 @@ get_header(); ?>
 
                             endif; ?>
                     </div>
-                    <div class="pagination-wrapper" >
-                        <?php if(function_exists('acajou_pagination')) { 
-                            acajou_pagination($wp_query, $paged); 
-                        }else {
-                            posts_nav_link();
-                        } ?>
+                    <div class="pagination-wrapper columns large-4 large-centered" >
+                        <?php the_posts_pagination( array(
+                            'mid_size' => 2,
+                            'prev_text' => __( '&laquo;', 'acajou' ),
+                            'next_text' => __( '&raquo;', 'acajou' ),
+                            'screen_reader_text' => ' '
+                        ) ); ?>
                     </div>
                 </section>
                 <?php get_sidebar();?>

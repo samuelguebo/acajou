@@ -25,14 +25,13 @@
                 <div class="post-content">
                     <?php the_content();?> 
                 </div>
-                <div class="post-pagination clearfix">
-                    <?php
-                    if ( is_singular() && $numpages > 1 ):?>
-                        <div class="pagination-wrapper" >
-                            <?php wp_link_pages();?> 
-                        </div>
-                        <?php 
-                    endif;?>
+                <div class="pagination-wrapper columns large-4 large-centered clearfix" >
+                    <?php the_posts_pagination( array(
+                        'mid_size' => 2,
+                        'prev_text' => __( '&laquo;', 'acajou' ),
+                        'next_text' => __( '&raquo;', 'acajou' ),
+                        'screen_reader_text' => ' '
+                    ) ); ?>
                 </div>
             </div>
         <?php endif;?>

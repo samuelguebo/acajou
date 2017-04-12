@@ -82,3 +82,7 @@ footer .copyright a {
 footer .copyright a:hover {
     color: $dark-color;
 }
+.nav-wrapper nav.top-bar li.current-menu-parent
+{
+    border-bottom:solid 4px $light-color;
+}

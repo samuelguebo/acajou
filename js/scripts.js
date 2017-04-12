@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
         // Waits 1000ms after typing "First
         stringsElement: $('.strings')
         , loop: true
-        , backDelay: 3000
+        , backDelay: 10*1000
         , typeSpeed: 0.2
         , backSpeed: 0.5
     });

@@ -29,15 +29,20 @@
                 <div class="post-content">
                     <?php the_content();?> 
                 </div>
-                <div class="post-pagination clearfix">
-                    <?php
-                    if ( is_singular() && $numpages > 1 ):?>
-                        <div class="pagination-wrapper" >
-                            <?php wp_link_pages();?> 
-                        </div>
-                        <?php 
-                    endif;?>
+                <div class="pagination-wrapper columns large-3 large-centered clearfix" >
+                    <?php wp_link_pages(); ?>
                 </div>
+
+                <div class="post-pagination clearfix">
+                    <?php the_post_navigation( array(
+                        'prev_text'                  => __( '&laquo; %title' ),
+                        'next_text'                  => __( '%title &raquo;' ),
+                        'in_same_term'               => true,
+                        'taxonomy'                   => __( 'post_tag' ),
+                        'screen_reader_text' => ' ',
+                    ) ); ?>
+                </div>
+                <br>
                 <div class="post-categories breadcrumbs">
                     <?php $categories = get_the_category();
                         if ( $categories ): ?>
@@ -71,10 +76,10 @@
 </article>
 <?php 
     // If comments are open or we have at least one comment, load up the comment template.
-    if ( comments_open() || get_comments_number() ) :?>
-    <article class="post-item comment-wrapper">
-        <div class="panel">
-            <?php comments_template();?>
-        </div>
-    </article>
+        if ( comments_open() || get_comments_number() ) :?>
+        <article class="comment-wrapper">
+            <div class="panel">
+                <?php comments_template();?>
+            </div>
+        </article>
 <?php endif;?>

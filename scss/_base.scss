@@ -69,12 +69,23 @@ header {
     border-bottom: solid 10px $extra-light-color;
 }
 
+header div.slogan{
+    margin-top: 1em;
+}
 header div.slogan .title, header div.slogan .description{
     font-weight: 300;
 }
 
 header div.slogan .title{
     font-size: 5.8em;
+    color: $light-color;
+    text-transform: uppercase;
+    font-family: $primary-font;
+    text-align: center;
+}
+header div.slogan .title{
+    font-size: 5.8em;
+    margin-top: 0;
     color: $light-color;
     text-transform: uppercase;
     font-family: $primary-font;
@@ -137,7 +148,7 @@ header div.logo img {
     min-height: 100%;
 }
 .top-bar-section li:not(.has-form) a:not(.button) {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 @media only screen and (max-width: 60em) {
     .top-bar-section li:not(.has-form) a:not(.button) {
@@ -145,7 +156,7 @@ header div.logo img {
     }
     .top-bar-section li:not(.has-form) a:not(.button) {
         line-height: 2.8125rem;
-        padding: 2px 0.5rem;
+        padding: 2px 0.3rem;
     }
 }
 .top-bar-section .dropdown li:not(.has-form) a:not(.button) {
@@ -225,7 +236,7 @@ header div.logo img {
 .nav-wrapper nav.top-bar li.current-menu-ancestor,
 .nav-wrapper nav.top-bar li.current-menu-parent
 {
-    border-bottom:solid 4px $link-color;
+    border-bottom:solid 4px $dark-color;
 }
 
 /* SOCIAL ICONS */
@@ -245,7 +256,7 @@ header div.logo img {
     margin-left: 25px;
 }
 
-.socials ul li a {
+.socials a {
     color: $light-color;
     font-size: 20px;
     width: 36px;
@@ -258,19 +269,24 @@ header div.logo img {
     display: block;
 }
 
-.socials ul li a:hover {
+.socials a:hover {
     color: $dark-color;
     font-size: 20px;
     text-align: center;
     border: solid 1px $dark-color;
 }
 
-header .socials ul li a {
+.socials .screen-reader-text {
+	position: absolute;
+	top:      -9999em;
+	left:     -9999em;
+}
+
+header .socials a {
     color: $dark-color;
     font-size: 20px;
     width: 36px;
     height: 36px;
-    
     -moz-border-radius: 18px;
     -webkit-border-radius: 18px;
     border-radius: 18px;
@@ -278,13 +294,68 @@ header .socials ul li a {
     display: block;
 }
 
-.socials ul li a:hover {
+.socials a:hover {
     color: $light-color;
     font-size: 20px;
     text-align: center;
     border: solid 1px $light-color;
 }
 
+
+
+.socials li a::before {
+				content:        '\f408';
+				display:        inline-block;
+				padding:        4px;
+				font-family:    'FontAwesome';
+				font-size:      18px;
+				vertical-align: top;
+
+				-webkit-font-smoothing: antialiased;
+			}
+
+.socials li a[href*="wordpress.com"]::before {
+    content: '\f205';
+}
+.socials li a[href*="facebook.com"]::before {
+    content: '\f09a';
+}
+.socials li a[href*="twitter.com"]::before {
+    content: '\f099';
+}
+.socials li a[href*="dribbble.com"]::before {
+    content: '\f17d';
+}
+.socials li a[href*="plus.google.com"]::before {
+    content: '\f0d5';
+}
+.socials li a[href*="pinterest.com"]::before {
+    content: '\f231';
+}
+.socials li a[href*="github.com"]::before {
+    content: '\f09b';
+}
+.socials li a[href*="tumblr.com"]::before {
+    content: '\f174';
+}
+.socials li a[href*="youtube.com"]::before {
+    content: '\f16a';
+}
+.socials li a[href*="flickr.com"]::before {
+    content: '\f16e';
+}
+.socials li a[href*="vimeo.com"]::before {
+    content: '\f27d';
+}
+.socials li a[href*="instagram.com"]::before {
+    content: '\f16d';
+}
+.socials li a[href*="codepen.io"]::before {
+    content: '\f1cb';
+}
+.socials li a[href*="linkedin.com"]::before {
+    content: '\f0e1';
+}
 /* TEST COLORS */
 
 .background-indigo {
@@ -377,9 +448,7 @@ header .socials ul li a {
 .button, button {
     background-color: $primary-color;
 }
-ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
-    background: $dark-color;
-}
+
 article .panel .button {
     border-radius: 5px;
     border-style: solid;
@@ -532,21 +601,21 @@ article.columns + article.columns:last-child {
 }
 
 article .post-item-date.wrap {
-    color: $light-color;
+    color: gray;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     position:relative;
-    float: right;
-    clear: left;
-    top:40px;
-    right:0;
-    background: $primary-color;
+    
+    top:0px;
+    right:0px;
+    background: none;
     text-transform: uppercase;
-    padding: 5px;
+    padding: 0;
 }
+
 /* FOOTER */
 
-footer {
+footer#footer {
     padding-bottom: 25px;
     color: #FFF;
 }
@@ -656,6 +725,11 @@ footer a.back-to-top:hover {
 footer a#back-to-top {
     opacity: 1;
     z-index: 999;
+}
+
+footer .socials a:hover {
+    color: $dark-color;
+    border: solid 1px $dark-color;
 }
 
 
@@ -1022,14 +1096,6 @@ aside .recent-posts-box ul li a {
     text-align: left;
 }
 
-ul.pagination li.current a,
-ul.pagination li.current button {
-    background: $link-color;
-}
-ul.pagination li a, ul.pagination li{
-    font-size: 1em;
-    font-family: $second-font;
-}
 
 /* TABLES */
 
@@ -1191,15 +1257,14 @@ img.alignright {
 
 /* COLORS */
 
-footer {
+footer#footer{
     background: $primary-color;
 }
 
 header .overlay{
-    background:$primary-color;
+    background:rgba($primary-color,0.9);
     height: 100%;
     width: 100%;
-    opacity: 0.9;
     top: 0;
     left: 0;
     padding: 0;
@@ -1216,6 +1281,7 @@ header .overlay .site-title a:hover {
 header .overlay .site-title {
     line-height: 0.8em;
     margin-top:20px;
+    text-transform: uppercase;
 }
 header .overlay .site-description {
     font-size: 0.8em;
@@ -1260,17 +1326,38 @@ header {
     100% { opacity:1; }
 }
 /* PAGINATION */
-.pagination-wrapper{
+
+.nav-links div{
+    display: inline;
+}
+.nav-links .nav-next{
     float:right;
-    position:relative;
-    left:-50%;
-    text-align:left;
 }
-.pagination-wrapper .pagination{
-    list-style:none;
-    position:relative;
-    left:50%;
+.nav-links .nav-prev{
+    float:left;
 }
+
+.page-numbers, .nav-links div {
+    font-family: $second-font;
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 2px 0 0;
+	border: 1px solid $link-color;
+	line-height: 1;
+	text-decoration: none;
+	border-radius: 2px;
+	font-weight: 600;
+    font-size: 1em;
+}
+.page-numbers.current,
+a.page-numbers:hover {
+	background: $link-color;
+	color: $light-color;
+}
+span.page-numbers.dots {
+    color: $link-color;
+}
+
 /* MISCELLANEOUS */
 figure {
     margin:0;
@@ -1332,4 +1419,40 @@ p img.alignright, p img.alignleft {margin-top:0;}
 @media (max-width:767px) {
 	img.alignright, div.alignright, figure.alignright, img.alignleft, div.alignleft, figure.alignleft, img.wp-post-image.attachment-thumb {display:block; margin:1em auto; float:none;}
 	.gallery.gallery-columns-4 figure, .gallery.gallery-columns-5 figure, .gallery.gallery-columns-6 figure, .gallery.gallery-columns-7 figure, .gallery.gallery-columns-8 figure, .gallery.gallery-columns-9 figure {width:100%; margin:0 0 1em 0; float:none;}
+}
+
+/* COMMENTS THREAD */
+.comment-list{
+    list-style: none;
+    counter-increment: none;
+}
+.comment-content
+.widget input[type=submit] {
+    max-width: 120px;
+}
+/* COMMENT THREAD */
+.comment-list, .comment-list .vcard .fn, .comment-content, .comment-content p {
+    font-size: 0.85rem;
+}
+
+.comment-list .vcard {
+    margin: 0 0 0.5rem;
+    width: 100%;
+}
+#comments label {
+    display:inline;
+    
+}
+#comments span.required{
+    color:crimson;
+}
+
+ul.comment-list {
+    list-style: none;
+}
+.comment-list > li.comment {
+     -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0 0 0.5em;
+    position: relative;
 }
