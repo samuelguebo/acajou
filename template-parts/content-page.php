@@ -20,13 +20,11 @@
                 <?php the_post_thumbnail( 'single-thumb',array('class' =>'delay placeholder') );?>
             </div>        
         <?php endif;?>
-        
             <div class="panel">
                 <div class="post-content">
                     <?php the_content();?> 
                 </div>
             </div>
-        <?php endif;?>
     </div>
 </article>
 <?php 
