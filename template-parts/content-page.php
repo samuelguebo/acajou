@@ -20,18 +20,10 @@
                 <?php the_post_thumbnail( 'single-thumb',array('class' =>'delay placeholder') );?>
             </div>        
         <?php endif;?>
-        <?php if(is_single()): global $numpages; ?>
+        
             <div class="panel">
                 <div class="post-content">
                     <?php the_content();?> 
-                </div>
-                <div class="pagination-wrapper columns large-4 large-centered clearfix" >
-                    <?php the_posts_pagination( array(
-                        'mid_size' => 2,
-                        'prev_text' => __( '&laquo;', 'acajou' ),
-                        'next_text' => __( '&raquo;', 'acajou' ),
-                        'screen_reader_text' => ' '
-                    ) ); ?>
                 </div>
             </div>
         <?php endif;?>
