@@ -35,10 +35,10 @@
 
                 <div class="post-pagination clearfix">
                     <?php the_post_navigation( array(
-                        'prev_text'                  => __( '&laquo; %title', 'acajou'),
-                        'next_text'                  => __( '%title &raquo;' 'acajou'),
+                        'prev_text'                  => __( "&laquo; %title", 'acajou'),
+                        'next_text'                  => __( "%title &raquo;",'acajou'),
                         'in_same_term'               => true,
-                        'taxonomy'                   => __( 'post_tag' 'acajou'),
+                        'taxonomy'                   => __( 'post_tag', 'acajou'),
                         'screen_reader_text' => ' ',
                     ) ); ?>
                 </div>
