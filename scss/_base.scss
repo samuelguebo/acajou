@@ -169,9 +169,6 @@ header div.logo img {
 .top-bar-section li a:hover {
     background: $dark-color;
 }
-.nav-wrapper {
-    margin-bottom: -25px;
-}
 
 .nav-wrapper nav {
     /*! overflow: hidden; */
@@ -1067,7 +1064,8 @@ aside .recent-posts-box ul li a {
     border: none;
 }
 .single-row .breadcrumbs {
-        margin-bottom:15px;
+        /* margin-bottom:15px;*/
+        padding: 5px 20px;
 }
 .single-row .post-item .breadcrumbs {
     font-weight: bold;
@@ -1079,7 +1077,9 @@ aside .recent-posts-box ul li a {
     color: #000;
     font-size: 0.7em;
 }
-
+.breadcrumbs > * {
+    line-height: 1.2rem;
+}
 .breadcrumbs  a {
     color: $link-color;
 }
