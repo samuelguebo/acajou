@@ -9,7 +9,7 @@ Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: acajou
-Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, threaded-comments, translation-ready, blog, acajou,abidjan, Côte d'Ivoire, Ivory coast
+Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, threaded-comments, translation-ready, blog
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -18,8 +18,3 @@ Acajou is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic,
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 */
-.sticky,
-.screen-reader-text,
-.gallery-caption,
-.bypostauthor {
-}
