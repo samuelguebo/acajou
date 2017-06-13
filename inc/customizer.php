@@ -54,7 +54,7 @@ function acajou_customize_register( $wp_customize ) {
     $wp_customize->add_setting('from_text', array(
 		'default' => 'From the blog',
 		'transport' => 'refresh',
-        'sanitize_callback'	=> 'acajou_sanitize_text'
+        'sanitize_callback'	=> 'sanitize_text_field'
 
 	));
     $wp_customize->add_control(new WP_Customize_Control(

@@ -5,11 +5,6 @@
  * @package Acajou
  */
 
-/* Text */
-
-add_filter( 'acajou_sanitize_text', 'sanitize_text_field' );
-
-/* Textarea */
 
 function acajou_sanitize_textarea($input) {
 	global $allowedposttags;
