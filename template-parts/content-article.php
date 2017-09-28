@@ -15,7 +15,7 @@
         <div class="post-item-image"> 
             <?php
                 if ( has_post_thumbnail() ) { 
-                    the_post_thumbnail( 'post-thumb' ); 
+                    the_post_thumbnail( 'post-thumb' , array('alt'=> get_the_title())); 
                 }
             ?>
             <?php if ('page' !==get_post_type()):?>
