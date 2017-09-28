@@ -17,7 +17,9 @@
     <div class="post-item-caption">
         <?php if ( has_post_thumbnail() ):?>
             <div class="post-item-image"> 
-                <?php the_post_thumbnail( 'single-thumb',array('class' =>'delay placeholder') );?>
+                <?php the_post_thumbnail( 'single-thumb', array(
+                    'class' => 'delay placeholder',
+                    'title' => get_the_title()) ) );?>
                 <p class="post-item-date wrap"> 
                     <span class="day"><?php echo get_the_date('d')?></span> <span class="month-year"><?php echo get_the_date('M. Y')?>
                     </span> 
