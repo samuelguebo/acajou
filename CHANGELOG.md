@@ -1,6 +1,8 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+## [1.0.6] - 2017-06-013
+- fix missing Alt attributes in Single, Page, Archive, and acajou_modify_post_thumbnail_html()
 
 ## [1.0.5] - 2017-06-013
 - fixing sanitizing bug notified by [Smarciz](https://github.com/samuelguebo/acajou/issues/1)
