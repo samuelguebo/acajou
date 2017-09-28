@@ -1,10 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
-## [1.0.6] - 2017-06-013
+## [1.0.6] - 2017-09-28
 - fix missing Alt attributes in Single, Page, Archive, and acajou_modify_post_thumbnail_html()
 
-## [1.0.5] - 2017-06-013
+## [1.0.5] - 2017-06-13
 - fixing sanitizing bug notified by [Smarciz](https://github.com/samuelguebo/acajou/issues/1)
 ## [1.0.4] - 2017-06-04
 - updating tags: adding Abidjan, Côte d'Ivoire, Ivory coast, etc
