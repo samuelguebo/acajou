@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+## [1.0.7] - 2017-09-30
+- fix php error in content-single.php
+
 ## [1.0.6] - 2017-09-28
 - fix missing Alt attributes in Single, Page, Archive, and acajou_modify_post_thumbnail_html()
 
