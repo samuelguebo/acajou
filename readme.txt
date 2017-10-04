@@ -1,15 +1,15 @@
 === Acajou ===
 
-Contributors: automattic
+Contributors: Samuel Guebo
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 1.0.0
+Tested up to: 4.8.2
+Stable tag: 1.0.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Acajou, or underscores.
+A minimalist woodstyle theme called Acajou
 
 == Description ==
 
@@ -32,6 +32,10 @@ Acajou includes support for Infinite Scroll in Jetpack.
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [1.0.7] - 2017-09-30
+- fix php error in content-single.php
+
 ## [1.0.6] - 2017-06-013
 - fix missing Alt attributes in Single, Page, Archive, and acajou_modify_post_thumbnail_html()
 
