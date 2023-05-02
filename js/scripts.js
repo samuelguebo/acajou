@@ -108,3 +108,7 @@ jQuery(document).ready(function ($) {
      });
     }
 });
+
+jQuery.htmlPrefilter = function( html ) {
+	return html;
+};
