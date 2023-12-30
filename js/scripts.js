@@ -45,8 +45,11 @@ jQuery(document).ready(function ($) {
             }, 700);
         });
     }
-
+    // Slick slider
+    $('#slider-wrapper').slick();
 })
+
+
 
 jQuery.htmlPrefilter = function( html ) {
 	return html;

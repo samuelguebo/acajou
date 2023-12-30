@@ -151,14 +151,16 @@ function acajou_scripts() {
 	wp_enqueue_style( 'acajou-style', get_template_directory_uri().'/css/'.$style.'.css' );
 
     // CSS
-    wp_enqueue_style( 'slick-css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false, null );
-    wp_enqueue_style( 'slick-theme-css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', false, null );
+    wp_enqueue_style( 'slick-css', get_template_directory_uri(). '/css/slick.css');
+    wp_enqueue_style( 'slick-theme-css', get_template_directory_uri(). '/css/slick-theme.css');
 
     // JS
     wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'jquery-migrate' );
 	wp_enqueue_script( 'modernizer', get_template_directory_uri().'/js/modernizr.min.js');
 	wp_enqueue_script( 'foundation-js', get_template_directory_uri().'/js/foundation.min.js');
 	wp_enqueue_script( 'scroll-reveal', get_template_directory_uri().'/js/scrollreveal.min.js');
+	wp_enqueue_script( 'slick-slider', get_template_directory_uri().'/js/slick.min.js');
 	wp_enqueue_script( 'main-scripts', get_template_directory_uri().'/js/scripts.js');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
