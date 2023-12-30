@@ -206,11 +206,15 @@ class Multilevel_Menu extends Walker_Nav_Menu
 						echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
 						if ($showCurrent == 1) echo '' . $before . get_the_title() . $after;
 					} else {
-						$cat = get_the_category(); $cat = $cat[0];
-						$cats = get_category_parents($cat, TRUE, '');
-						if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-						echo $cats;
-						if ($showCurrent == 1) echo $before . get_the_title() . $after;
+						$cat = get_the_category();
+                        if(is_array($cat) && isset($cat[0])) {
+                            $cat = $cat[0];
+                            $cats = get_category_parents($cat->term_id, TRUE, '');
+                            if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+                            echo $cats;
+                            if ($showCurrent == 1) echo $before . get_the_title() . $after;
+                        }
+
 					}
 
 				} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {

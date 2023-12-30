@@ -27,44 +27,24 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php
-    if ( is_front_page() && is_home() ) : ?>
-        <header <?php acajou_header_background();?>>
-            <div class="overlay">
-                <div class="row clearfix">
-                        <?php if(has_custom_logo()):?>
-                        <div class="small-2 large-2 columns logo">
-                            <a href="<?php echo esc_url(home_url()); ?>">
-                                <?php the_custom_logo();?>
-                            </a>
-                        </div>
-                        <?php else:?>
-                        <div class="small-2 large-2 columns">
-                            <h2 class="site-title">
-                                <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('title'); ?></a>
-                            </h2>
-                        </div>
-                        <?php endif;?>
-                    <?php get_template_part('menu'); ?>
-                </div>
-            <div class="row slogan">
-                <?php if(has_custom_logo()):?>
-                    <h1 class="title reveal"><?php bloginfo('title'); ?></h1>
-                <?php endif;?>
-                <h2 class="typed-strings" align="center">
-                    <span id="typed" class="description"></span>
-                </h2> 
-                <div class="strings">
-                    <p><?php bloginfo('description') ?? bloginfo('title');  ?></p>
-                </div> 
-            </div><!--slogan/-->
-            <div class="row socials">
-                <ul class="large-3 large-centered medium-4 medium-centered small-centered small-7 columns ">
-                    <?php get_template_part('menu', 'social'); ?>
-                </ul>
-            </div><!--socials/-->
-        </div>
-        </header>
+    <?php if ( is_front_page() && is_home() ) :?>
+        <section class="nav-wrapper">
+            <nav>
+                <header class="home-menu">
+                    <section class="top-bar-section">
+                        <?php
+                            get_template_part('menu-home');
+                        ?>
+                    </section>
+                    <section class="socials">
+                        <ul class="columns ">
+                            <?php get_template_part('menu', 'social'); ?>
+                        </ul>
+                    </section>
+                </header>
+            </nav>
+        </section>
+        <?php get_template_part('template-parts/content', 'slider'); ?>
     <?php else:?>
         <header <?php acajou_header_background();?>>
             <div class="overlay">

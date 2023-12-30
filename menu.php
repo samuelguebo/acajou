@@ -21,9 +21,7 @@
             <?php
                 /* Primary menu */
                 $is_menu_active = wp_nav_menu( array( 'theme_location' => 'primary', 'echo' => false ));
-                if(function_exists('wp_nav_menu') &&
-                    ($is_menu_active !== false) &&
-                    count(wp_get_nav_menus()) > 1
+                if(function_exists('wp_nav_menu')
                 ) {
                     wp_nav_menu(array(
                     'theme_location' => 'primary',

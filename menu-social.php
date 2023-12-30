@@ -1,9 +1,6 @@
 
 <?php
-$is_menu_active = wp_nav_menu( array( 'theme_location' => 'social', 'echo' => false ));
-if ( has_nav_menu( 'social' )  &&
-    count(wp_get_nav_menus()) > 1
-    && ($is_menu_active  !== false)) {
+if ( has_nav_menu( 'social' )) {
 
 	wp_nav_menu(
 		array(

@@ -46,7 +46,12 @@ jQuery(document).ready(function ($) {
         });
     }
     // Slick slider
-    $('#slider-wrapper').slick();
+    slideshow(
+            sliderSelector = ".carousel-inner",
+            nextSelector = ".carousel-control-next",
+            prevSelector = ".carousel-control-prev",
+            autoChangeTime = 5000
+    );
 })
 
 
