@@ -77,7 +77,7 @@ function add_home_menu_item ( $items, $args ) {
 		if('1'== get_theme_mod( 'home_icon' )) {
 				if ($args->theme_location == 'primary') {
 
-								$items = '<li id="home-link" $class_names><a href="'.site_url().'" title="'.esc_html__( 'Home', 'acajou' ).'"><i class="fa fa-home"></i></a></li>'.$items;
+								$items = '<li id="home-link" $class_names><a href="'.home_url().'" title="'.esc_html__( 'Home', 'acajou' ).'"><i class="fa fa-home"></i></a></li>'.$items;
 
 				}
 		}
@@ -101,7 +101,7 @@ class Multilevel_Menu extends Walker_Nav_Menu
 			 $output .= "$indent</ul>\n";
 	 }
 		// adding arrow to top-menu
-		function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+		function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
 
 				if ( !$element )
 								return;

@@ -15,7 +15,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php 
     if( false === get_option( 'site_icon', false ) ) {
     // Show favicon
@@ -26,6 +26,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <?php
     if ( is_front_page() && is_home() ) : ?>
         <header <?php acajou_header_background();?>>
@@ -33,14 +34,14 @@
                 <div class="row clearfix">
                         <?php if(has_custom_logo()):?>
                         <div class="small-2 large-2 columns logo">
-                            <a href="<?php echo site_url(); ?>">  
+                            <a href="<?php echo esc_url(home_url()); ?>">
                                 <?php the_custom_logo();?>
                             </a>
                         </div>
                         <?php else:?>
                         <div class="small-2 large-2 columns">
                             <h2 class="site-title">
-                                <a href="<?php echo site_url(); ?>"><?php bloginfo('title'); ?></a>
+                                <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('title'); ?></a>
                             </h2>
                         </div>
                         <?php endif;?>
@@ -54,7 +55,7 @@
                     <span id="typed" class="description"></span>
                 </h2> 
                 <div class="strings">
-                    <p><?php bloginfo('description'); ?></p>
+                    <p><?php bloginfo('description') ?? bloginfo('title');  ?></p>
                 </div> 
             </div><!--slogan/-->
             <div class="row socials">
@@ -70,14 +71,14 @@
                 <div class="row clearfix">
                         <?php if(has_custom_logo()):?>
                         <div class="small-2 large-2 columns logo">
-                            <a href="<?php echo site_url(); ?>">  
+                            <a href="<?php echo esc_url(home_url()); ?>">
                                 <?php the_custom_logo();?>
                             </a>
                         </div>
                         <?php else:?>
                         <div class="small-2 large-2 columns">
                             <h2 class="site-title">
-                                <a href="<?php echo site_url(); ?>"><?php bloginfo('title'); ?></a>
+                                <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('title'); ?></a>
                             </h2>
                             <p class="site-description">
                                 <?php bloginfo('description'); ?>

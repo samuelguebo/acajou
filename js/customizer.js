@@ -7,14 +7,6 @@
  */
 
 ( function( $ ) {
-    /*
-	// Site title and slogan.
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
-		} );
-	} );
-    */
-	
-	} );
+
+	// Implement as needed
 } )( jQuery );

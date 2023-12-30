@@ -20,7 +20,11 @@
         <section class="top-bar-section">
             <?php
                 /* Primary menu */
-                if(function_exists('wp_nav_menu')) {
+                $is_menu_active = wp_nav_menu( array( 'theme_location' => 'primary', 'echo' => false ));
+                if(function_exists('wp_nav_menu') &&
+                    ($is_menu_active !== false) &&
+                    count(wp_get_nav_menus()) > 1
+                ) {
                     wp_nav_menu(array(
                     'theme_location' => 'primary',
                     'container' => '',

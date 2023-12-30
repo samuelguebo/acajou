@@ -535,6 +535,9 @@ article .panel {
 .category-row .post-list {
     margin-top:30px;
     margin-bottom:20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .category-row .category-header {
@@ -581,8 +584,14 @@ article.columns + article.columns:last-child {
 }
 
 .category-row article .post-item-image{
+    /*
     max-height:180px;
     overflow: hidden;
+    */
+    display: flex;
+    img{
+        flex: 1;
+    }
 }
 .category-row article .panel p {
     font-family: inherit;
