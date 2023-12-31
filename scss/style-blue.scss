@@ -1,8 +1,19 @@
-$primary-color: #0e94c9;
-$secondary-color: #123e66;
+$primary-color: #008ee2;
+$secondary-color: #5ad8ff;
 $dark-color: #020d16;
 $light-color: #FFF;
-$link-color: #1985DD;
+$link-color: $primary-color;
 $extra-light-color: #c8d5fc;
 
 @import 'base';
+
+.top-bar-section li a:hover {
+  background: $link-color;
+}
+.carousel {
+  .carousel-caption h2 {
+    color: $secondary-color !important;
+  }
+
+}
+

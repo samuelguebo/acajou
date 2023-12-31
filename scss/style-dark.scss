@@ -1,0 +1,85 @@
+$primary-color: #000;
+$secondary-color: lighten($primary-color, 40);
+$third-color: lighten($primary-color, 60);
+$menu-link-color: $secondary-color;
+$dark-color: #020d16;
+$light-color: #FFF;
+$extra-light-color: #f8f4f4;
+
+$link-color: $third-color;
+
+@import 'base';
+
+.nav-wrapper nav li.current-menu-item,
+.nav-wrapper nav li.current-menu-ancestor,
+.nav-wrapper nav li.current-menu-parent
+{
+  a {
+    background: darken($secondary-color, 10);
+    color: $light-color;
+  }
+
+}
+.top-bar-section li {
+  a:hover {
+    background: darken($secondary-color, 10);
+  }
+}
+header {
+  border-bottom: solid 5px darken($secondary-color, 10);
+}
+.slider-wrapper .slider-caption .label.category{
+  background-color:$primary-color;
+  color: $light-color;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  background-color: lighten($secondary-color, 20);
+  border-color: lighten($secondary-color, 20);
+
+  &:hover{
+    background-color: $dark-color;
+    border-color: $dark-color;
+  }
+}
+.carousel {
+  .carousel-caption h2 {
+    color: $extra-light-color !important;
+  }
+}
+
+aside .widget-title {
+  background: $primary-color;
+}
+.main-column .call-to-action .button.small {
+  background:$primary-color;
+}
+.main-column .call-to-action .button.small:hover {
+  background:$primary-color;
+}
+.button:hover {
+  background:$dark-color;
+}
+footer .copyright {
+  clear: both;
+  font-size: 0.75em;
+}
+
+footer#footer .copyright a {
+  color: $secondary-color;
+}
+footer#footer .copyright a:hover {
+  color: $light-color;
+}
+
+footer .socials ul li a:hover {
+  color: $secondary-color;
+  border-color: $secondary-color;
+}
+
+footer .widget ul li a:hover {
+  font-size: 0.9em;
+  color: $primary-color;
+}
+

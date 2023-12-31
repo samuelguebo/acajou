@@ -14,26 +14,51 @@ $extra-light-color: #c8d5fc;
 
 @import 'base';
 
-article .post-item-date, article .post-item-date.wrap {
-    color:$primary-color;
-    background:$light-color;
+.nav-wrapper nav li.current-menu-item,
+.nav-wrapper nav li.current-menu-ancestor,
+.nav-wrapper nav li.current-menu-parent
+{
+    a {
+        background: darken($link-color, 20);
+        color: #FFF;
+    }
+
+}
+
+.nav-wrapper nav.top-bar li.current-menu-parent
+{
+    border-bottom:solid 4px $light-color;
+}
+
+.nav-wrapper nav {
+    li > a {
+        color: darken($link-color, 20);
+        &:hover{
+            background: darken($link-color, 20);
+        }
+    }
 }
 
 header {
-    border-bottom: solid 10px $light-color;
+    border-bottom: solid 5px darken($link-color, 20);
+}
+
+article .post-item-date, article .post-item-date.wrap {
+    color:$primary-color;
+    background:$light-color;
 }
 
 header div.slogan .title{
     color: $secondary-color;
 }
 header .socials ul li a {
-    color: $light-color;
+    color: darken($link-color, 10);
     border: solid 1px $light-color;
 }
 
 header .socials ul li a:hover {
-    color: $dark-color;
-    border: solid 1px $dark-color;
+    color: $light-color;
+    border: solid 1px $light-color;
 }
 
 
@@ -55,9 +80,6 @@ header div.slogan a {
 
 header div.slogan a:hover {
     color: $light-color;
-}
-.top-bar-section ul li > a {
-    color:$secondary-color;
 }
 header .overlay .site-title a, header .overlay .site-description {
     color:$light-color;
@@ -82,7 +104,25 @@ footer .copyright a {
 footer .copyright a:hover {
     color: $dark-color;
 }
-.nav-wrapper nav.top-bar li.current-menu-parent
-{
-    border-bottom:solid 4px $light-color;
+.carousel-control-next,
+.carousel-control-prev {
+    background-color: $light-color;
+    border-color: $light-color;
+
+    &:hover{
+        background-color: darken($link-color, 20);
+        border-color: darken($link-color, 20);
+    }
+}
+.carousel {
+    a.simple-btn {
+        background: $light-color !important;
+        &:hover{
+            background: darken($link-color, 20) !important;
+            color: #FFF !important;
+        }
+    }
+    .carousel-caption h2 {
+        color: $light-color !important;
+    }
 }

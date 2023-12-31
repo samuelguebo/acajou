@@ -6,3 +6,7 @@ $light-color: #FFF;
 $link-color: #f9a819;
 
 @import 'base';
+
+.top-bar-section li a:hover {
+  background: $link-color;
+}

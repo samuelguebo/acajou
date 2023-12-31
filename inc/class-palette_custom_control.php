@@ -44,8 +44,8 @@ class Palette_Custom_Control extends WP_Customize_Control
                     #palette .green {
                         background: #3fc455;
                     }
-                    #palette .purple {
-                        background: #8e0788;
+                    #palette .dark {
+                        background: #393838;
                     }
                     #palette .yellow {
                         background: #f8b016;
@@ -57,7 +57,6 @@ class Palette_Custom_Control extends WP_Customize_Control
                 </style>
 
                 <label>
-                      <?php echo 'currently color is: '.get_theme_mod('acajou_theme_color'); ?>
                   <h1 class="customize-layout-control">
                       <?php echo esc_html( $this->label ); ?>
                     </h1>
@@ -71,8 +70,8 @@ class Palette_Custom_Control extends WP_Customize_Control
                     <a class="green" href="#">
                         <input type="radio" name="<?php echo $this->id; ?>" <?php $this->link(); ?> id="<?php echo $this->id; ?>" value="green" />
                     </a>
-                    <a class="purple" href="#">
-                        <input type="radio" name="<?php echo $this->id; ?>" <?php $this->link(); ?> id="<?php echo $this->id; ?>" value="purple" />
+                    <a class="dark" href="#">
+                        <input type="radio" name="<?php echo $this->id; ?>" <?php $this->link(); ?> id="<?php echo $this->id; ?>" value="dark" />
                     </a>
                     <a class="red" href="#">
                         <input type="radio" name="<?php echo $this->id; ?>" <?php $this->link(); ?> id="<?php echo $this->id; ?>" value="red" />
