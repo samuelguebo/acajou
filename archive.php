@@ -23,8 +23,6 @@ get_header(); ?>
                 
                 <!-- post list-->
                 <section class="large-9 columns main-column">
-                    <h1 class="category-title"><?php the_archive_title(); ?></h1>
-                    <div class="category-title-line large-2 large-centered columns"></div>
                     <div class="post-list clearfix">
                         <?php
                             if ( have_posts() ) :

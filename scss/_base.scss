@@ -962,8 +962,19 @@ aside .widget_search .widget-title {
 
 aside .widget_search {
     background: $primary-color;
-    padding: 5px 10px 0px 15px;
+    padding: 15px;
     border:solid 1px $primary-color;
+    button {
+        background: $light-color;
+        width: 100%;
+        margin: 0!important;
+        font-size: .9em !important;
+        padding: 10px 5px !important;
+
+    }
+    label{
+        color: $light-color;
+    }
 }
 
 aside{

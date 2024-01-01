@@ -949,8 +949,18 @@ aside .widget_search .widget-title {
 
 aside .widget_search {
   background: #5f3633;
-  padding: 5px 10px 0px 15px;
+  padding: 15px;
   border: solid 1px #5f3633;
+}
+aside .widget_search button {
+  background: #ffbb8f;
+  width: 100%;
+  margin: 0 !important;
+  font-size: 0.9em !important;
+  padding: 10px 5px !important;
+}
+aside .widget_search label {
+  color: #ffbb8f;
 }
 
 aside .wp-block-search__inside-wrapper {
