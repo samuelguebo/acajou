@@ -140,6 +140,13 @@ header div.logo img {
   font-size: 1.1em;
 }
 
+.single-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
 @media only screen and (max-width: 60em) {
   .top-bar-section li:not(.has-form) a:not(.button) {
     font-size: 1em;
@@ -157,9 +164,26 @@ header div.logo img {
   background: #FFF;
 }
 
+.top-bar-section {
+  display: flex;
+  align-items: end;
+}
+
+.nav-wrapper {
+  margin-top: 20px;
+}
+
 .nav-wrapper nav .home-menu {
   display: flex;
   justify-content: space-evenly;
+}
+.nav-wrapper nav .home-menu .logo {
+  margin-right: 20px;
+}
+.nav-wrapper nav .home-menu .logo img {
+  max-height: 50px;
+  width: auto;
+  padding: 5px 0px;
 }
 
 .top-bar .toggle-topbar.menu-icon {
@@ -197,10 +221,6 @@ header div.logo img {
 .nav-wrapper nav ul li a {
   font-family: "Arvo", serif;
   text-transform: uppercase;
-}
-
-.nav-wrapper nav {
-  margin-top: 20px;
 }
 
 .nav-wrapper nav #home-link i {
@@ -259,7 +279,7 @@ header div.logo img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 15px 40px;
   text-align: left;
 }
@@ -766,6 +786,14 @@ article .post-item-date.wrap {
 }
 
 /* FOOTER */
+.nav-links {
+  display: flex;
+  justify-content: center;
+}
+.nav-links .page-numbers {
+  margin: 5px;
+}
+
 footer#footer {
   padding-bottom: 25px;
   color: #FFF;
@@ -1512,11 +1540,11 @@ header .overlay {
 header .overlay .site-title a, header .overlay .site-description {
   font-family: "Arvo", serif;
   text-align: center;
-  color: #000;
+  color: #FFF;
 }
 
 header .overlay .site-title a:hover {
-  color: #FFF;
+  color: #160005;
 }
 
 header .overlay .site-title {
@@ -1526,7 +1554,7 @@ header .overlay .site-title {
 }
 
 header .overlay .site-description {
-  font-size: 0.8em;
+  font-size: 1.3em;
 }
 
 header {

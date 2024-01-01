@@ -27,13 +27,20 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-    <?php if ( is_front_page() && is_home() ) :?>
+
         <section class="nav-wrapper">
             <nav>
                 <header class="home-menu">
                     <section class="top-bar-section">
+                        <?php if(has_custom_logo()):?>
+                            <section class="logo">
+                                <a href="<?php echo esc_url(home_url()); ?>">
+                                    <?php the_custom_logo();?>
+                                </a>
+                            </section>
+                        <?php endif;?>
                         <?php
-                            get_template_part('menu-home');
+                            get_template_part('menu', 'main');
                         ?>
                     </section>
                     <section class="socials">
@@ -41,32 +48,14 @@
                             <?php get_template_part('menu', 'social'); ?>
                         </ul>
                     </section>
+
                 </header>
             </nav>
         </section>
-        <?php get_template_part('template-parts/content', 'slider'); ?>
-    <?php else:?>
-        <header <?php acajou_header_background();?>>
-            <div class="overlay">
-                <div class="row clearfix">
-                        <?php if(has_custom_logo()):?>
-                        <div class="small-2 large-2 columns logo">
-                            <a href="<?php echo esc_url(home_url()); ?>">
-                                <?php the_custom_logo();?>
-                            </a>
-                        </div>
-                        <?php else:?>
-                        <div class="small-2 large-2 columns">
-                            <h2 class="site-title">
-                                <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('title'); ?></a>
-                            </h2>
-                            <p class="site-description">
-                                <?php bloginfo('description'); ?>
-                            </p>
-                        </div>
-                        <?php endif;?>
-                    <?php get_template_part('menu'); ?>
-                </div>
-            </div>
-        </header>
-    <?php endif;?>
+        <?php
+            if(is_home() && is_front_page()) {
+                get_template_part('template-parts/content', 'slider');
+            } else {
+                get_template_part('header-overlay');
+            }
+        ?>

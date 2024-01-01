@@ -8,16 +8,18 @@
  */
 
 ?>
-<div id="carouselControls" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner">
+
         <?php
-        $args = [ 'posts_per_page' => 5,  'meta_query' => [ [ 'key' => 'featured', 'value' => 1 ] ] ];
+        $slider_category = get_theme_mod('slider_category');
+        $args = [ 'posts_per_page' => 5,  'cat' => $slider_category ];
         $slider_posts = new WP_Query($args);
         $i = 1;
-        if ( $slider_posts->have_posts() ) :
-            // custom params for my loop
+        if ( $slider_posts->have_posts() ) : ?>
 
-            while ( $slider_posts->have_posts() ) : $slider_posts->the_post();?>
+<div id="carouselControls" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+
+    <?php while ( $slider_posts->have_posts() ) : $slider_posts->the_post();?>
 
                 <div class="carousel-item <?php echo $i ==1 ? 'active': '';?>">
                 <?php $link = get_the_post_thumbnail_url(get_the_ID(), "slider-cover"); ?>
@@ -41,8 +43,6 @@
         <?php
                 $i++;
             endwhile;
-
-        endif; wp_reset_postdata();
         ?>
     </div>
     <a class="carousel-control-prev previous" href="#carouselControls" role="button" data-slide="prev" style="right: 0;">
@@ -53,4 +53,6 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only"></span>
     </a>
+    <?php  wp_reset_postdata(); endif;
+    ?>
 </div>
