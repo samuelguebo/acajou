@@ -13,7 +13,7 @@ if ( has_nav_menu( 'social' )) {
 			'depth'           => 1,
 			'link_before'     => '<span class="screen-reader-text">',
 			'link_after'      => '</span>',
-			'fallback_cb'     => '',
+            'fallback_cb' => false,
 		)
 	);
 

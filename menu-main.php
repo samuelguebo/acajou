@@ -9,7 +9,7 @@ if(function_exists('wp_nav_menu')
         'container_id' => '',
         'menu_id' => 'main-menu',
         'menu_class' => 'main-nav',
-        'fallback_cb' => 'wp_page_menu',
+        'fallback_cb' => false,
         'walker' => new Multilevel_Menu()
     ));
 }

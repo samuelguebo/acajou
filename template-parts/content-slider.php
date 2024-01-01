@@ -24,7 +24,7 @@
                 <div class="carousel-item <?php echo $i ==1 ? 'active': '';?>">
                 <?php $link = get_the_post_thumbnail_url(get_the_ID(), "slider-cover"); ?>
                     <div class="carousel-image">
-                        <img src="<?= $link ?>" alt="..." />
+                        <img src="<?php echo $link ?>" alt="..." />
                     </div>
                 <div class="carousel-caption">
                     <div class="container">
@@ -35,7 +35,7 @@
                             <?php the_excerpt();?>
                         </div>
                         <a href="<?php the_permalink()?>" class="simple-btn">
-                            <?php _e('Read more')?>
+                            <?php _e('Read more', 'acajou')?>
                         </a>
                     </div>
                 </div>
