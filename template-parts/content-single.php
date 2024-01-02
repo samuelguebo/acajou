@@ -18,7 +18,7 @@
         <?php if ( has_post_thumbnail() ):?>
             <div class="post-item-image"> 
                 <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), "single-thumb")?>" alt="<?php the_title();?>>">
-                <p class="post-item-date wrap"> 
+                <p class="post-item-date">
                     <span class="day"><?php echo get_the_date('d')?></span> <span class="month-year"><?php echo get_the_date('M. Y')?>
                     </span> 
                 </p>

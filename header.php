@@ -53,9 +53,14 @@
             </nav>
         </section>
         <?php
-            if(is_home() && is_front_page()) {
+            if(is_home() && is_front_page()):
                 get_template_part('template-parts/content', 'slider');
-            } else {
-                get_template_part('header-overlay');
-            }
-        ?>
+            else:
+                get_template_part('header-overlay');?>
+                <?php if(!is_singular()):?>
+                <section>
+                    <h1 class="category-title"><?php the_archive_title();?></h1>
+                    <div class="category-title-line large-2 large-centered columns"></div>
+                </section>
+                <?php endif;?>
+        <?php endif;?>

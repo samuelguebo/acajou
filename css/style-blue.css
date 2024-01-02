@@ -18,7 +18,6 @@ Table of Content
 14. Responsiveness (Tablet Large 64em (1024px))
 15. Responsiveness (Mobile Large 37.50em (600px))
 16. Responsiveness (Mobile Small 30em (480px))
-17. Responsiveness (Mobile Small 20em (320px))
 ================================================================================================
 */
 @font-face {
@@ -512,6 +511,7 @@ header .socials a {
   background: #000;
 }
 .carousel .carousel-inner .carousel-item {
+  height: 100%;
   width: 100%;
   transition: 1s all;
   position: absolute;
@@ -519,12 +519,6 @@ header .socials a {
 }
 .carousel .carousel-inner .carousel-item:not(.active) {
   opacity: 0;
-}
-.carousel .carousel-inner .carousel-item .carousel-image {
-  display: flex;
-}
-.carousel .carousel-inner .carousel-item .carousel-image img {
-  flex: 1;
 }
 .carousel .carousel-inner .carousel-caption {
   position: absolute;
@@ -543,7 +537,7 @@ header .socials a {
   color: #008ee2;
   font-weight: bold;
   font-size: 45px;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .carousel .carousel-inner .carousel-caption p {
   font-size: 22px;
@@ -621,8 +615,8 @@ header .socials a {
   background-color: #5ad8ff;
 }
 
-.carousel-control-prev.previous {
-  left: 75% !important;
+.carousel-control-prev {
+  left: 75%;
 }
 
 .carousel-control-next {
@@ -718,6 +712,9 @@ header .socials a {
 .single-row article .post-item-image {
   position: relative;
 }
+.single-row article .post-item-image img {
+  min-width: 100%;
+}
 
 .single-row article.post-item .wp-caption {
   background: #efefef;
@@ -786,8 +783,7 @@ header .socials a {
   right: -5px;
   background: #008ee2;
   text-transform: uppercase;
-  padding: 5px;
-  padding-left: 10px;
+  padding: 5px 5px 5px 10px;
   webkit-box-shadow: 0px 0px 2px 1px #008ee2;
   -moz-box-shadow: 0px 0px 2px 1px #008ee2;
   box-shadow: 0px 0px 2px 1px #008ee2;
@@ -894,7 +890,7 @@ article .post-item-date {
   font-size: 0.8rem;
   position: absolute;
   top: 40px;
-  right: 15px;
+  right: 0;
   background: #008ee2;
   text-transform: uppercase;
   padding: 5px;
@@ -931,21 +927,27 @@ article .panel {
   margin-top: 20px;
 }
 
+.category-row .category-title-line {
+  margin-bottom: 15px;
+}
+
 .category-row.archive-row .category-title, .category-row.archive-row .category-title-line, .not-found,
 .single-row .category-title, .single-row .category-title-line {
   text-align: left;
 }
 
-.category-row {
-  margin-bottom: 30px;
+.category-row .post-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.category-row .post-list {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.category-row article.column-third {
+  width: 31%;
+  margin: 1%;
+}
+.category-row article.column-half {
+  width: 48%;
+  margin: 0 1%;
 }
 
 .category-row .category-header {
@@ -992,14 +994,10 @@ article.columns + article.columns:last-child {
 }
 
 .category-row article .post-item-image {
-  /*
-  max-height:180px;
   overflow: hidden;
-  */
-  display: flex;
 }
 .category-row article .post-item-image img {
-  flex: 1;
+  min-width: 100%;
 }
 
 .category-row article .panel p {
@@ -1027,18 +1025,9 @@ article .post-item-date.wrap {
   padding: 0;
 }
 
-.category-row article,
-.category-row article:nth-child(2n+0) {
-  padding: 0px;
-}
-
 .category-row .post-list,
-.archive-row {
-  padding: 15px;
-}
-
 .main-column {
-  padding-right: 0px;
+  padding-right: 0;
 }
 
 .category-row article,
@@ -1126,7 +1115,7 @@ aside .widget_search {
   border: solid 1px #008ee2;
 }
 aside .widget_search button {
-  background: #FFF;
+  background: #27ccff;
   width: 100%;
   margin: 0 !important;
   font-size: 0.9em !important;
@@ -1140,7 +1129,7 @@ aside .wp-block-search__inside-wrapper {
   display: block;
 }
 aside .wp-block-search__inside-wrapper button:hover {
-  background: #008ee2;
+  background: #020d16;
 }
 
 aside .widget_search button {
@@ -1712,21 +1701,46 @@ article.comment-wrapper {
 14. Responsiveness (Tablet Large 64em (1024px))
 ===========================================================================================
 */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .carousel {
+    height: 440px;
+  }
+  .carousel-caption h2 {
+    font-size: 50px;
+  }
+  .category-row {
+    padding: 10px;
+  }
+}
 @media screen and (max-width: 1024px) {
-  /** TODO */
+  .carousel {
+    height: 350px;
+  }
+  .carousel .carousel-inner .carousel-caption h2 {
+    font-size: 34px;
+  }
+  .carousel .carousel-inner .carousel-caption p {
+    font-size: 18px;
+  }
+  .category-row {
+    padding: 10px;
+  }
+  .category-row article.column-third, .category-row article.column-half {
+    width: 48% !important;
+  }
 }
 /*
 ===========================================================================================
-15. Responsiveness (Mobile Large 37.50em (600px))
+15. Responsiveness (Mobile Large (740px))
 ===========================================================================================
 */
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 740px) {
   .carousel {
     z-index: 111;
-    height: 500px;
+    height: 380px;
   }
   .carousel .carousel-inner .carousel-caption h2 {
-    font-size: 35px;
+    font-size: 22px;
   }
   .carousel .carousel-inner .carousel-caption p {
     font-size: 15px;
@@ -1737,16 +1751,15 @@ article.comment-wrapper {
     font-size: 14px;
     margin-left: 0px;
   }
-  .carousel .carousel-inner .carousel-caption a.carousel-video-btn {
-    font-size: 14px;
-    margin-left: 0px;
-  }
   .carousel-control-prev,
   .carousel-control-next {
-    position: absolute;
-    height: 35px;
-    width: 35px;
-    top: 50%;
+    top: 60%;
+  }
+  .carousel-control-prev {
+    left: 75%;
+  }
+  .carousel-control-next {
+    right: 10%;
   }
   header div.slogan .title {
     padding-top: 20px;
@@ -1760,22 +1773,21 @@ article.comment-wrapper {
   .top-bar-section ul li > a {
     color: #008ee2;
   }
+  .category-row {
+    padding: 10px;
+  }
+  .category-row article.column-third, .category-row article.column-half {
+    width: 48% !important;
+  }
 }
 /*
 ===========================================================================================
 16. Responsiveness (Mobile Small 30em (480px))
 ===========================================================================================
 */
-@media screen and (max-width: 480px) {
-  header .carousel {
-    height: 410px;
-  }
+@media only screen and (max-width: 480px) {
   header .carousel .carousel-inner {
     width: 100vw;
-  }
-  header .carousel .carousel-inner img {
-    width: auto;
-    max-height: 100%;
   }
   header .carousel .carousel-inner .carousel-caption {
     text-align: center;
@@ -1798,29 +1810,25 @@ article.comment-wrapper {
   }
   header .carousel-control-prev,
   header .carousel-control-next {
-    position: absolute;
-    height: 35px;
-    width: 35px;
     top: 90%;
   }
   header .carousel-control-prev {
-    left: 5% !important;
+    left: 25% !important;
   }
   header .carousel-control-next {
-    right: 5% !important;
+    right: 10% !important;
   }
   header .card-top .card-top-btn ul li a.btn {
     padding: 10px 6px;
     font-size: 10px;
   }
-}
-/*
-===========================================================================================
-17. Responsiveness (Mobile Small 20em (320px))
-===========================================================================================
-*/
-@media screen and (max-width: 320px) {
-  /** TODO */
+  .category-row {
+    padding: 15px;
+  }
+  .category-row article.column-third, .category-row article.column-half {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
 }
 .top-bar-section li a:hover {
   background: #008ee2;

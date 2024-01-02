@@ -21,11 +21,8 @@
 
     <?php while ( $slider_posts->have_posts() ) : $slider_posts->the_post();?>
 
-                <div class="carousel-item <?php echo $i ==1 ? 'active': '';?>">
-                <?php $link = get_the_post_thumbnail_url(get_the_ID(), "slider-cover"); ?>
-                    <div class="carousel-image">
-                        <img src="<?php echo $link ?>" alt="..." />
-                    </div>
+        <?php $link = get_the_post_thumbnail_url(get_the_ID(), "slider-cover"); ?>
+        <div class="carousel-item <?php echo $i ==1 ? 'active': '';?>" style="background-size: cover; background-repeat: no-repeat; background-image: url(<?php echo $link; ?>);">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="section-title col-12">

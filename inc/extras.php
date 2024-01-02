@@ -35,12 +35,12 @@ add_filter( 'body_class', 'acajou_body_classes' );
 function acajou_post_item_class() {
 		
 	if ( is_front_page() || is_home()) {
-		$classes[] = 'post-item large-4 medium-6 columns';
+		$classes[] = 'post-item column-third';
 	}elseif(is_singular()) {
 				$classes[] = 'post-item';
 				
 		}elseif(!is_front_page() && !is_home() && !is_singular()) {
-				$classes[] = 'post-item large-6 medium-6 columns';
+				$classes[] = 'post-item column-half';
 				
 		}
 		return $classes;
