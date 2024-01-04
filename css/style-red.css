@@ -54,6 +54,17 @@ a:hover, a:focus {
   color: #160005;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .panel h1,
 .panel h2,
 .panel h3,

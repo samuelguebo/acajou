@@ -153,13 +153,6 @@ class Multilevel_Menu extends Walker_Nav_Menu
 				call_user_func_array(array(&$this, 'end_el'), $cb_args);
 		}
 }
-if(!function_exists('acajou_has_sticky_posts')) {
-    function acajou_has_sticky_posts(): bool
-    {
-        $args = [ 'meta_query' => [ [ 'key' => 'featured', 'value' => 1 ] ] ];
-        return(new WP_Query( $args ))->have_posts();
-    }
-}
 
 /**
  * This functions prints a breadcrumb
@@ -302,96 +295,8 @@ add_filter( 'the_custom_logo', 'acajou_body_classes' );
          }
          echo $text;
  }
-/*
- * Override the default post_thumbnail() content
- *
- */
-function acajou_get_attachment_id_from_src( $image_src ) {
-        global $wpdb;
-        $query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
-        $id = $wpdb->get_var($query);
-        return $id;
-}
-function acajou_get_first_image($post_id) {
-        $post = get_post($post_id);
-        $post_content = $post->post_content;
-        preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post_content, $matches);
-        return $matches[1][0];
-}
 
-function acajou_modify_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
-        if( '' == $html ) {
-                $attr['class'] = 'default';
-                global $post, $posts;
-                ob_start();
-                ob_end_clean();
 
-                acajou_get_first_image($post_id);
-                $first_img = acajou_get_first_image($post_id);
-                if ( !empty( $first_img ) ){
-                        $html = '<img src="' . $first_img . '" alt="' . get_the_title($post_id). '" class="' . $attr['class'] . '" />';
-                }
-
-        }
-        return $html;
-}
-add_filter('post_thumbnail_html', 'acajou_modify_post_thumbnail_html', 10, 5);
-
-/*
- * Customize the comments with this fallback
- *
- */
-function acajou_custom_comments( $comment, $args, $depth ) {
-$GLOBALS['comment'] = $comment;
-echo '<div class="comment-list">';
-        switch( $comment->comment_type ) :
-                case 'pingback' :
-                case 'trackback' : ?>
-                        <li <?php comment_class(); ?> id="comment<?php comment_ID(); ?>">
-                        <div class="back-link"><?php comment_author_link(); ?></div>
-                <?php break;
-                default : ?>
-                        <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-                        <article <?php comment_class(); ?> class="comment">
-
-                        <div class="comment-body">
-                                <div class="author vcard">
-                                <?php echo get_avatar( $comment, 100 ); ?>
-                                <h6 class="author-name">
-                                        <a href="<?php comment_author_link(); ?>"><?php comment_author(); ?></a>
-                                </h6>
-                                <?php comment_text(); ?>
-                                <hr/>
-                                <footer class="comment-footer">
-                                <span class="date">
-                                <?php comment_date('d/m/Y'); ?>
-                                </span> -
-                                <span class="time">
-                                <?php comment_time('H:i'); ?>
-                                </span>
-                                <div class="reply"><?php
-                                comment_reply_link( array_merge( $args, array(
-                                'reply_text' => __( 'Reply', 'acajou' ),
-                                'depth' => $depth,
-                                'max_depth' => $args['max_depth']
-                                ) ) ); ?>
-                                </div><!-- .reply -->
-                                </footer><!-- .comment-footer -->
-                                </div><!-- .vcard -->
-                        </div><!-- comment-body -->
-
-                        </article><!-- #comment-<?php comment_ID(); ?> -->
-                <?php // End the default styling of comment
-                break;
-        endswitch;
-echo '</div>';
-}
-
-/*
- * Creating the social nav menu
- * inspired by @http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
- *
- */
 add_action( 'init', 'acajou_register_nav_menus' );
 
 function acajou_register_nav_menus() {

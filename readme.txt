@@ -37,6 +37,9 @@ Icons are automatically detected based on the URL of your social page.
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+= [1.2.1] - 2024-01-04 =
+* Handle edge cases: missing thumbnails and lenghty titles
+
 = [1.2.0] - 2024-01-04 =
 * Replace Typed animation with slider on homepage
 * Improve Hamburger menu
