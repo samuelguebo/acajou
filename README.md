@@ -1,12 +1,14 @@
 # Acajou
 A minimalist woodstyle theme for WordPress.
 ## Description
-<img align="left" src="https://raw.githubusercontent.com/samuelguebo/acajou/master/screenshot.jpg" width="380" style="margin: 0 15px 0 0" alt="Acajou WordPress theme"/>
-Acajou is a clean, simple, and fully responsive WordPress theme that feels like wood and looks awesome on any device. Its name, pronounced ***/a.kaˈʒu/*** in French, refers to a tree from tropical forests. 
+<img align="left" src="https://raw.githubusercontent.com/samuelguebo/acajou/master/screenshot.png" width="380" style="margin: 0 15px 0 0" alt="Acajou WordPress theme"/>
+
+Acajou is a clean, simple, and fully responsive WordPress theme that feels like wood and looks awesome on any device. Its name, pronounced ***/a.kaˈʒu/*** in French, refers to a tree from tropical forests.
 
 It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using [Zurb Foundation](https://github.com/zurb/foundation-sites), a  framework for HTML5 / CSS3 which is SEO friendly. This WordPress theme was built with blogs and creative portfolios in mind but be creative and unleash its full potential in eCommerce, business and other projects. Acajou is available in English, French, and Spanish for now.
 
 <hr/>
+<br/><br/>
 
 ## Installation
 
@@ -16,7 +18,7 @@ It adjusts automatically to any screen size including tablets and smartphones as
 2. Upload the **acajou** folder to the **/wp-content/themes/** directory
 3. Activate the Theme through the Apperance - Themes menu in WordPress
 4. See **Appearance -> Customize**  to change theme specific options.
- 
+
 #### WordPress Admin Panel
 
 1. Download theme by using "Download zip" button on the right side
@@ -47,7 +49,7 @@ Change the header image. It might support a random image list.
 Set the link for Facebook, Twitter, YouTube and other social networks.
 
 #### Colors
- Acajou comes with six flavors: chocolate, blue, green, red, dark, and yellow. You might switch between these colors in using the Customizer.
+Acajou comes with six flavors: chocolate, blue, green, red, dark, and yellow. You might switch between these colors in using the Customizer.
 
 ## File structure
 In this theme we are using a default [WordPress template hierarchy](http://codex.wordpress.org/Template_Hierarchy).
