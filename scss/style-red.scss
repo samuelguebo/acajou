@@ -1,8 +1,18 @@
-$primary-color: #df332e;
-$secondary-color: #ad0b36;
+$primary-color: #e21330;
+$secondary-color: #fcbecf;
 $extra-light-color: #fcbecf;
 $dark-color: #160005;
 $light-color: #FFF;
 $link-color: #e21330;
 
 @import 'base';
+
+.top-bar-section li a:hover {
+  background: $link-color;
+}
+.carousel {
+  .carousel-caption h2 {
+    color: $extra-light-color !important;
+  }
+
+}

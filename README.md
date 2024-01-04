@@ -1,12 +1,12 @@
 # Acajou
 A minimalist woodstyle theme for WordPress.
-
-[![acajou_top.png](https://s6.postimg.org/pfvhdmpr5/acajou_top.png)](https://postimg.org/image/zd6i6oxct/)
 ## Description
-
+<img align="left" src="https://raw.githubusercontent.com/samuelguebo/acajou/master/screenshot.jpg" width="380" style="margin: 0 15px 0 0" alt="Acajou WordPress theme"/>
 Acajou is a clean, simple, and fully responsive WordPress theme that feels like wood and looks awesome on any device. Its name, pronounced ***/a.kaˈʒu/*** in French, refers to a tree from tropical forests. 
 
 It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using [Zurb Foundation](https://github.com/zurb/foundation-sites), a  framework for HTML5 / CSS3 which is SEO friendly. This WordPress theme was built with blogs and creative portfolios in mind but be creative and unleash its full potential in eCommerce, business and other projects. Acajou is available in English, French, and Spanish for now.
+
+<hr/>
 
 ## Installation
 
@@ -44,12 +44,10 @@ This theme has loads of customization options available. To open WordPress Custo
 #### Header
 Change the header image. It might support a random image list.
 #### Social links
-Set the link for Facebook, Twitter, youtube and other social networks.
+Set the link for Facebook, Twitter, YouTube and other social networks.
 
 #### Colors
- Acajou comes with six flavors: chocolate, blue, green, red, purple, and yellow. You might switch between these colors in using the Customizer.
-[![acajou_theme_showcase.jpg](https://s6.postimg.org/p9hsajgm9/acajou_theme_showcase.jpg)](https://postimg.org/image/5rn4uljod/).
-
+ Acajou comes with six flavors: chocolate, blue, green, red, dark, and yellow. You might switch between these colors in using the Customizer.
 
 ## File structure
 In this theme we are using a default [WordPress template hierarchy](http://codex.wordpress.org/Template_Hierarchy).
@@ -82,12 +80,8 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 - [Commons images](https:commons.wikimedia.org), under Creative Commons By SA 4.0 License
 - [ScrollReveal](https://github.com/jlmakes/scrollreveal), under MIT License.
-- [Typed.js](https://github.com/mattboldt/typed.js/), under MIT License.
 - [Roboto](https://github.com/google/roboto), under Apache License 2.0 License.
 
 
 # Change log
 All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/blob/master/CHANGELOG.md) file.
-
-# Contributors
- * Samuel Gu&eacute;bo ([@samuelguebo](http://twitter.com/samuelguebo))

@@ -1848,7 +1848,6 @@ meta.foundation-mq-topbar {
   .top-bar-section ul li {
     background: #333333; }
     .top-bar-section ul li > a {
-      color: #c91030;
       display: block;
       font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
       font-size: 0.8125rem;
@@ -2155,11 +2154,6 @@ meta.foundation-mq-topbar {
       clip: auto;
       display: block;
       position: absolute !important; }
-    .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
-      border: none;
-      content: "\00bb";
-      top: 0.1875rem;
-      right: 5px; }
     .top-bar-section .dropdown {
       left: 0;
       background: transparent;

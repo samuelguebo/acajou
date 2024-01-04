@@ -44,8 +44,9 @@ function acajou_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-    add_image_size( 'post-thumb', 370,210, array( 'left', 'top' ) );
-    add_image_size( 'single-thumb', 770,330, array( 'left', 'top' ) );
+    add_image_size( 'post-thumb', 370,210, array( 'center', 'top' ) );
+    add_image_size( 'single-thumb', 770,330, array( 'center', 'top' ) );
+    add_image_size( 'slider-cover', 1100,450, array( 'center', 'top' ) );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -141,7 +142,7 @@ function acajou_scripts() {
 	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.min.css' );
 	wp_enqueue_style( 'foundation-css', get_template_directory_uri().'/css/foundation.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
-    
+
     $style = "style";
     if(""!=get_theme_mod('acajou_theme_color')){
         
@@ -149,13 +150,13 @@ function acajou_scripts() {
         $style = 'style-'.$color;
     } 
 	wp_enqueue_style( 'acajou-style', get_template_directory_uri().'/css/'.$style.'.css' );
-    
+
     // JS
     wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'modernizer', get_template_directory_uri().'/js/modernizr.min.js');
-	wp_enqueue_script( 'foundation-js', get_template_directory_uri().'/js/foundation.min.js');
-	wp_enqueue_script( 'typed', get_template_directory_uri().'/js/typed.js');
-	wp_enqueue_script( 'scroll-reveal', get_template_directory_uri().'/js/scrollreveal.min.js');
+    wp_enqueue_script( 'modernizer', get_template_directory_uri().'/js/modernizr.min.js');
+    wp_enqueue_script( 'foundation-js', get_template_directory_uri().'/js/foundation.min.js');
+    wp_enqueue_script( 'scroll-reveal', get_template_directory_uri().'/js/scrollreveal.min.js');
+	wp_enqueue_script( 'slider', get_template_directory_uri().'/js/slider.js');
 	wp_enqueue_script( 'main-scripts', get_template_directory_uri().'/js/scripts.js');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -17,6 +17,7 @@ function acajou_customize_register( $wp_customize ) {
      * @link https://github.com/bueltge/Wordpress-Theme-Customizer-Custom-Controls
      *
      */
+    require_once dirname(__FILE__) . '/class-category_dropdown_custom_control.php';
     require_once dirname(__FILE__) . '/class-palette_custom_control.php';
     
     
@@ -38,8 +39,29 @@ function acajou_customize_register( $wp_customize ) {
                 )
             )
         );
-    
-     /*
+    /**
+     * Slider section
+     */
+    $wp_customize->add_section('acajou_slider_section', array(
+        'title' => __('Slider', 'acajou'),
+        'priority' => 30,
+    ));
+    $wp_customize->add_setting('slider_category', array(
+        'default' => '1',
+        'transport' => 'refresh',
+        'sanitize_callback'	=> 'sanitize_text_field'
+
+    ));
+    $wp_customize->add_control(new Category_Dropdown_Custom_Control(
+        $wp_customize,
+        'slider_category',
+        array(
+            'label' => __('Category of slider', 'acajou'),
+            'section' => 'acajou_slider_section',
+            'settings' => 'slider_category',
+        )
+    ));
+    /*
      * From the blog text
      * 
      *
@@ -50,7 +72,6 @@ function acajou_customize_register( $wp_customize ) {
 		'priority' => 30,
 	));
     
-    // Typing lines
     $wp_customize->add_setting('from_text', array(
 		'default' => 'From the blog',
 		'transport' => 'refresh',
@@ -68,33 +89,6 @@ function acajou_customize_register( $wp_customize ) {
 		)
 	));
     
-    /**
-     *  Show home icon in menu 
-     */
-    // Create sections for socials links
-    $wp_customize->add_section('acajou_home_icon_section', array(
-		'title' => __('Home icon', 'acajou'),
-		'priority' => 100,
-	));
-    
-    // Typing lines
-    $wp_customize->add_setting('home_icon', array(
-		'default' => '1',
-		'transport' => 'refresh',
-        'sanitize_callback'	=> 'acajou_sanitize_checkbox'
-
-	));
-    $wp_customize->add_control(new WP_Customize_Control(
-		$wp_customize,
-		'home_icon',
-		array(
-			'label' => __('Show home icon in menu?', 'acajou'),
-			'section' => 'acajou_home_icon_section',
-			'settings' => 'home_icon',
-			'type' => 'checkbox',
-		)
-	));
-    
 }
 add_action( 'customize_register', 'acajou_customize_register' );
 
@@ -102,7 +96,7 @@ add_action( 'customize_register', 'acajou_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function acajou_customize_preview_js() {
-	wp_enqueue_script( 'acajou_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'acajou_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20231215', true );
 }
 
 /* Validate user input */

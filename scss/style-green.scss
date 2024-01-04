@@ -1,8 +1,12 @@
-$primary-color: #3fc455;
+$primary-color: #02a550;
 $secondary-color: #0bad22;
 $dark-color: #021102;
 $light-color: #FFF;
 $extra-light-color: #ecfcd2;
-$link-color: #0bad22;
+$link-color: #02a550;
 
 @import 'base';
+
+.top-bar-section li a:hover {
+  background: $link-color;
+}
