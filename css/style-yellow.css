@@ -18,6 +18,7 @@ Table of Content
 14. Responsiveness (Tablet Large 64em (1024px))
 15. Responsiveness (Mobile Large 37.50em (600px))
 16. Responsiveness (Mobile Small 30em (480px))
+17. Responsiveness (Hamburger menu)
 ================================================================================================
 */
 @font-face {
@@ -206,7 +207,7 @@ header {
   }
   .top-bar-section li:not(.has-form) a:not(.button) {
     line-height: 2.8125rem;
-    padding: 2px 0.3rem;
+    padding: 5px 20px;
   }
 }
 .top-bar-section .dropdown li:not(.has-form) a:not(.button) {
@@ -219,7 +220,9 @@ header {
 
 .top-bar-section {
   display: flex;
-  align-items: end;
+}
+.top-bar-section li.icon {
+  display: none;
 }
 
 .nav-wrapper {
@@ -947,7 +950,7 @@ article .panel {
 }
 .category-row article.column-half {
   width: 48%;
-  margin: 0 1%;
+  margin: 1%;
 }
 
 .category-row .category-header {
@@ -1130,6 +1133,9 @@ aside .wp-block-search__inside-wrapper {
 }
 aside .wp-block-search__inside-wrapper button:hover {
   background: #211601;
+}
+aside .wp-block-latest-comments {
+  padding: 10px;
 }
 
 aside .widget_search button {
@@ -1363,11 +1369,11 @@ footer .socials a:hover {
   counter-increment: none;
 }
 
-.comment-content .widget input[type=submit] {
+.comment-content,
+.widget input[type=submit] {
   max-width: 120px;
 }
 
-/* COMMENT THREAD */
 .comment-list, .comment-list .vcard .fn, .comment-content, .comment-content p {
   font-size: 0.85rem;
 }
@@ -1828,6 +1834,117 @@ article.comment-wrapper {
   .category-row article.column-third, .category-row article.column-half {
     width: 100% !important;
     margin-bottom: 20px;
+  }
+  aside {
+    padding: 0 !important;
+  }
+}
+/*
+===========================================================================================
+17. Responsiveness (Hamburger menu)
+===========================================================================================
+*/
+@media screen and (max-width: 600px) {
+  .top-bar-section {
+    flex: 1;
+    padding-left: 20px;
+  }
+  .top-bar-section .nav-wrapper nav li.current-menu-item a,
+  .top-bar-section .nav-wrapper nav li.current-menu-ancestor a,
+  .top-bar-section .nav-wrapper nav li.current-menu-parent a,
+  .top-bar-section li a, .top-bar-section li {
+    background: transparent !important;
+    color: #f9a819;
+  }
+  #main-menu {
+    max-height: 50px;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+  }
+  #main-menu li {
+    display: none;
+  }
+  #main-menu li.icon {
+    display: inline-block;
+  }
+  #main-menu li.icon .hamburger {
+    transform-origin: center;
+    width: 20px;
+    height: 2px;
+    top: -5px;
+    display: inline-block;
+    background: #f9a819;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+  }
+  #main-menu li.icon .hamburger::before, #main-menu li.icon .hamburger::after {
+    transition: 0.3s ease-in-out;
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #f9a819;
+  }
+  #main-menu li.icon .hamburger::before {
+    top: -8px;
+  }
+  #main-menu li.icon .hamburger::after {
+    bottom: -8px;
+  }
+  #main-menu li.icon a {
+    line-height: inherit;
+  }
+  #main-menu li a {
+    color: #f9a819;
+  }
+  #main-menu li a:hover {
+    color: #211601;
+  }
+  #main-menu li.has-dropdown > a::after {
+    transition: 1s ease-in-out;
+    content: "\f107";
+    font-size: 1.2em;
+    line-height: 3em;
+    top: 0;
+    color: #211601;
+  }
+  #main-menu li.has-dropdown.open > a::after {
+    content: "\f106";
+  }
+  #main-menu ul.dropdown {
+    position: relative !important;
+    left: revert !important;
+    display: none;
+  }
+  #main-menu ul.dropdown.visible {
+    display: block;
+  }
+  #main-menu.responsive {
+    max-height: 500px;
+  }
+  #main-menu.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #main-menu.responsive li.icon {
+    display: inline-block;
+  }
+  #main-menu.responsive .hamburger, #main-menu.responsive .hamburger::before, #main-menu.responsive .hamburger::after {
+    background: #999999 !important;
+  }
+  #main-menu.responsive .hamburger {
+    transform: rotate(45deg) !important;
+  }
+  #main-menu.responsive .hamburger::before {
+    transform: rotate(90deg) !important;
+    top: 0 !important;
+  }
+  #main-menu.responsive .hamburger::after {
+    transform: rotate(90deg) !important;
+    bottom: 0 !important;
   }
 }
 .top-bar-section li a:hover {

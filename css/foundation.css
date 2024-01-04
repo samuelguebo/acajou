@@ -2612,12 +2612,6 @@ meta.foundation-mq-topbar {
     display: block;
     position: absolute !important;
   }
-  .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
-    border: none;
-    content: "»";
-    top: 0.1875rem;
-    right: 5px;
-  }
   .top-bar-section .dropdown {
     left: 0;
     background: transparent;

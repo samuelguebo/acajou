@@ -52,6 +52,7 @@ jQuery(document).ready(function ($) {
             prevSelector = ".carousel-control-prev",
             autoChangeTime = 5000
     );
+
 })
 
 
@@ -59,3 +60,36 @@ jQuery(document).ready(function ($) {
 jQuery.htmlPrefilter = function( html ) {
 	return html;
 };
+
+const toggleHamburgerMenu = () =>  {
+    let x = document.querySelector('#main-menu');
+    if (!x.classList.contains('responsive')) {
+        x.classList.add('responsive');
+        // Handle dropdown menus
+        toggleDropDownMenus();
+    } else {
+        x.classList.remove('responsive');
+    }
+}
+
+const toggleDropDownMenus = () => {
+
+    // Prevent registering event too many times
+    if(document.hasToggleDropDownMenus){
+        return;
+    }
+
+    const submenus = document.querySelectorAll(".responsive .has-dropdown");
+    for (let i = 0; i < submenus.length; i++) {
+
+        submenus[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let child = this.closest('ul').querySelector('.dropdown')
+            child.classList.toggle("visible");
+            this.classList.toggle("open");
+        });
+    }
+
+    document.hasToggleDropDownMenus = true;
+}

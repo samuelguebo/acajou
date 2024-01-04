@@ -69,6 +69,25 @@ function new_excerpt_length($length) {
 add_filter('excerpt_length', 'new_excerpt_length');
 
 /**
+ * Adding the Home button to main menu
+ */
+add_filter( 'wp_nav_menu_items', 'add_hamburgermenu', 10, 2 );
+
+function add_hamburgermenu ( $items, $args ) {
+        if ($args->theme_location == 'primary') {
+
+            $hamburger = '<li class="icon">';
+            $hamburger .= '<a href="javascript:void(0);" onclick="toggleHamburgerMenu()">';
+            $hamburger .= '<i class="hamburger"></i>';
+            $hamburger .= '</a>';
+            $hamburger .= '</li>';
+
+            $items = $hamburger . $items;
+        }
+
+    return $items;
+}
+/**
  * Dealig with submenu items
  */
 class Multilevel_Menu extends Walker_Nav_Menu

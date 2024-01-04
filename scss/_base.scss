@@ -25,6 +25,7 @@ Table of Content
 14. Responsiveness (Tablet Large 64em (1024px))
 15. Responsiveness (Mobile Large 37.50em (600px))
 16. Responsiveness (Mobile Small 30em (480px))
+17. Responsiveness (Hamburger menu)
 ================================================================================================
 */
 
@@ -190,7 +191,6 @@ header {
 .top-bar {
     background: none;
     z-index: 99;
-
 }
 .top-bar.expanded {
     overflow: visible;
@@ -212,7 +212,7 @@ header {
     }
     .top-bar-section li:not(.has-form) a:not(.button) {
         line-height: 2.8125rem;
-        padding: 2px 0.3rem;
+        padding: 5px 20px;
     }
 }
 .top-bar-section .dropdown li:not(.has-form) a:not(.button) {
@@ -223,8 +223,10 @@ header {
     background: $light-color;
 }
 .top-bar-section {
+    li.icon {
+        display:none;
+    }
     display: flex;
-    align-items: end;
 }
 .nav-wrapper{
     margin-top: 10px;
@@ -931,7 +933,7 @@ article .panel {
 
     &.column-half{
         width: 48%;
-        margin: 0 1%;
+        margin: 1% ;
 
     }
 }
@@ -1114,6 +1116,9 @@ aside{
         button:hover{
             background: $dark-color;
         }
+    }
+    .wp-block-latest-comments{
+        padding: 10px;
     }
 }
 
@@ -1342,11 +1347,10 @@ footer .socials a:hover {
     list-style: none;
     counter-increment: none;
 }
-.comment-content
+.comment-content,
 .widget input[type=submit] {
     max-width: 120px;
 }
-/* COMMENT THREAD */
 .comment-list, .comment-list .vcard .fn, .comment-content, .comment-content p {
     font-size: 0.85rem;
 }
@@ -1743,4 +1747,132 @@ and (-webkit-min-device-pixel-ratio: 2) {
             }
         }
     }
+    aside {
+        padding: 0 !important;
+    }
+}
+
+
+/*
+===========================================================================================
+17. Responsiveness (Hamburger menu)
+===========================================================================================
+*/
+
+
+@media screen and (max-width: 600px) {
+    .top-bar-section {
+        flex: 1;
+        padding-left: 20px;
+
+        .nav-wrapper nav li.current-menu-item a,
+        .nav-wrapper nav li.current-menu-ancestor a,
+        .nav-wrapper nav li.current-menu-parent a,
+        li a, li {
+            background: transparent !important;
+            color: $link-color;
+        }
+    }
+    #main-menu{
+        max-height: 50px;
+        overflow: hidden;
+        transition: 1s ease-in-out;
+
+        li {
+            display: none;
+            &.icon {
+                display: inline-block;
+
+                .hamburger {
+                    transform-origin: center;
+                    width: 20px;
+                    height: 2px;
+                    top: -5px;
+                    display: inline-block;
+                    background: $link-color;
+                    position:relative;
+                    transition: .3s ease-in-out;
+                    opacity: 1;
+
+                    &::before, &::after{
+                        transition: .3s ease-in-out;
+                        content: " ";
+                        position: absolute;
+                        display: block;
+                        width: 20px;
+                        height: 2px;
+                        background: $link-color;
+                    }
+                    &::before{
+                        top: -8px;
+                    }
+                    &::after{
+                        bottom: -8px;
+                    }
+
+                }
+                a{
+                    line-height: inherit;
+                }
+            }
+            a {
+                color: $link-color;
+                &:hover{
+                    color: $dark-color;
+                }
+
+            }
+            &.has-dropdown > a::after {
+                transition: 1s ease-in-out;
+                content: '\f107';
+                font-size: 1.2em;
+                line-height: 3em;
+                top: 0;
+                color: $dark-color;
+            }
+
+            &.has-dropdown.open > a::after {
+                content: '\f106';
+            }
+
+        }
+
+        ul.dropdown{
+            position: relative !important;
+            left: revert !important;
+            display: none;
+            &.visible{
+                display: block;
+            }
+        }
+    }
+    #main-menu.responsive {
+        max-height: 500px;
+        // transition: max-height .5s ease-in;
+
+        li {
+            float: none;
+            display: block;
+            text-align: left;
+            &.icon{
+                display: inline-block;
+            }
+        }
+        .hamburger, .hamburger::before, .hamburger::after{
+            background: darken($light-color, 40) !important;
+        }
+        .hamburger {
+            transform: rotate(45deg) !important;
+            &::before{
+                transform: rotate(90deg) !important;
+                top: 0 !important;
+            }
+            &::after{
+                transform: rotate(90deg) !important;
+                bottom: 0 !important;
+            }
+        }
+
+    }
+
 }

@@ -10,6 +10,9 @@ const slideshow = (
     pauseOnHover = false
 ) => {
 
+    if(!document.querySelector(sliderSelector)){
+        return;
+    }
 
     ////////////////////
     const _sliderAutoChangeTime = autoChangeTime;
