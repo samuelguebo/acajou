@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [1.2.0] - 2024-01-04
+
+- Replace Typed animation with slider on homepage
+- Improve Hamburger menu
+- Fix menu fallback causing fatal error
+- Replace purple with Dark theme
+
 ## [1.0.7] - 2017-09-30
 - fix php error in content-single.php
 
