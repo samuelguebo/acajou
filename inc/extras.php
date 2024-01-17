@@ -302,3 +302,52 @@ add_action( 'init', 'acajou_register_nav_menus' );
 function acajou_register_nav_menus() {
         register_nav_menu( 'social', __( 'Social', 'acajou' ) );
 }
+
+/*
+ * Customize the comments with this fallback
+ */
+function acajou_custom_comments( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment;
+    echo '<div class="comment-list">';
+    switch( $comment->comment_type ) :
+        case 'pingback' :
+        case 'trackback' : ?>
+            <li <?php comment_class(); ?> id="comment<?php comment_ID(); ?>">
+            <div class="back-link"><?php comment_author_link(); ?></div>
+            <?php break;
+        default : ?>
+        <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+            <article <?php comment_class(); ?> class="comment">
+
+                <div class="comment-body">
+                    <div class="author vcard">
+                        <?php echo get_avatar( $comment, 100 ); ?>
+                        <h6 class="author-name">
+                            <?php comment_author_link(); ?>
+                        </h6>
+                        <?php comment_text(); ?>
+                        <hr/>
+                        <footer class="comment-footer">
+                                <span class="date">
+                                <?php comment_date('d/m/Y'); ?>
+                                </span> -
+                            <span class="time">
+                                <?php comment_time('H:i'); ?>
+                                </span>
+                            <div class="reply"><?php
+                                comment_reply_link( array_merge( $args, array(
+                                    'reply_text' => __( 'Reply', 'acajou' ),
+                                    'depth' => $depth,
+                                    'max_depth' => $args['max_depth']
+                                ) ) ); ?>
+                            </div><!-- .reply -->
+                        </footer><!-- .comment-footer -->
+                    </div><!-- .vcard -->
+                </div><!-- comment-body -->
+
+            </article><!-- #comment-<?php comment_ID(); ?> -->
+            <?php // End the default styling of comment
+            break;
+    endswitch;
+    echo '</div>';
+}
