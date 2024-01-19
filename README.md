@@ -93,6 +93,15 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 - [ScrollReveal](https://github.com/jlmakes/scrollreveal), under MIT License.
 - [Roboto](https://github.com/google/roboto), under Apache License 2.0 License.
 
+### Available CLI commands
 
+`acajou` comes packed with CLI commands tailored for WordPress theme development :
+
+- `npm run watch` : watches all SASS files and recompiles them to css when they change.
+- `npm run compile:css` : compiles SASS files to css.
+- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
+- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+- 
 # Change log
 All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/samuelguebo/acajou/blob/master/CHANGELOG.md) file.

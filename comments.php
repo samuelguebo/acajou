@@ -35,17 +35,16 @@ if ( post_password_required() ) {
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php endif; // Check for comment navigation ?>
         
         <?php
-                $args = array(
+            $args = array(
                 'short_ping' => true,
                 'callback' => 'acajou_custom_comments',
-                    );
-            wp_list_comments( $args);
+            );
+            wp_list_comments( $args );
         ?>
 		<!-- .comment-list -->
-
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 			<h4 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'acajou' ); ?></h4>
