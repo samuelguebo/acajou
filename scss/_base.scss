@@ -241,9 +241,9 @@ header {
         .logo {
             margin-right: 20px;
             img {
-                max-height: 50px;
+                max-height: 48px;
                 width: auto;
-                padding: 8px 0;
+                padding: 0;
             }
         }
     }
@@ -883,6 +883,7 @@ article .post-item-date {
     background: $primary-color;
     text-transform: uppercase;
     padding: 5px;
+    z-index: 100;
 }
 article .post-item-date span {
     display: block;

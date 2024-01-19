@@ -248,9 +248,9 @@ header {
   margin-right: 20px;
 }
 .nav-wrapper nav .home-menu .logo img {
-  max-height: 50px;
+  max-height: 48px;
   width: auto;
-  padding: 8px 0;
+  padding: 0;
 }
 
 .top-bar .toggle-topbar.menu-icon {
@@ -908,6 +908,7 @@ article .post-item-date {
   background: #008ee2;
   text-transform: uppercase;
   padding: 5px;
+  z-index: 100;
 }
 
 article .post-item-date span {
