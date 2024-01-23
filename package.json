@@ -16,7 +16,7 @@
         "url": "git+https://github.com/samuelguebo/acajou.git"
     },
     "devDependencies": {
-        "@wordpress/scripts": "^19.2.2",
+        "@wordpress/scripts": "^27.0.0",
         "dir-archiver": "^1.1.1",
         "node-sass": "^7.0.1"
     },
